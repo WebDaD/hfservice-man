@@ -30,7 +30,7 @@ Für eine bessere Verwaltung der O-Töne zu Themen in Messen wird eine Datenbank
 * Es gibt Messen mit Name, Link, Logo, Text, Themenservice.pdf
 * Zu jeder Messe gibt es Themen.
 * Es gibt Messen wo kein Themenservice notwendig ist. Hier sollte eine Möglichkeit des Weglassens sein. 
-* Ein Thema besteht aus einem Titel und Text
+* Ein Thema besteht aus einem Titel, Text und einem PDF
 * Zu jedem Thema gibt es O-Töne
 * Diese sollen als Akkordeon dargestellt werden.
 * Ein O-Ton besteht aus einem Titel, einem Text, einer mp3 und evtl einem Bild
@@ -57,6 +57,7 @@ Es wird eine MySQL-Datenbank mit folgenden Tabellen genutzt
 	* id (PK, Auto Increment)
 	* titel
 	* text
+	* pdf
 	* messen_id (FK)
 * o-toene
 	* id (PK, Auto Increment)
@@ -85,6 +86,7 @@ Folgende Fragmente werden für die Anzeige der Daten erzeugt und können dann ei
 	* Enthält Messe-Informationen
 	* Enthält die Themen als Akkordeon
 	* In den Themen liegen die O-Töne mit Audio-Player (html5 -> <audio>)
+	* Wenn es ein Bild gibt, liegt dieses als Thumbnail vor (server-gen). Beim rollover wird ein grosses angezeigt.
 	* Die mp3 ist hier als sauberer Link hinterlegt um das Loggen in Analytics zu ermöglichen.
 
 ### Einbau in bestehenden System
