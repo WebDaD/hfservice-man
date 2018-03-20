@@ -115,7 +115,9 @@ Aus *messe.php?slug=SLUG_DER_MESSE* wird dann **messe/SLUG_DER_MESSE**
 
 Das Admin-Tool ist eine kleine Webapplikation, geschrieben unter Verwendung der Frameworks Angular, Bootstrap und Dropzone.
 Im hintergrund gibt es eine api.php, die die Daten aus der Datenbank zur Verfügung stellt.
-Die Seite ist nur per Login erreichbar (interne Userverwaltung)
+Die Seite ist nur per Login erreichbar (interne Userverwaltung).
+
+Als Drag'Drop-Plugin: https://github.com/marceljuenemann/angular-drag-and-drop-lists
 
 Verwaltet werden hier:
 * User (Anlegen, Löschen, Login/Passwort ändern)
@@ -132,6 +134,13 @@ Hier können Themen angelegt, gelöscht und bearbeitet werden.
 Klicke ich hier auf ein Thema, kann ich das Thema verwalten und die O-Töne als Liste sehen.
 In dieser Ansicht kann ich O-Töne anlegen, löschen und bearbeiten.
 Bild und mp3-Datei lade ich hier per Drag'n'Drop hoch.
+
+#### api.php
+
+* Verb, Type, ID, Data in Variablen
+* Jeder Type als Klasse mit Funktionen
+* Switch-Case als Sender
+* Send JSON
 
 ### Optionale Features
 
@@ -154,3 +163,7 @@ Ich empfehle hier die händische Variante, da sie effizienter ist.
 	* Die Lösung kann nun eingebunden werden, die Daten werden händisch in die Datenbank eingetragen (phpmyadmin, ftp)
 2. Admin-Tool
 	* Ab hier können die Daten per Web eingetragen werden.
+
+## Deployment
+
+per FTP Sync

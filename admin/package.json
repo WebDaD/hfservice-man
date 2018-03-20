@@ -1,0 +1,16 @@
+{
+  "name": "hf_service_admin",
+  "version": "1.0.0",
+  "description": "Admin-Tool for HFService",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dominik Sigmund",
+  "license": "Unlicense",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "bootstrap": "^4.0.0"
+  }
+}

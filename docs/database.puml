@@ -1,0 +1,43 @@
+@startuml
+hide circle
+hide empty members
+
+entity messen {
+  * id INT AUTO_INCREMENT NOT NULL
+  --
+  * titel VARCHAR(255)
+  * slug VARCHAR(255)
+  * text TEXT
+  * bild VARCHAR(255)
+  * link VARCHAR(255)
+  * datum DATETIME
+  * sortierung INT
+  **themenservice** VARCHAR(255)
+}
+entity themen {
+  * id INT AUTO_INCREMENT NOT NULL
+  --
+  * titel VARCHAR(255)
+  * text TEXT
+  * messen_id INT (FK)
+  **pdf**
+}
+entity otoene {
+  * id INT AUTO_INCREMENT NOT NULL
+  --
+  * titel VARCHAR(255)
+	* text TEXT 
+  * themen_id INT (FK)
+	**bild VARCHAR(255)**
+	**mp3 VARCHAR(255)**
+}	
+entity user {
+  * id INT AUTO_INCREMENT NOT NULL
+  --
+  * login VARCHAR(255)
+	* password VARCHAR(255)
+}
+
+messen }|-- themen
+themen }|-- otoene
+@enduml
