@@ -9,22 +9,34 @@ if ($mysql->connect_error) {
 } 
 
 if($sort == "manual") {
-  $sorter = " sortierung ASC";
+  $sorter = "sortierung ASC";
 } else {
-  $sorter = " datum DESC";
+  $sorter = "datum DESC";
 }
 
-$sql = "SELECT title, slug, bild, datum FROM ".DB_PREFIX."_messen ".$sorter;
-
+$sql = "SELECT titel, slug, bild FROM ".DB_PREFIX."_messen ORDER BY ".$sorter;
 $result = $mysql->query($sql);
 
-
+$messen = array();
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-    // HERE be HTML $row["fieldname"]
+    array_push($messen, $row);
   }
-} else {
-  // HERE be HTML for 0 Results
 }
 $mysql->close();
 ?>
+<?php if($type == "grid"): ?>
+
+<?php elseif($type == "stripe"): ?>
+
+<?php else: ?>
+  <ul style="list-style-type: none;">
+    <?php foreach ($messen as $messe): ?>
+      <li>
+        <a href="<?php echo $messe["slug"];?>">
+          <img style="width:100%;height:auto;" src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"/>
+        </a>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+<?php endif; ?>
