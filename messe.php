@@ -8,7 +8,7 @@ if ($mysql->connect_error) {
 } 
 
 
-$sql = "SELECT titel, bild, link, themenservice,  DATE_FORMAT (datum,\"%d.%m.%Y\") AS datum, DATE_FORMAT (enddatum,\"%d.%m.%Y\") AS enddatum FROM ".DB_PREFIX."_messen WHERE slug='".$messe."'";
+$sql = "SELECT id, titel, bild, link, themenservice,  DATE_FORMAT (datum,\"%d.%m.%Y\") AS datum, DATE_FORMAT (enddatum,\"%d.%m.%Y\") AS enddatum FROM ".DB_PREFIX."_messen WHERE slug='".$messe."'";
 $result = $mysql->query($sql);
 if ($result->num_rows == 1) {
   $data = $result->fetch_assoc();
@@ -16,6 +16,30 @@ if ($result->num_rows == 1) {
   die("404 - Messe nicht gefunden");
 }
 
+$themen = array();
+$sql_themen = "SELECT t.id, t.titel, t.text, t.pdf FROM hfs_themen t, hfs_messen m  WHERE t.messen_id = m.id AND m.id=".$data["id"];
+$result_themen = $mysql->query($sql_themen);
+if ($result_themen->num_rows > 0) {
+  while($row = $result_themen->fetch_assoc()) {
+    array_push($themen, $row);
+  }
+}
+$count_ton = 0;
+foreach ($themen as &$thema) {
+  $oton = array();
+  $sql_oton = "SELECT o.id, o.titel, o.text, o.bild, o.mp3, o.upload FROM hfs_themen t, hfs_otoene o  WHERE o.themen_id = t.id AND t.id=".$thema["id"];
+  $result_oton  = $mysql->query($sql_oton);
+  if ($result_oton->num_rows > 0) {
+    while($row = $result_oton->fetch_assoc()) {
+      array_push($oton, $row);
+      $count_ton++;
+    }
+    $thema["oton"] = $oton;
+  } else {
+    $thema["oton"] = "";
+  }
+}
+$mysql->close();
 ?>
   <span style="float:right;text-align:right">
     <a href="<?php echo $data["link"];?>" target="_blank" title='zum Pressebereich der <?php echo $data["titel"];?>'>
@@ -63,14 +87,47 @@ if ($result->num_rows == 1) {
   <?php if($data["themenservice"] !== ""):?>
   <a href="/uploads/<?php echo $data["themenservice"]; ?>" type="application/pdf" title="unser Themenservice als PDF-Dokument"
     target="_blank">
-    <img alt="unser Themenservice als PDF-Dokument" title="unser Themenservice als PDF-Dokument" src="/pdf.png" style="float:left;"/>
+    <img alt="unser Themenservice als PDF-Dokument" title="unser Themenservice als PDF-Dokument" src="/pdf.png" style="float:left;margin-right:10px"/>
     <strong>Unser Themenservice als Download</strong>
   </a>
   <br/>
   <br/>
   <?php endif; ?>
-  <h4>Nachfolgend finden Sie Manuskripte und ## O-T&ouml;ne zum Download:</h4>
-
-  <!-- TODO: Hier das Accordeon mit den Themen mit O-Tönen -->
-
+  <h4>Nachfolgend finden Sie Manuskripte und <?php echo $count_ton; ?> O-T&ouml;ne zum Download:</h4>
+  <?php if (count($themen) > 0): ?>
+      <?php foreach ($themen as &$thema): ?>
+      <button class="accordion">
+        <?php if($thema["oton"] != ""): ?>
+          <img alt="onAir" title="O-Töne vorhanden" src="/onair.png" style="float:left;"/>
+        <?php else: ?>
+          <img alt="offAir" title="Noch keine O-Töne vorhanden" src="/offair.png" style="float:left;"/>
+        <?php endif; ?>
+        <?php echo $thema["titel"]; ?>
+        <a href="/uploads/<?php echo $data["themenservice"]; ?>" type="application/pdf" title="unser Themenservice als PDF-Dokument" target="_blank">
+          <img alt="PDF" title="Thema als PDF-Dokument" src="/pdf.png" style="float:right;"/>
+        </a>
+      </button>
+      <div class="panel">
+        <p><?php echo $thema["text"]; ?></p>
+        <?php if($thema["oton"] != ""): ?>
+          <ul>
+            <?php foreach ($thema["oton"] as $oton): ?>
+              <li>
+                <h6><?php echo $oton["titel"]; ?></h6>
+                <?php if ($oton["bild"] != ""): ?>
+                  <img src="/uploads/<?php echo $oton["bild"]; ?>" style="float:left;margin-right:5px;"/>
+                <?php endif; ?>
+                <p><?php echo $oton["text"]; ?></p>
+                <audio src="/uploads/<?php echo $oton["mp3"]; ?>" controls/>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        <?php else: ?>
+          <p>Noch keine O-T&ouml;ne vorhanden</p>
+        <?php endif; ?>
+      </div>
+      <?php endforeach; ?>
+  <?php else: ?>
+    <p>Noch keine Themen vorhanden.</p>
+  <?php endif; ?>
   </div>

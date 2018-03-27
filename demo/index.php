@@ -15,16 +15,7 @@
     media="screen,print">
   <link rel="stylesheet" type="text/css" href="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/css/banner_temp.css?v=1386855708801"
     media="screen,print">
-  <!--[if lte IE 9 ]>
-<link rel="stylesheet" type="text/css" href="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/css/ie.css?v=1386855708797" media="screen, print" />
-<![endif]-->
-  <!--[if lte IE 7]>
-<link rel="stylesheet" type="text/css" href="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/css/ie7.css?v=1386855708856" media="screen, print">
-<![endif]-->
-  <script type="text/javascript" src="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/js/all_scripts.js?v=1386855708848"></script>
-  <!--[if lte IE 9]>
-<script type="text/javascript" src="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/js/ie_scripts.js?v=1386855708850"></script>
-<![endif]-->
+  <link rel="stylesheet" type="text/css" href="accordion.css" media="screen"/>
 <style>
 .footer ul#next.box li {
     float: left;
@@ -566,6 +557,7 @@ http://www.messe-muenchen.de/media/local_trade_fair_munich/header_1/header_press
   </div>
   <!-- /pageWrapper -->
   <!-- 5.1.415.67492 | 2015-11-19 16:00 | standardcontent -->
+  <script type="text/javascript" src="accordion.js"></script>
 </body>
 
 </html>
