@@ -11,6 +11,7 @@ entity messen {
   * bild VARCHAR(255)
   * link VARCHAR(255)
   * datum DATETIME
+  * enddatum DATETIME
   * sortierung INT
   **themenservice** VARCHAR(255)
 }
@@ -28,6 +29,7 @@ entity otoene {
   * titel VARCHAR(255)
 	* text TEXT 
   * themen_id INT (FK)
+  * upload TIMESTAMP
 	**bild VARCHAR(255)**
 	**mp3 VARCHAR(255)**
 }	
