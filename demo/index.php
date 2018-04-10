@@ -108,8 +108,8 @@ http://www.messe-muenchen.de/media/local_trade_fair_munich/header_1/header_press
           </div>
           <!-- /logo white -->
           <div class="search floatRight">
-            <form action="http://www.messe-muenchen.de/de/globalsearch.php/mmg/globalsearch/de/mmi/list">
-              <input type="text" value="Ihr Suchbegriff" size="42" class="searchInput" id="searchInput" name="keyword">
+            <form action="index.php?messe=search" method="POST">
+              <input type="text" placeholder="Ihr Suchbegriff" size="42" class="searchInput" id="query" name="query">
               <input type="submit" value=" " class="metaSearchSubmit sprite searchIcon">
             </form>
           </div>
@@ -229,7 +229,11 @@ http://www.messe-muenchen.de/media/local_trade_fair_munich/header_1/header_press
                   ">
           <?php
           if(!empty($_GET['messe']) && is_string($_GET['messe'])) {
-            include("../messe.php");
+            if($_GET["messe"] == "search") {
+              include("../search.php");
+            } else {
+              include("../messe.php");
+            }
           } else {
             include 'main.php';
           }
