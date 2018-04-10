@@ -1,5 +1,7 @@
 <?php
-$messe = $_GET["messe"];
+$url = explode( '#', $_GET["messe"] );
+$messe = $url[0];
+
 include 'config.php';
 $mysql = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $mysql->query("SET NAMES utf8"); 
@@ -27,7 +29,7 @@ if ($result_themen->num_rows > 0) {
 $count_ton = 0;
 foreach ($themen as &$thema) {
   $oton = array();
-  $sql_oton = "SELECT o.id, o.titel, o.text, o.bild, o.mp3, o.upload FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_otoene o  WHERE o.themen_id = t.id AND t.id=".$thema["id"];
+  $sql_oton = "SELECT o.id, o.themen_id, o.titel, o.text, o.bild, o.mp3, o.upload FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_otoene o  WHERE o.themen_id = t.id AND t.id=".$thema["id"];
   $result_oton  = $mysql->query($sql_oton);
   if ($result_oton->num_rows > 0) {
     while($row = $result_oton->fetch_assoc()) {
@@ -103,7 +105,7 @@ $mysql->close();
           <img alt="offAir" title="Noch keine O-Töne vorhanden" src="/offair.png" style="float:left;"/>
         <?php endif; ?>
         <?php echo $thema["titel"]; ?>
-        <a href="/uploads/<?ph<?php echo $thema["text"]; ?>p echo $data["themenservice"]; ?>" type="application/pdf" title="unser Themenservice als PDF-Dokument" target="_blank">
+        <a href="/uploads/<?php echo $data["themenservice"]; ?>" type="application/pdf" title="unser Themenservice als PDF-Dokument" target="_blank">
           <img alt="PDF" title="Thema als PDF-Dokument" src="/pdf.png" style="float:right;"/>
         </a>
       </button>
@@ -113,7 +115,7 @@ $mysql->close();
           <ul>
             <?php foreach ($thema["oton"] as $oton): ?>
               <li>
-                <h6 id="oton-<?php echo $oton["id"]; ?>"><?php echo $oton["titel"]; ?></h6>
+                <h6 id="thema-<?php echo $oton["themen_id"]; ?>-oton-<?php echo $oton["id"]; ?>"><?php echo $oton["titel"]; ?></h6>
                 <?php if ($oton["bild"] != ""): ?>
                   <img src="/uploads/<?php echo $oton["bild"]; ?>" style="float:left;margin-right:5px;"/>
                 <?php endif; ?>
