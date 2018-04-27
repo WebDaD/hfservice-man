@@ -1,5 +1,5 @@
 <?php
-$query = strtolower($_POST["query"]);
+$query = strtolower($_POST["nav-search"]);
 include 'config.php';
 $mysql = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $mysql->query("SET NAMES utf8"); 
@@ -37,38 +37,59 @@ if ($result_otone->num_rows > 0) {
 
 $mysql->close();
 ?>
-  <h3>Suchergebnisse für <?php echo $query;?></h3>
-  <br>
-  <h4>Messen</h4>
-  <?php if (count($messen) > 0): ?>
+  <div id="unique-image-text-section-oben">
+    <div class="text-section">
+      <h3>Suchergebnisse für
+        <?php echo $query;?>
+      </h3>
+      <br>
+      <h4>Messen</h4>
+      <?php if (count($messen) > 0): ?>
       <?php foreach ($messen as &$messe): ?>
-        <strong><a href="<?php echo $messe["slug"]; ?>"><?php echo $messe["datum"];?>: <?php echo $messe["titel"];?></a></strong>
-        <p><?php echo $messe["text"]; ?>...</p>
-        <br/>
+      <strong>
+        <a href="<?php echo $messe[" slug "]; ?>">
+          <?php echo $messe["datum"];?>:
+          <?php echo $messe["titel"];?>
+        </a>
+      </strong>
+      <p>
+        <?php echo $messe["text"]; ?>...</p>
+      <br/>
       <?php endforeach; ?>
-  <?php else: ?>
-    <p>Keine Ergebnisse.</p>
-  <?php endif; ?>
-  <hr/>
-  <h4>Themen</h4>
-  <?php if (count($themen) > 0): ?>
+      <?php else: ?>
+      <p>Keine Ergebnisse.</p>
+      <?php endif; ?>
+      <hr/>
+      <h4>Themen</h4>
+      <?php if (count($themen) > 0): ?>
       <?php foreach ($themen as &$thema): ?>
-        <strong><a href="<?php echo $thema["slug"]; ?>#thema-<?php echo $thema["id"]; ?>"><?php echo $thema["titel"];?></a></strong>
-        <p><?php echo $thema["text"]; ?>...</p>
-        <br/>
+      <strong>
+        <a href="<?php echo $thema[" slug "]; ?>#thema-<?php echo $thema["id "]; ?>">
+          <?php echo $thema["titel"];?>
+        </a>
+      </strong>
+      <p>
+        <?php echo $thema["text"]; ?>...</p>
+      <br/>
       <?php endforeach; ?>
-  <?php else: ?>
-    <p>Keine Ergebnisse.</p>
-  <?php endif; ?>
-  <hr/>
-  <h4>O-Tönen</h4>
-  <?php if (count($otone) > 0): ?>
+      <?php else: ?>
+      <p>Keine Ergebnisse.</p>
+      <?php endif; ?>
+      <hr/>
+      <h4>O-Tönen</h4>
+      <?php if (count($otone) > 0): ?>
       <?php foreach ($otone as &$oton): ?>
-        <strong><a href="<?php echo $oton["slug"]; ?>#thema-<?php echo $oton["themen_id"]; ?>-oton-<?php echo $oton["id"]; ?>"><?php echo $oton["titel"];?></a></strong>
-        <p><?php echo $oton["text"]; ?>...</p>
-        <br/>
+      <strong>
+        <a href="<?php echo $oton[" slug "]; ?>#thema-<?php echo $oton["themen_id "]; ?>-oton-<?php echo $oton["id "]; ?>">
+          <?php echo $oton["titel"];?>
+        </a>
+      </strong>
+      <p>
+        <?php echo $oton["text"]; ?>...</p>
+      <br/>
       <?php endforeach; ?>
-  <?php else: ?>
-    <p>Keine Ergebnisse.</p>
-  <?php endif; ?>
+      <?php else: ?>
+      <p>Keine Ergebnisse.</p>
+      <?php endif; ?>
+    </div>
   </div>

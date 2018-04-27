@@ -1,567 +1,587 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
-  <meta charset="utf-8">
-  <title>H&ouml;rfunkservice</title>
-  <meta name="keywords" content="Messe, M&uuml;nchen, M,O,C,, ICM, Medien, Presse, Journalisten, Pressebereich, Bildmaterial, Footage, Rohmaterial, Video, TV, Filmmaterial, Fernsehen, Videobeitr&auml;ge, Fernsehbeitr&auml;ge, Filmbeitr&auml;ge, Videomaterial, Bildaufnahmen, Sendebeitr&auml;ge, Sendematerial, TV-Service, Fernsehjournalisten, TV-Journalisten, MAZ, Fernseh-Service, Download, Downloadservice, ">
-  <meta name="description" content="Unser TV-Service bietet Fernseh- und Online-Journalisten kostenfreies Rohmaterial und bereits geschnittene und vertonte Filmbeitr&auml;ge.">
-  <meta name="revisit-after" content="14 days">
-  <meta name="robots" content="index,follow">
-  <link rel="shortcut icon" href="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/img/layout/favicon.ico"
-    type="image/vnd.microsoft.icon">
-  <link rel="icon" type="image/gif" href="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/img/layout/favicongif.gif">
-  <link rel="stylesheet" type="text/css" href="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/css/all_styles.css?v=1386855708854"
-    media="screen,print">
-  <link rel="stylesheet" type="text/css" href="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/css/banner_temp.css?v=1386855708801"
-    media="screen,print">
-  <link rel="stylesheet" type="text/css" href="accordion.css" media="screen"/>
-<style>
-.footer ul#next.box li {
-    float: left;
-    width: 30%;
-    height: 100%;
-    margin-left: 20px;
-    padding: 0;
-    overflow: hidden;
-}
-</style>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="http://frontend.mmicode.de/css/app.css?8c997a1f42b7b0e6a8b5" rel="stylesheet"></head>
 
 <body>
+<!-- BEGIN ################################################################################################# -->
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-TWDGKKN');
-  </script>
-  <!-- End Google Tag Manager -->
+    <header>
+        <nav class="navbar navbar-blue-dark no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+    
+                    <!-- large devices -->
+                    <a class="navbar-brand large-device" href="#">
+                        <img src=http://frontend.mmicode.de/img/logo-messe-muenchen.png srcset="http://frontend.mmicode.de/img/logo-messe-muenchen.png 1x, http://frontend.mmicode.de/img/logo-messe-muenchen@2x.png 2x" class="nav-logo" alt="The alternative Image Text">
+                        <!-- @david do not include this -->
+                        <div class="hiddenforwebpackexport">
+                            <img src=http://frontend.mmicode.de/img/logo-messe-muenchen@2x.png>
+                        </div>
+                        <!-- do not include end -->
+                    </a>
+    
+                    <div class="header-meta large-device">
+                        <ul class="meta-navigation">
+                            <li><a href="#"><i class="mmi mmi-globe" aria-hidden="true"></i> English</a></li>
+                            <li><a href="#"><i class="mmi mmi-envelope" aria-hidden="true"></i> Kontakt</a></li>
+                            <!-- search item -->
+                            <li class="large-device">
+                                <div class="nav-search-box large-device">
+                                  <form action="index.php?messe=search" method="POST">
+                                    <input type="text" id="nav-search" class="search-autocomplete searchInput" placeholder="Suche"  name="nav-search">
+                                    <button id="search-submit" class="quick-search-submit" type="submit" name="quick-search"><i class="mmi mmi-magnifier" aria-hidden="true"></i></button>
+                                  </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+    
+    
+                    <!-- smaller devices -->
+                    <a class="brand-mobile small-device" href="#">
+                        <img src=http://frontend.mmicode.de/img/logo-messe-muenchen-mobile.png srcset="http://frontend.mmicode.de/img/logo-messe-muenchen-mobile.png 1x, http://frontend.mmicode.de/img/logo-messe-muenchen-mobile@2x.png 2x" class="nav-logo" alt="The alternative Image Text">
+                        <!-- @david do not include this -->
+                        <div class="hiddenforwebpackexport">
+                            <img src=http://frontend.mmicode.de/img/logo-messe-muenchen-mobile@2x.png>
+                        </div>
+                        <!-- do not include end -->
+                    </a>
+                    <ul class="meta-mobile small-device pull-right">
+                        <li><a href="#"><i class="mmi mmi-globe" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="mmi mmi-magnifier" aria-hidden="true"></i></a></li>
+                    </ul>
+    
+    
+    
+                    <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#navbar-brand_size_lg">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        Menü
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbar-brand_size_lg">
+                        <ul class="nav navbar-nav navbar-left">
+                            <!-- menu item #1 -->
+                            <li class="dropdown-full ">
+                                <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Unternehmen</a>
+                                <div class="dropdown-menu">
+    
+    
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-3">
+    
+                                                <h4>Messe München Locations</h4>
+                                                <ul>
+                                                    <li><a href="#">Messe München</a></li>
+                                                    <li><a href="#">ICM - Internationales Congress Center München</a></li>
+                                                    <li><a href="#">MOC Veranstaltungscenter München</a></li>
+                                                </ul>
+    
+                                                <h4>Weitere Standorte</h4>
+                                                <ul>
+                                                    <li><a href="#">Bauzentrum Poing</a></li>
+                                                    <li><a href="#">MOC Ordercenter</a></li>
+                                                    <li><a href="#">International</a></li>
+                                                </ul>
+    
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4>Leistungen für Veranstalter</h4>
+                                                <ul>
+                                                    <li><a href="#">Leistungsportfolio</a></li>
+                                                    <li><a href="#">Lorem Ipsum</a></li>
+                                                    <li><a href="#">Dolor</a></li>
+                                                    <li><a href="#">Sit Amet</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4>Referenzen</h4>
+                                                <ul>
+                                                    <li><a href="#">...</a></li>
+                                                </ul>
+    
+                                                <h4>Unser Sales Team</h4>
+                                                <ul>
+                                                    <li><a href="#">...</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <figure>
+                                                    <img src=http://frontend.mmicode.de/img/285x180.png class="img-responsive" alt="The alternative Image Text">
+                                                    <figcaption><strong>Ab Herbst 2018</strong><br>Neue Hallen C5/C6 mit Konferenzbereich</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="btn-flyout-close text-center">
+                                        <div class="triangle"></div>
+                                    </div>
+    
+                                </div>
+                            </li>
+    
+                            <!-- menu item #2 -->
+                            <li class="dropdown-full ">
+                                <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Locations</a>
+                                <div class="dropdown-menu">
+    
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-3">Locations col 1</div>
+                                            <div class="col-md-3">col 2</div>
+                                            <div class="col-md-3">col 3</div>
+                                            <div class="col-md-3">
+                                                <figure>
+                                                    <img src=http://frontend.mmicode.de/img/285x180.png class="img-responsive" alt="The alternative Image Text">
+                                                    <figcaption><strong>Ab Herbst 2018</strong><br>noch mehr Neues</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="btn-flyout-close text-center">
+                                        <div class="triangle"></div>
+                                    </div>
+    
+    
+                                </div>
+                            </li>
+    
+                            <!-- menu item #3 -->
+                            <li class="dropdown-full ">
+                                <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Karriere</a>
+                                <div class="dropdown-menu">
+    
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-3">Karriere col 1</div>
+                                            <div class="col-md-3">col 2</div>
+                                            <div class="col-md-3">col 3</div>
+                                            <div class="col-md-3">
+                                                <figure>
+                                                    <img src=http://frontend.mmicode.de/img/285x180.png class="img-responsive" alt="The alternative Image Text">
+                                                    <figcaption><strong>Ab Herbst 2018</strong><br>TBD</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="btn-flyout-close text-center">
+                                        <div class="triangle"></div>
+                                    </div>
+    
+                                </div>
+                            </li>
+    
+                            <!-- menu item #4 -->
+                            <li class="dropdown-full ">
+                                <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Presse</a>
+                                <div class="dropdown-menu">
+    
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-3">Presse col 1</div>
+                                            <div class="col-md-3">col 2</div>
+                                            <div class="col-md-3">col 3</div>
+                                            <div class="col-md-3">
+                                                <figure>
+                                                    <img src=http://frontend.mmicode.de/img/285x180.png class="img-responsive" alt="The alternative Image Text">
+                                                    <figcaption><strong>Ab Herbst 2018</strong><br>TBD</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="btn-flyout-close text-center">
+                                        <div class="triangle"></div>
+                                    </div>
+    
+                                </div>
+                            </li>
+    
+    
+                            <!-- menu item #5 -->
+                            <li class="dropdown-full ">
+                                <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Magazin</a>
+                                <div class="dropdown-menu">
+    
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-3">Presse col 1</div>
+                                            <div class="col-md-3">col 2</div>
+                                            <div class="col-md-3">col 3</div>
+                                            <div class="col-md-3">
+                                                <figure>
+                                                    <img src=http://frontend.mmicode.de/img/285x180.png class="img-responsive" alt="The alternative Image Text">
+                                                    <figcaption><strong>Ab Herbst 2018</strong><br>TBD</figcaption>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="btn-flyout-close text-center">
+                                        <div class="triangle"></div>
+                                    </div>
+    
+                                </div>
+                            </li>
+    
+    
+    
+                        </ul>
+    
+                        <div class="mobile-contact-nav">
+                            <ul>
+                                <li><a href="#"><i class="mmi mmi-envelope" aria-hidden="true"></i> Kontakt</a></li>
+                                <li><a href="#"><i class="mmi mmi-calendar" aria-hidden="true"></i> Messekalender</a></li>
+                            </ul>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <!-- pageWrapper -->
-  <div class="pageWrapper">
-    <div class="line_bg"></div>
-    <!-- page -->
-    <div class="page">
-      <!-- header -->
-      <div class="header">
-        <!-- navigationMeta -->
-        <div class="metaNavigation">
-          <ul class="meta floatRight">
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/home/home.html" title="">Home</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/international/international_1_contentmaster.php" title="">International</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/anreise/anreise_2_contentmaster.php" title="">Anreise</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/aufenthalt/aufenthalt_contentmaster.php" title="">Aufenthalt</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/karriere/karriere.php" title="">Karriere</a>
-            </li>
-            <li>
-              <a class="active" href="http://www.messe-muenchen.de/de/meta/newsroom/newsrooms.php" title="">Newsroom</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/faq/faq_startseite.php" title="">FAQ</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/kontakt_global/kontakt.php" title="">Kontakt</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/downloadcenter/downloadcenter_1.php" title="">Downloadcenter</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/ticketportal/tickets.php" title="">Ticketportal</a>
-            </li>
-          </ul>
+    <div class="mood-header broadcasting-header" style="background-image:url(http://frontend.mmicode.de/img/1170x578-drohnea_section_slider_image_1600.jpg);">
+    <!-- use class mood-header-large for 600px high header -->
+        <!-- ignore this @susi & david - only for webpack export! -->
+        <div class="hiddenforwebpackexport"><img src=http://frontend.mmicode.de/img/1170x578-drohnea_section_slider_image_1600.jpg></div>
+        <!-- ignore this end -->
+        <div class="flexy">
+            <div class="flex-content">
+                <h1>Hörfunk- und TV-Service</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </p>
+            </div>
         </div>
-        <div class="logoPrintWrapper">
-          <img src="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/img/layout/logoPrint.png" alt=" " class="logoPrint"
-          />
-        </div>
-        <!-- /navigationMeta -->
-        <!-- mainNavigation -->
-        <div class="headerMainNavigation" style="background-image:url(
-http://www.messe-muenchen.de/media/local_trade_fair_munich/header_1/header_presse3.jpg)">
-          <!-- logo white -->
-          <div class="logo">
-            <a href="http://www.messe-muenchen.de/de/meta/home/home.html">
-              <img src="http://www.messe-muenchen.de/media/pkg_corp_master_template_global/img/layout/logo_stage_white.png" alt="Logo"
-              />
-            </a>
-          </div>
-          <!-- /logo white -->
-          <div class="search floatRight">
-            <form action="index.php?messe=search" method="POST">
-              <input type="text" placeholder="Ihr Suchbegriff" size="42" class="searchInput" id="query" name="query">
-              <input type="submit" value=" " class="metaSearchSubmit sprite searchIcon">
-            </form>
-          </div>
-          <ul class="mainNavigation">
-            <li>
-              <a href="http://www.messe-muenchen.de/de/messen_und_events/index.php" title="">Messen und Events</a>
-            </li>
-            <li>
-              <a href="http://messe-muenchen.de/de/services/services_index.php" title="">Services &amp; Leistungen</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/messe_muenchen_locations/messe_muenchen_locations.php" title="">Messe M&uuml;nchen Locations</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/company/unternehmen.php" title="">Unternehmen</a>
-            </li>
-          </ul>
-          <div class="line"></div>
-        </div>
-
-
-        <!-- /mainNavigation -->
-
-        <h1>H&ouml;rfunkservice</h1>
-
-        <div class="hr"></div>
-      </div>
-      <!-- /header -->
-      <!-- content -->
-      <div class="clearfix content">
-        <div class="col1 floatLeft">
-          <!-- navigationSecondLevel -->
-          <ul class="subNavigation">
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/newsroom/press_releases/presse_uebersicht_contentmaster.php" title="">Pressemitteilungen</a>
-            </li>
-            <li>
-              <a href="http://www.messeradio-muenchen.de" title="">H&ouml;rfunk- und TV-Service</a>
-              <ul>
-                <li>
-                  <a href="http://www.messeradio-muenchen.de" title="" class="active">H&ouml;rfunkservice</a>
-                </li>
-                <li>
-                  <a href="http://www.messe-muenchen.de/de/meta/newsroom/hoerfunk_und_tv_service/tv_service/tv_service.php" title="">TV-Service</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/newsroom/bilder/bilder_1.php" title="">Aktuelle Pressefotos</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/newsroom/hallenbau/neue_hallen_c5_c6.php" title="">Hallenbau</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/newsroom/akkreditierung/akkreditierung_1.php" title="">Akkreditierung</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/newsroom/pressezentren/pressezentren_1.php" title="">Pressezentren</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/newsroom/kontakt_newsroom/kontakt.php" title="">Kontakt</a>
-            </li>
-            <li>
-              <a href="http://www.messe-muenchen.de/de/meta/newsroom/media_database/mediadatabase.php" title="">Bilderservice</a>
-            </li>
-            <li>
-              <a href="http://videos.messe-muenchen.de" title="">Video Mediathek</a>
-            </li>
-          </ul>
-          <!-- /navigationSecondLevel -->
-          <!-- contact_box -->
-          <div class="contactBoxText">
-            <h3>Kontaktieren Sie uns!
-              <br/>
-            </h3>
-            <span>Ihr Kontakt zu unserem Presseteam.
-              <br/>
-            </span>
-          </div>
-          <div class="wrapperBox">
-            <div class="contactBoxData">
-              <div class="entry">Christine Heufer</div>
-              <div class="entry">Broadcast Media Manager</div>
-              <div class="entry">Telefon:
-                <strong>+49 89 949-20762</strong>
-              </div>
-              <div class="entry">Fax:
-                <strong>+49 89 949-9720762</strong>
-              </div>
-              <div class="entry">Email:
-                <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#104;&#114;&#105;&#115;&#116;&#105;&#110;&#101;&#46;&#104;&#101;&#117;&#102;&#101;&#114;&#64;&#109;&#101;&#115;&#115;&#101;&#45;&#109;&#117;&#101;&#110;&#99;&#104;&#101;&#110;&#46;&#100;&#101;">&#99;&#104;&#114;&#105;&#115;&#116;&#105;&#110;&#101;&#46;&#104;&#101;&#117;&#102;&#101;&#114;&#64;&#109;&#101;&#115;&#115;&#101;&#45;&#109;&#117;&#101;&#110;&#99;&#104;&#101;&#110;&#46;&#100;&#101;</a>
-              </div>
-            </div>
-          </div>
-          <ul class="subNavigation">
-            <ul class="subNavigation">
-              <li>
-                <a href="http://www.messe-muenchen.de/mmicontact/web/index.php/mmg/mmicontact/de/modalcb/13890" class="modal {inherits:'overlayContact'}"
-                  title="Call Back">Call Back</a>
-              </li>
-              <li>
-                <a href="http://www.messe-muenchen.de/mmicontact/web/index.php/mmg/mmicontact/de/modalmsg/13890" class="modal
-                  {inherits: 'overlayContact'} " title="Nachricht schreiben ">Nachricht schreiben</a>
-              </li>
-              <li>
-                <a href="http://www.messe-muenchen.de/de/vcf_13890.vcf " title="Kontakt speichern ">Kontakt speichern</a>
-              </li>
-            </ul>
-
-            <!-- /contact_box -->
-        </div>
-
-
-        <div class="col2 floatLeft textImage ">
-          <!-- textImage -->
-          <div class="clearfix text
-                  ">
-          <?php
-          if(!empty($_GET['messe']) && is_string($_GET['messe'])) {
-            if($_GET["messe"] == "search") {
-              include("../search.php");
-            } else {
-              include("../messe.php");
-            }
-          } else {
-            include 'main.php';
-          }
-          ?>
-
-
-
-
-        <!-- -------------------Nächste Veranstaltungen--------------------- -->
-        <!-->
-
-
-        <div class="col3 floatLeft ">
-        </div>
-        <!-- footer -->
-        <div class="clearfix footer ">
-          <div class="moduleReleatedContentFooter ">
-            <div class="moduleReleatedContentWrapper ">
-              <h2 class="var
-                  ">N&auml;chste Veranstaltungen</h2>
-              <div class="hr "></div>
-              <?php
-              $_GET['type'] = "stripe";
-              $_GET['max'] = "3";
-              include("../navbar.php");
-              ?>
-              <!-- TODO Next Ones -->
-            </div>
-          </div>
-          <div class="breadcrumb ">
-            <div class="footerLine "></div>
-
-
-
-            <!-- 
-
-
-
-
-
-
--->
-
-
-
-
-
-
-
-            <ul>
-              <li>
-                <a href="http://www.messe-muenchen.de/de/meta/newsroom/newsroom.php " title=" ">Newsroom</a> &gt;</li>
-              <li>
-                <a href="http://www.messeradio-muenchen.de/ " title=" ">H&ouml;rfunk- und TV-Service</a> &gt;</li>
-              <li>
-                <strong>H&ouml;rfunkservice</strong>
-              </li>
-            </ul>
-          </div>
-
-          <div class="footermap ">
-            <!-- footer sitemap -->
-            <!-- pt_footer_sitemap_link_list.is NOT Empty -->
-            <div class="col clear ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/messen_und_events/index.php " title=" " target="_self ">Messen & Events</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/messen_und_events/index.php " title=" " target="_self ">Kalender</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/messen_und_events/index.php/mmg/eventcalendar/de/mmi/list "
-                          title="
-                  " target="_self " rel="nofollow ">Listenansicht</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/messen_und_events/index.php/mmg/eventcalendar/de/mmi/list "
-                          title="
-                  " target="_self " rel="nofollow ">Events A-Z</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/services/services_index.php " title=" " target="_self ">Services & Leistungen</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/services/exhibitor_services/exhibitor_service_128.php " title=" "
-                          target="_self ">Aussteller-Services</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/services/visitor_services/visitor_service_130.php " title=" "
-                          target="_self ">Services vor Ort</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/services/mediasales/mediasales_1.php " title=" " target="_self ">Media Sales</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/services/professional_event_service/professional_event_service.php
-                  " title=" " target="_self ">Professional Event Service</a>
-                      </li>
-                      <li>
-                        <a href="http://open-innovation.messe-muenchen.de/de/meta/home/home.php " title=" " target="_blank "
-                          rel="nofollow ">Open Innovation</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/messe_muenchen_locations/messe_muenchen_locations.php " title=" " target="_self ">Messe M&uuml;nchen Locations</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/messe_muenchen_locations/messe_muenchen/messe_muenchen.php "
-                          title="
-                  " target="_self ">Messe M&uuml;nchen</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/messe_muenchen_locations/icm/icm_internationales_congress_center_muenchen.php
-                  " title=" " target="_self ">ICM - Internationales Congress Center M&uuml;nchen</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/messe_muenchen_locations/moc_veranstaltungscenter/moc_veranstaltungscenter.php
-                  " title=" " target="_self ">MOC Veranstaltungscenter M&uuml;nchen</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/company/unternehmen.php " title=" " target="_self ">Unternehmen</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/company/profil/profil_2.php " title=" " target="_self ">Profil</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/company/management/management.php " title=" " target="_self ">Management</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/company/messehistorie/messehistorie.php " title=" " target="_self ">Messehistorie</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/company/corporate_social_responsibility/corporate_social_responsibility.php
-                  " title=" " target="_self ">Corporate Social Responsibility</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/company/messe_metropole_muenchen/wirtschaft_infrastruktur_1.php "
-                          title="
-                  " target="_self ">Messe Metropole M&uuml;nchen</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="colLast ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/meta/international/international_1_contentmaster.php " title=" " target="_self ">International</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/international/tochtergesellschaften/tochtergesellschaften_1_contentmaster.php
-                  " title=" " target="_self ">Tochtergesellschaften</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/international/auslandsvertretungen/auslandsvertretungen_contentmaster.php
-                  " title=" " target="_self ">Auslandsvertretungen</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col clear ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/meta/anreise/anreise_2_contentmaster.php " title=" " target="_self ">Anreise</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/anreise/anreise_mit_dem_flugzeug/anreise_mit_dem_flugzeug.php
-                  " title=" " target="_self ">mit dem Flugzeug</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/anreise/anreise_mit_der_bahn/anreise_mit_dem_flugzeug_bahn.php
-                  " title=" " target="_self ">mit der Bahn</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/anreise/anreise_mit_dem_auto/anreise_mit_dem_auto_contentmaster.php
-                  " title=" " target="_self ">mit dem Auto</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/anreise/anreise_mit_oeffentlichen_verkehrsmitteln/anreise_mit_oeffentlichen_verkehrsmitteln.php
-                  " title=" " target="_self ">mit &ouml;ffentlichen Verkehrsmitteln</a>
-                      </li>
-                      <li>
-                        <a href="http://www.moc-veranstaltungscenter.de/de/meta/anreise/anreise_1.php " title=" " target="_blank "
-                          rel="nofollow ">zum MOC Veranstaltungscenter M&uuml;nchen</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/meta/aufenthalt/aufenthalt_contentmaster.php " title=" " target="_self ">Aufenthalt</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.mvv-muenchen.de/ " title=" " target="_blank " rel="nofollow ">MVV M&uuml;nchen</a>
-                      </li>
-                      <li>
-                        <a href="http://www.muenchen.de/stadtplan.html " title=" " target="_blank " rel="nofollow ">Stadtplan M&uuml;nchen</a>
-                      </li>
-                      <li>
-                        <a href="http://www.muenchen.de/ " title=" " target="_blank " rel="nofollow ">M&uuml;nchen Portal</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/meta/karriere/karriere.php " title=" " target="_self ">Karriere</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/karriere/lernen_sie_uns_kennen/lernen_sie_uns_kennen_2.php "
-                          title="
-                  " target="_self ">Lernen Sie uns kennen</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/karriere/lernen_sie_uns_kennen/mitarbeiter_im_gespraech/mitarbeiter_testimonials.php
-                  " title=" " target="_self ">Mitarbeiter im Gespr&auml;ch</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/karriere/unser_bewerbungscenter/unser_bewerbungscenter_2.php
-                  " title=" " target="_self ">Unser Bewerbungscenter</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/meta/newsroom/newsrooms.php " title=" " target="_self ">Presse</a>
-                    <ul>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/newsroom/press_releases/presse_uebersicht_contentmaster.php "
-                          title="
-                  " target="_self ">Pressemitteilungen</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/newsroom/akkreditierung/akkreditierung_1.php " title=" "
-                          target="_self ">Akkreditierung</a>
-                      </li>
-                      <li>
-                        <a href="http://www.messe-muenchen.de/de/meta/newsroom/kontakt_newsroom/kontakt.php " title=" " target="_self ">Presse Team</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="colLast ">
-              <div class="item ">
-                <ul>
-                  <li>
-                    <a href="http://www.messe-muenchen.de/de/meta/ticketportal/tickets.php " title=" " target="_self ">Ticketportal </a>
-                    <!-- st_linklist.isEmpty -->
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- /footer sitemap -->
-          </div>
-          <!-- Footer-Metanavigation -->
-          <div class="clear ">
-            <ul class="meta floatRight ">
-              <li>
-                <a href="https://www.facebook.com/messemuenchen " title=" " target="_blank ">Facebook</a>
-              </li>
-              <li>
-                <a href="http://www.messe-muenchen.de/de/impressum.php " title="Rechtliche Hinweise der Messe M&uuml;nchen GmbH
-                  " target="_self ">Impressum</a>
-              </li>
-              <li>
-                <a href="http://www.messe-muenchen.de/de/datenschutz.php " title="Datenschutz " target="_self ">Datenschutz</a>
-              </li>
-              <li class="lastchild ">
-                <a href="http://www.messe-muenchen.de/de/agb_s.php " title=" " target="_self ">AGB der Messe M&uuml;nchen GmbH</a>
-              </li>
-          </div>
-          </ul>
-          <!-- /Footer-Metanavigation -->
-        </div>
-        <!-- /footer -->
-      </div>
-      <!-- /content -->
     </div>
-    <!-- /page -->
-  </div>
-  <!-- /pageWrapper -->
-  <!-- 5.1.415.67492 | 2015-11-19 16:00 | standardcontent -->
-  <script type="text/javascript" src="accordion.js"></script>
-</body>
+
+    <div class="container">
+
+        <div class="breadcrumb-navigation">
+            <ul class="breadcrumb">
+                <li><a href="CW-1002_hoerfunkservice_start.html">Hörfunk- und TV-Service</a></li>
+            </ul>
+        </div>
+
+        <div id="fs-unique-content-section">
+            <h1>Vom O-Ton-Paket bis zum fertigen Beitrag</h1>
+            <div class="row no-padding-outside">
+                <div class="broadcasting">
+                    <div class="row">
+                        <div class="col-md-8 broadcasting-start">
+                        <?php
+                          if(!empty($_GET['messe']) && is_string($_GET['messe'])) {
+                            if($_GET["messe"] == "search") {
+                              include("../search.php");
+                            } elseif($_GET["messe"] == "all") {
+                                $_GET['type'] = "grid";
+                                $_GET['max'] = "-1";
+                                include("../navbar.php");
+                            } else {
+                              include("../messe.php");
+                            }
+                          } else {
+                            include 'main.php';
+                          }
+                        ?>
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <div class="sidebar-section">
+                                <?php 
+                                    if(!empty($_GET['messe']) && is_string($_GET['messe'])) {
+                                        if($_GET["messe"] != "search" && $_GET["messe"] != "all") {
+                                            include("../sidebar.php");
+                                        }
+                                    }
+                                ?>
+                                    <div class="sidebar-block">
+                                        <h4>Kontaktieren Sie uns!</h4>
+                                        <h5>Ihr Kontakt zu unserem Presseteam</h5>
+                                        <ul>
+    
+                                            <li class="person">
+                                                Christine Heufer<br>
+                                                Broadcast Media Manager
+                                            </li>
+    
+                                            <li class="address">
+                                                <table>
+                                                        <tr>
+                                                            <td>
+                                                                Tel.
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-20762
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Fax
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-9720762
+                                                            </td>
+                                                        </tr>
+                                                </table>
+                                            </li>
+                                            <li class="email"><a href="Christine.Heufer@messe-muenchen.de">E-Mail schreiben</a></li>
+                                        </ul>
+                                        <ul class="extra-margin-top">
+    
+                                            <li class="person">
+                                                Bettina Schenk<br>
+                                                Broadcast Media Manager
+                                            </li>
+    
+                                            <li class="address">
+                                                <table>
+                                                        <tr>
+                                                            <td>
+                                                                Tel.
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-21475
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Fax
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-9721475
+                                                            </td>
+                                                        </tr>
+                                                </table>
+                                            </li>
+                                            <li class="email"><a href="Bettina.Schenk@messe-muenchen.de">E-Mail schreiben</a></li>
+                                        </ul>
+    
+                                    </div>
+
+                                    <div class="sidebar-block">
+                                        <h4>Kontakt Hörfunkstudio</h4>
+                                        <h5>Während der Öffnungszeiten des Pressezentrums West</h5>
+                                        <ul>
+    
+                                            <li class="person">
+                                                Gabriel und Susanne Wirth
+                                            </li>
+    
+                                            <li class="address">
+                                                <table>
+                                                        <tr>
+                                                            <td>
+                                                                Tel.
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-27000
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Technik
+                                                            </td>
+                                                            <td>
+                                                                <a href="#">NewWayMedia</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Fax
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-27002
+                                                            </td>
+                                                        </tr>
+                                                </table>
+                                            </li>
+                                        </ul>
+    
+                                    </div>
+
+                                <div class="sidebar-block">
+                                        <h4>Downloadbereich</h4>
+                                        <div class="broadcasting-sidebar-downloads">
+                                            <a href="CW-1002_hoerfunkservice_messen.html"><img src=http://frontend.mmicode.de/img/82x40.png alt="The alternative Image Text"></a>
+                                            <a href="CW-1002_hoerfunkservice_messen.html"><img src=http://frontend.mmicode.de/img/82x40.png alt="The alternative Image Text"></a>
+                                            <a href="CW-1002_hoerfunkservice_messen.html"><img src=http://frontend.mmicode.de/img/82x40.png alt="The alternative Image Text"></a>
+                                            <a href="CW-1002_hoerfunkservice_messen.html"><img src=http://frontend.mmicode.de/img/82x40.png alt="The alternative Image Text"></a>
+                                            <a href="CW-1002_hoerfunkservice_messen.html"><img src=http://frontend.mmicode.de/img/82x40.png alt="The alternative Image Text"></a>
+                                            <div class="clb"></div>
+                                        </div>
+                                    </div>
+
+                                <div class="sidebar-block">
+                                    <a href="all" class="btn btn-default btn-lg"><i class="mmi mmi-chevron-right" aria-hidden="true"></i>  
+                                    Alle Messen anzeigen</a>
+                                </div>
+
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-sharing">
+                    <div class="shariff" data-lang="de" data-theme="white" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;xing&quot;,&quot;twitter&quot;]"></div>
+                </div>
+
+
+
+
+
+
+                <div class="teaser-locations">
+
+                    <h2>Kommende Veranstaltungen</h2>
+                    <?php
+                      $_GET['type'] = "stripe";
+                      $_GET['max'] = "3";
+                      include("../navbar.php");
+                    ?>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="graybar">
+            <div class="container">
+                <div class="col-md-12">
+                    <h4>Folgen Sie uns auf:</h4>
+                    <a href="#" target="_blank" class="footer-icon">
+                        <i class="mmi mmi-facebook" aria-hidden="true"></i>
+                        <span class="title">Facebook</span>
+                    </a>
+                    <a href="#" target="_blank" class="footer-icon">
+                        <i class="mmi mmi-youtube" aria-hidden="true"></i>
+                        <span class="title">Twitter</span>
+                    </a>
+                    <a href="#" target="_blank" class="footer-icon">
+                        <i class="mmi mmi-instagram" aria-hidden="true"></i>
+                        <span class="title">Instagram</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="sitemap-footer">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Veranstaltungen</h4>
+                        <a href="#">Subnavigation 1</a>
+                        <a href="#">Subnavigation 2 mit total langem Anchortext... eigentlich viel zu lang aber evlt. nötig.</a>
+                        <a href="#">Subnavigation 3</a>
+                        <a href="#">Subnavigation n</a>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Locations</h4>
+                        <a href="#">Subnavigation 1</a>
+                        <a href="#">Subnavigation 2</a>
+                        <a href="#">Subnavigation 3</a>
+                        <a href="#">Subnavigation n</a>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Unternehmen</h4>
+                        <a href="#">Subnavigation 1</a>
+                        <a href="#">Subnavigation 2</a>
+                        <a href="#">Subnavigation 3</a>
+                        <a href="#">Subnavigation n</a>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Karriere</h4>
+                        <a href="#">Subnavigation 1</a>
+                        <a href="#">Subnavigation 2</a>
+                        <a href="#">Subnavigation 3</a>
+                        <a href="#">Subnavigation n</a>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Presse</h4>
+                        <a href="#">Subnavigation 1</a>
+                        <a href="#">Subnavigation 2</a>
+                        <a href="#">Subnavigation 3</a>
+                        <a href="#">Subnavigation 4</a>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Anreise</h4>
+                        <a href="#">Subnavigation 1</a>
+                        <a href="#">Subnavigation 2</a>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Aufenthalte</h4>
+                        <a href="#">Subnavigation 1</a>
+                        <a href="#">Subnavigation 2</a>
+                        <a href="#">Subnavigation 3</a>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>International</h4>
+                        <a href="#">Subnavigation 1</a>
+                        <a href="#">Subnavigation 2</a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="meta-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="meta-footer-nav">
+                            <li><a href="#">Impressum</a></li>
+                            <li><a href="#">Datenschutz</a></li>
+                            <li><a href="#">AGB der Messe München GmbH</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        &copy; Messe München 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- back-to-top-button kurz vor /body positionieren -->
+    <div id="back-to-top" title="zum Seitenanfang"><div></div></div>
+<!-- back-to-top-button end -->
+
+<!-- END ################################################################################################### -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="http://frontend.mmicode.de/app.bundle.js?8c997a1f42b7b0e6a8b5"></script></body>
 
 </html>

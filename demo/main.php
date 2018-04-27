@@ -1,67 +1,35 @@
-<h2>Unser H&ouml;rfunkservice</h2>
-            <p>
-              <strong>Vom O-Ton-Paket bis zum fertig geschnittenen Beitrag: Unsere H&ouml;rfunk-Redaktion bietet Ihnen alle Audiomaterialien,
+<div id="unique-image-text-section-oben">
+  <div class="text-section">
+      <div id="fs-uid">
+          <div class="slider story-slider broadcasting-slider">
+              <figure class="figure-element">
+                  <img src=img/555x370.png alt="The alternative Image Text">
+              </figure>
+              <figure class="figure-element">
+                  <img src=img/555x370.png alt="The alternative Image Text">
+              </figure>
+              <figure class="figure-element">
+                  <img src=img/555x370.png alt="The alternative Image Text">
+              </figure>
+          </div>
+      </div>
+      <h2>
+      Unser H&ouml;rfunkservice
+      </h2>
+      <h3>
+      Vom O-Ton-Paket bis zum fertig geschnittenen Beitrag: Unsere H&ouml;rfunk-Redaktion bietet Ihnen alle Audiomaterialien,
                 die Sie f&uuml;r die Produktion Ihres Beitrags brauchen. Wir stellen Ihnen unser Tonmaterial im MP3-Format
                 zusammen mit Textinformationen kostenfrei zur Verf&uuml;gung. Klicken Sie bitte auf die entsprechende Veranstaltung
-                im Downloadbereich.</strong>
-            </p>
-            <p>Eine Vorschau auf unsere Produktionen zeigt Ihnen unser Themenservice.
+                im Downloadbereich.
+      </h3>
+      <p>
+      Eine Vorschau auf unsere Produktionen zeigt Ihnen unser Themenservice.
               <br> Diese eNews k&ouml;nnen wir Ihnen gerne regelm&auml;&szlig;ig zusenden.
               <br>Mailen Sie bitte an
               <a href="mailto:christine.heufer@messe-muenchen.de ">Christine Heufer</a>.
-
-
-
-
-
-              <br />
-              <br /> </p>
-          </div>
-          <!-- /textImage -->
-          <!-- textImage -->
-          <div class="clearfix text ">
-            <h3>Modernes Digitalstudio </h3>
-            <div </div>
-
-              <script type="text/javascript " src="http://www.messeradio-muenchen.de/home/javajQuery.js ">
-              </script>
-              <script type="text/javascript " src="http://www.messeradio-muenchen.de/home/fadeslideshow.js ">
-              </script>
-              <script type="text/javascript ">
-                //<![CDATA[
-
-                var mygallery = new fadeSlideShow({
-                  wrapperid: "fadeshow1 ", //ID of blank DIV on page to house Slideshow
-                  dimensions: [300, 215], //width/height of gallery in pixels. Should reflect dimensions of largest image
-                  imagearray: [
-                    ["http://www.messeradio-muenchen.de/img_new/100.jpg ", " ", " ", " "],
-                    ["http://www.messeradio-muenchen.de/img_new/101.jpg ", " ", " ", " "],
-                    ["http://www.messeradio-muenchen.de/img_new/102.jpg ", " ", " ", " "],
-                    ["http://www.messeradio-muenchen.de/img_new/103.jpg ", " ", " ", " "]
-
-                  ],
-                  displaymode: {
-                    type: 'auto',
-                    pause: 1500,
-                    cycles: 0,
-                    wraparound: false,
-                    randomize: true
-                  },
-                  persist: false, //remember last viewed slide and recall within same session?
-                  fadeduration: 3000, //transition duration (milliseconds)
-                  descreveal: "peekaboo ",
-                  togglerid: " "
-                })
-
-                //]]>
-              </script>
-
-              <div id="fadeshow1
-                  ">
-              </div>
-            </div>
-            <br>
-            <strong>Unser H&ouml;rfunkstudio steht Ihnen w&auml;hrend der Messen und Veranstaltungen zum Produzieren Ihrer Berichte
+      </p>
+      <h3>Modernes Digitalstudio </h3>
+      <strong>Unser H&ouml;rfunkstudio steht Ihnen w&auml;hrend der Messen und Veranstaltungen zum Produzieren Ihrer Berichte
               und Reportagen zur Verf&uuml;gung. Sie k&ouml;nnen auch direkt aus dem Studio senden. Gerne unterst&uuml;tzen
               Sie vor Ort unsere rundfunkerfahrenen Mitarbeiter. </strong>
             <p>
@@ -85,26 +53,5 @@
               <br>
               <br>
             </p>
-            <p>&nbsp;</p>
-          </div>
-
-
-
-
-
-          <!-- /textImage -->
-        </div>
-        <div class="col3 floatLeft ">
-          <div class="moduleReleatedContent ">
-            <div class="moduleReleatedContentWrapper ">
-              <h4> Downloadbereich
-                <br/>
-              </h4>
-              <?php include '../navbar.php'; ?>
-            </div>
-          </div>
-
-          <!---->
-          <!---->
-          <!---->
-        </div>
+  </div>
+</div>

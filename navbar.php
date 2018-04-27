@@ -33,26 +33,38 @@ if ($result->num_rows > 0) {
 }
 $mysql->close();
 ?>
+
+
 <?php if($type == "grid"): ?>
-<ul style="list-style-type: none;columns:<?php echo $columns;?>;">
+<div class="teaser-locations">
+  <div class="row locations">
     <?php foreach ($messen as $messe): ?>
-      <li style="margin-left:10px;margin-right:10px;">
-        <a href="<?php echo $messe["slug"];?>">
-          <img style="width:100%;height:auto;" src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"/>
+      <div class="col-sm-4 col-xs-12">
+        <a href="<?php echo $messe["slug"];?>" class="location">
+          <figure>
+            <div class="figImage"><img src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"></div>
+          </figure>
         </a>
-      </li>
+      </div>
     <?php endforeach; ?>
-  </ul>
+  </div>
+</div>
 <?php elseif($type == "stripe"): ?>
-  <ul id="next" style="list-style-type: none;" class="box ">
+  <div class="row locations">
     <?php foreach ($messen as $messe): ?>
-      <li style="float:left;margin-left:10px;margin-right:10px;background-color: RGB(255,255,255)">
-        <a href="<?php echo $messe["slug"];?>">
-          <img class="crosslinkImageTeaser" style="width:100%;height:auto;" src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"/>
-        </a>
-      </li>
+      <div class="col-md-3 col-sm-6">
+          <a href="<?php echo $messe["slug"];?>" class="location">
+              <figure>
+                  <div class="figImage"><img src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"></div>
+                  <figcaption>
+                      <strong><?php echo $messe["titel"];?></strong>
+                      <p>Alle Radiospos zur Messe.</p>
+                  </figcaption>
+              </figure>
+          </a>
+      </div>
     <?php endforeach; ?>
-  </ul>
+  </div>
 <?php else: ?>
   <ul style="list-style-type: none;" class="addContent ">
     <?php foreach ($messen as $messe): ?>
