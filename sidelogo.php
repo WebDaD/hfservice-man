@@ -15,7 +15,7 @@ if($sort == "manual") {
 } else if ($sort == "next") {
   $sorter = " WHERE datum > CURDATE() + 1 ORDER BY datum ASC";
 } else {
-  $sorter = " WHERE datum > CURDATE() ORDER BY datum ASC";
+  $sorter = " ORDER BY datum ASC";
 }
 
 if($max == "-1") {
@@ -58,10 +58,7 @@ $mysql->close();
           <a href="<?php echo $messe["slug"];?>" class="location">
               <figure>
                   <div class="figImage"><img src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"></div>
-                  <figcaption>
-                      <strong><?php echo $messe["titel"];?></strong>
-                      <p>Alle Hörfunk-Beiträge zur Messe.</p>
-                  </figcaption>
+                
               </figure>
           </a>
       </div>

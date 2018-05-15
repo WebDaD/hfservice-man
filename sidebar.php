@@ -10,7 +10,7 @@ if ($mysql->connect_error) {
 } 
 
 
-$sql = "SELECT id, titel, bild, link, themenservice,  DATE_FORMAT (datum,\"%d.%m.%Y\") AS datum, DATE_FORMAT (enddatum,\"%d.%m.%Y\") AS enddatum FROM ".DB_PREFIX."_messen WHERE slug='".$messe."'";
+$sql = "SELECT id, titel, bild, link, themenservice, DATE_FORMAT (datum,\"%d.%m.%Y, %H:00 Uhr bis\") AS datum, DATE_FORMAT (enddatum,\"%d.%m.%Y, %H:00 Uhr\") AS enddatum FROM ".DB_PREFIX."_messen WHERE slug='".$messe."'";
 $result = $mysql->query($sql);
 if ($result->num_rows == 1) {
   $data = $result->fetch_assoc();
@@ -26,63 +26,67 @@ $mysql->close();
     <img src="/uploads/<?php echo $data["bild"]; ?>"/>
   </figure>
   <br>
-  <a href="<?php echo $data["link"]; ?>" class="btn btn-default btn-lg">
+  <a href="<?php echo $data["link"]; ?>"target="_blank" class="btn btn-default btn-lg">
     <i class="mmi mmi-chevron-right" aria-hidden="true"></i>
     Pressebereich aufrufen</a>
 </div>
-
-<div class="sidebar-block">
   <h4>Öffnungszeiten zur <?php echo $data["titel"];?></h4>
+<div class="sidebar-block">
+	
+ 
   <h5>Das Hörfunkstudio West im 2. OG des Pressezentrums West öffnet zu folgenden Zeiten:
   </h5>
   <ul>
     <li>
       <strong>
-        <?php echo $data["datum"];?> - 09:00 bis 18:00 Uhr
-        <br> <?php echo $data["enddatum"];?> - 09:00 bis 18:00 Uhr
+        <?php echo $data["datum"];?> 
+        <br> <?php echo $data["enddatum"];?>
       </strong>
+      
     </li>
   </ul>
 
-</div>
+</div> 
+    <div class="sidebar-block"> 
 
-<div class="sidebar-block">
-  <h4>Kontakt Hörfunkstudio</h4>
-  <h5>Während der Öffnungszeiten des Pressezentrums West</h5>
-  <ul>
-
-    <li class="person">
-      Gabriel und Susanne Wirth
-    </li>
-
-    <li class="address">
-      <table>
-        <tr>
+                      	<h4>Kontakt Hörfunkstudio</h4>
+  	 	<div class="contact-element size-large">
+			 
+                                         
+                                           
+                                                <figcaption>
+						
+							<h5>Während der Öffnungszeiten des Pressezentrums West</h5>
+							<h4>Gabriel und Susanne Wirth<h4>
+                    </figcaption>
+                    <div class="detail-content">
+                    	<table>
+	                        	<tr class="phone">
+	                            	<td class="icon"><i class="mmi mmi-phone blue"></i></td>
+	                                <td class="content"><a title="
+Anrufen" href="tel:+49 89 949-27000">+49 89 949-27000</a></td>
+	                            </tr>
+	                        	<tr class="fax">
+	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
+	                                <td class="content"><a title="
+Fax senden" href="tel:+49 89 949-27002">+49 89 949-27002</a></td>
+	                            </tr>
+	                            <tr class="email">
+	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
+	                                <td class="content"><a title="
+Email senden" href="mailto:studio@messeradio-muenchen.de">
+E-Mail</a></td>
+	                        	</tr> <tr>
           <td>
-            Tel.
+           
           </td>
           <td>
-            +49 89 949-27000
+            <a href="http://www.newwaymedia.de"target="_blank">NewWayMedia</a>
           </td>
         </tr>
-        <tr>
-          <td>
-            Technik
-          </td>
-          <td>
-            <a href="#">NewWayMedia</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Fax
-          </td>
-          <td>
-            +49 89 949-27002
-          </td>
-        </tr>
-      </table>
-    </li>
-  </ul>
-
-</div>
+                    	</table>
+                                            </li>
+                                           
+                                        </ul> 
+                                    
+    </div>     </div> </div>

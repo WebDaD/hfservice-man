@@ -29,7 +29,7 @@ if ($result_themen->num_rows > 0) {
 $count_ton = 0;
 foreach ($themen as &$thema) {
   $oton = array();
-  $sql_oton = "SELECT o.id, o.themen_id, o.titel, o.text, o.bild, o.mp3, o.upload FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_otoene o  WHERE o.themen_id = t.id AND t.id=".$thema["id"];
+  $sql_oton = "SELECT o.id, o.themen_id, o.titel, o.text, o.posttext, o.bild, o.mp3, o.upload FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_otoene o  WHERE o.themen_id = t.id AND t.id=".$thema["id"];
   $result_oton  = $mysql->query($sql_oton);
   if ($result_oton->num_rows > 0) {
     while($row = $result_oton->fetch_assoc()) {
@@ -46,21 +46,21 @@ $mysql->close();
 <div id="unique-image-text-section-oben">
   <div class="text-section">
       <h2>
-              Unser Hörfunkservice zur <?php echo $data["titel"];?>
+              Unser Hörfunk-Service zur <?php echo $data["titel"];?>
       </h2>
       <h3>
               Sie möchten über die <?php echo $data["titel"];?> im Radio berichten? Hier finden Sie alles, was Sie dazu brauchen!
       </h3>
+      <p> </p>
       <p>
-              Das Team vom Messeradio ist auch diesmal wieder auf der <?php echo $data["titel"];?> für Sie unterwegs, um die unterschiedlichsten Themen redaktionell zu bearbeiten. Wir bieten Ihnen alle Audiomaterialien, die Sie zur Produktion Ihres Beitrags brauchen. Hier im Downloadbereich stellen wir Ihnen kostenfrei unser Tonmaterial in Sendequalität (MP3) zur Verfügung. Wir freuen uns, wenn Sie uns über den Einsatz informieren. 
-              Wenn Sie persönlich und direkt auf der Messe produzieren möchten, nutzen Sie unser <a class="link-internal">Hörfunkstudio im Pressezentrum West</a>.
-      </p>
-      <p>
+              Das Team vom Messeradio ist auch diesmal wieder auf der <?php echo $data["titel"];?> für Sie unterwegs, um die unterschiedlichsten Themen redaktionell zu bearbeiten. Wir bieten Ihnen alle Audiomaterialien, die Sie zur Produktion Ihres Beitrags brauchen. Hier im Downloadbereich stellen wir Ihnen kostenfrei unser Tonmaterial in Sendequalität (MP3) zur Verfügung. Wir freuen uns, wenn Sie uns über den Einsatz informieren. <p> </p>
+              Wenn Sie persönlich und direkt auf der Messe produzieren möchten, können Sie unser <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios" target="_blank">Hörfunkstudio im Pressezentrum West</a> nutzen.
+     
           In diesem mit modernster Digitaltechnik ausgestatteten Studio können Sie Ihre Beiträge bearbeiten, überspielen oder gleich live aus dem Studio senden. Unser Technik-Team unterstützt Sie gerne direkt vor Ort.
       </p>
       <?php if($data["themenservice"] !== ""):?>
-        <a href="/uploads/<?php echo $data["themenservice"]; ?>" type="application/pdf" title="unser Themenservice als PDF-Dokument" class="btn btn-default btn-lg"><i class="mmi mmi-pdf-document" aria-hidden="true"></i>  
-            Unser Themenservice als Download</a>
+        <a href="/uploads/<?php echo $data["themenservice"]; ?>" target="_blank" type="application/pdf" title="unser Themenservice als PDF-Dokument" class="btn btn-default btn-lg"><i class="mmi mmi-pdf-document" aria-hidden="true"></i>  
+            Unser Themen-Service als Download</a>
       <?php endif; ?>
           <br><br>
       <h5>Nachfolgend finden Sie Manuskripte und <?php echo $count_ton; ?> O-Töne zum Download</h5>
@@ -75,19 +75,31 @@ $mysql->close();
             <a href="#accordion-<?php echo $thema["id"]; ?>" class="plusminus closed"><i class="mmi mmi-accordion-plus" aria-hidden="true"></i></a>
       </dt>
       <dd class="accordion-content">
+        <?php if ($thema["pdf"] != ""): ?>
+          <a href="/uploads/<?php echo $thema["pdf"]; ?>" target="_blank" type="application/pdf" class="btn btn-default btn-lg">
+            <i class="mmi mmi-pdf-document" aria-hidden="true"></i>  
+              PDF zum Thema als Download
+          </a>
+        <?php endif; ?>
+        <?php if ($thema["text"] != ""): ?>
+          <p><?php echo $thema["text"]; ?></p>
+        <?php endif; ?>
         <?php if($thema["oton"] != ""): ?>
           <?php foreach ($thema["oton"] as $oton): ?>
-          <h6 id="accordion-<?php echo $oton["themen_id"]; ?>-oton-<?php echo $oton["id"]; ?>"><?php echo $oton["titel"]; ?></h6>
+          <h5 id="accordion-<?php echo $oton["themen_id"]; ?>-oton-<?php echo $oton["id"]; ?>"><?php echo $oton["titel"]; ?></h5>
             <?php if ($oton["bild"] != ""): ?>
               <img src="/uploads/<?php echo $oton["bild"]; ?>" style="float:left;margin-right:5px;"/>
             <?php endif; ?>
             <p><?php echo $oton["text"]; ?></p>
-            <h5>Tonspur abspielen</h5>
-            <audio src="/uploads/<?php echo $oton["mp3"]; ?>" controls data-title="<?php echo $oton["titel"]; ?>" preload="none"/>
+            <h5 style="clear: left;padding-top: 10px;">Tonspur abspielen</h5>
+            <audio src="/uploads/<?php echo $oton["mp3"]; ?>" controls data-title="<?php echo $oton["titel"]; ?>" preload="none"></audio>
             <div>
-                <a href="/uploads/<?php echo $oton["mp3"]; ?>" type="audio/mp3" class="btn btn-default btn-lg"><i class="mmi mmi-cloud-download" aria-hidden="true"></i>  
+                <a href="/uploads/<?php echo $oton["mp3"]; ?>"  onclick="window.open(this.href, 'Download', 'width=500,height=100'); return false" type="audio/mp3" class="btn btn-default btn-lg"><i class="mmi mmi-cloud-download" aria-hidden="true"></i>  
                     MP3-Download</a>
             </div>
+            <?php if ($oton["posttext"] != ""): ?>
+              <p><?php echo $oton["posttext"]; ?></p>
+            <?php endif; ?>
             <hr/>
           <?php endforeach; ?>
         <?php else: ?>
