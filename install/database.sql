@@ -62,6 +62,8 @@ CREATE TABLE IF NOT EXISTS `hfs_themen` (
   `titel` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `text` text COLLATE utf8_unicode_ci NOT NULL,
   `messen_id` int(11) NOT NULL,
+  `posttext` TEXT NULL,
+  `youtube` TEXT NULL,
   `pdf` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `messen_id` (`messen_id`)
