@@ -19,7 +19,7 @@ if ($result->num_rows == 1) {
 }
 
 $themen = array();
-$sql_themen = "SELECT t.id, t.titel, t.text, t.pdf FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_messen m  WHERE t.messen_id = m.id AND m.id=".$data["id"];
+$sql_themen = "SELECT t.id, t.titel, t.text, t.pdf, t.youtube FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_messen m  WHERE t.messen_id = m.id AND m.id=".$data["id"];
 $result_themen = $mysql->query($sql_themen);
 if ($result_themen->num_rows > 0) {
   while($row = $result_themen->fetch_assoc()) {
@@ -75,6 +75,10 @@ $mysql->close();
             <a href="#accordion-<?php echo $thema["id"]; ?>" class="plusminus closed"><i class="mmi mmi-accordion-plus" aria-hidden="true"></i></a>
       </dt>
       <dd class="accordion-content">
+        <?php if ($thema["youtube"] != ""): ?>
+              <h6>LiveStream</h6>
+              <iframe width="560" height="315" src="<?php echo $thema["youtube"];?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <?php endif; ?>
         <?php if ($thema["pdf"] != ""): ?>
           <a href="/uploads/<?php echo $thema["pdf"]; ?>" target="_blank" type="application/pdf" class="btn btn-default btn-lg">
             <i class="mmi mmi-pdf-document" aria-hidden="true"></i>  
@@ -87,11 +91,6 @@ $mysql->close();
         <?php if($thema["oton"] != ""): ?>
           <?php foreach ($thema["oton"] as $oton): ?>
           <h5 id="accordion-<?php echo $oton["themen_id"]; ?>-oton-<?php echo $oton["id"]; ?>"><?php echo $oton["titel"]; ?></h5>
-
-            <?php if ($oton["youtube"] != ""): ?>
-              <h6>LiveStream</h6>
-              <iframe width="560" height="315" src="<?php echo $oton["youtube"];?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <?php endif; ?>
             <?php if ($oton["bild"] != ""): ?>
               <img src="/uploads/<?php echo $oton["bild"]; ?>" style="float:left;margin-right:5px;"/>
             <?php endif; ?>
