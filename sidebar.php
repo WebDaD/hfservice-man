@@ -57,7 +57,7 @@ $mysql->close();
                                            
                                                 <figcaption>
 						
-							<h5>Während der Öffnungszeiten des Pressezentrums West</h5>
+							<h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudios</a></h5>
 							<h4>Gabriel und Susanne Wirth<h4>
                     </figcaption>
                     <div class="detail-content">
@@ -151,31 +151,42 @@ Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
                     	</table>
                                             </li> </div>
                                            
-                                        </ul>
+                                        </ul></div> </div>
 <?php else:?>
+
+<div class="contact-element size-large">
 <figure>
-<img alt="Christine Heufer"src="https://files.messe-muenchen.de/corporate/media/global_media/kontaktbilder/kontakte_g_l/Christine_Heufer_section_contacts_370.jpg" >
-</figure>
-                                                <figcaption>
-                                                <h4>TEST TEST</h4>
+	<img alt="Willi Bock"   src="https://files.messe-muenchen.de/corporate/media/global_media/kontaktbilder/kontakte_a_f/Willi_Bock_section_contacts_370.jpg" >
+						</figure>
+                    <figcaption>
+							<h4>Willi Bock</h4>
+							<p>Leiter Unternehmens-PR<br>Pressesprecher</p>
                     </figcaption>
                     <div class="detail-content">
                     	<table>
-                        <tr class="phone">
-                          <td class="icon"><i class="mmi mmi-phone blue"></i></td>
-                                <td class="content"><a title="Anrufen" href="tel:+498994920762">+49 89 949-20762</a></td>
+	                        	<tr class="phone">
+	                            	<td class="icon"><i class="mmi mmi-phone blue"></i></td>
+	                                <td class="content"><a title="
+Anrufen" href="tel:+498994920734">+49 89 949-20734</a></td>
+	                            </tr>
+	                        	<tr class="mobile">
+	                            	<td class="icon"><i class="mmi mmi-mobile blue"></i></td>
+	                                <td class="content"><a title="
+Anrufen" href="tel:+491723936929">+49 172 3936929</a></td>
 	                            </tr>
 	                        	<tr class="fax">
 	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
-	                                <td class="content"><a title="Fax senden" href="tel:+498994920715">+49 89 949-20715</a></td>
+	                                <td class="content"><a title="
+Fax senden" href="tel:+49899499720719">+49 89 949-9720719</a></td>
 	                            </tr>
 	                            <tr class="email">
 	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
-	                                <td class="content"><a title="Email senden"href="mailto:christine.heufer@messe-muenchen.de">E-Mail</a></td>
+	                                <td class="content"><a title="
+Email senden" href="mailto:willi.bock@messe-muenchen.de">
+E-Mail</a></td>
 	                        	</tr>
-                    	</table>
-                                            </li>
+                    	</table>  
+                                            
+                                        </li> </div>
                                            
-                                        </ul>
-                                        <?php endif;?>
-                                    </div> </div>
+                                        </ul></div>      	<?php endif;?>

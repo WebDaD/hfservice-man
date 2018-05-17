@@ -22,11 +22,11 @@
                 <div class="navbar-header">
     
                     <!-- large devices -->
-                     <a class="navbar-brand large-device" href="#">
+                     <a class="navbar-brand large-device" href="https://www.messe-muenchen.de/de/">
                         <img src=http://frontend.mmicode.de/img/logo-messe-muenchen.png srcset="http://frontend.mmicode.de/img/logo-messe-muenchen.png 1x, http://frontend.mmicode.de/img/logo-messe-muenchen@2x.png 2x" class="nav-logo" alt="The alternative Image Text">
                         <!-- @david do not include this -->
                         <div class="hiddenforwebpackexport">
-                            <img src=https://messe-muenchen.de/media/technisches/bilder/logo-messe-muenchen@2x.png>
+                            <img src=https://www.messe-muenchen.de/media/technisches/bilder/logo-messe-muenchen@2x.png>
                         </div>
                         <!-- do not include end -->
                     </a>
@@ -599,6 +599,7 @@ Messe München"></a>
                           } else {
                             include 'main.php';
                           }
+
                         ?>
 
                         </div>
@@ -609,7 +610,112 @@ Messe München"></a>
                                     if(!empty($_GET['messe']) && is_string($_GET['messe'])) {
                                         if($_GET["messe"] != "search" && $_GET["messe"] != "all") {
                                             include("sidebar.php");
-                                        }
+                                        } else {
+											?>
+<div class="sidebar-block"> 
+
+<h4>Kontakt Hörfunkstudio</h4>
+<div class="contact-element size-large">
+
+			   
+				 
+					  <figcaption>
+
+  <h5>Während der Öffnungszeiten des Pressezentrums West</h5>
+  <h4>Gabriel und Susanne Wirth<h4>
+</figcaption>
+<div class="detail-content">
+<table>
+	  <tr class="phone">
+		  <td class="icon"><i class="mmi mmi-phone blue"></i></td>
+		  <td class="content"><a title="
+Anrufen" href="tel:+49 89 949-27000">+49 89 949-27000</a></td>
+	  </tr>
+	  <tr class="fax">
+		  <td class="icon"><i class="mmi mmi-fax blue"></i></td>
+		  <td class="content"><a title="
+Fax senden" href="tel:+49 89 949-27002">+49 89 949-27002</a></td>
+	  </tr>
+	  <tr class="email">
+		   <td class="icon"><i class="mmi mmi-email blue"></i></td>
+		  <td class="content"><a title="
+Email senden" href="mailto:studio@messeradio-muenchen.de">
+E-Mail</a></td>
+	  </tr> <tr>
+<td>
+
+</td>
+<td>
+<a href="http://www.newwaymedia.de"target="_blank">NewWayMedia</a>
+</td>
+</tr>
+</table>
+				  </li>
+				 
+			  </ul> 
+		  
+</div>     </div> </div>
+<div class="sidebar-block">
+                                       
+                                        <h4>Ihr Kontakt zu unserem Presseteam</h4>
+                                        <ul>
+  
+<div class="contact-element size-large">
+<figure>
+<img alt="Christine Heufer"src="https://files.messe-muenchen.de/corporate/media/global_media/kontaktbilder/kontakte_g_l/Christine_Heufer_section_contacts_370.jpg" >
+</figure>
+                                                <figcaption>
+                                                <h4>Christine Heufer</h4>
+                    </figcaption>
+                    <div class="detail-content">
+                    	<table>
+                        <tr class="phone">
+                          <td class="icon"><i class="mmi mmi-phone blue"></i></td>
+                                <td class="content"><a title="Anrufen" href="tel:+498994920762">+49 89 949-20762</a></td>
+	                            </tr>
+	                        	<tr class="fax">
+	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
+	                                <td class="content"><a title="Fax senden" href="tel:+498994920715">+49 89 949-20715</a></td>
+	                            </tr>
+	                            <tr class="email">
+	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
+	                                <td class="content"><a title="Email senden"href="mailto:christine.heufer@messe-muenchen.de">E-Mail</a></td>
+	                        	</tr>
+                    	</table>
+                                            </li>
+                                           
+                                        </ul>
+                                      
+                                        
+                                        <div class="contact-element size-large">
+			 			<figure>
+	<img alt="Bettina Schenk" title="Bettina Schenk"  src="https://files.messe-muenchen.de/corporate/media/global_media/kontaktbilder/kontakte_s_z/Bettina_Schenk_section_contacts_370.jpg" >
+						</figure>
+                    <figcaption>
+							<h4>Bettina Schenk</h4>
+                    </figcaption>
+                    <div class="detail-content">
+                    	<table>
+	                        	<tr class="phone">
+	                            	<td class="icon"><i class="mmi mmi-phone blue"></i></td>
+	                                <td class="content"><a title="
+Anrufen" href="tel:+498994921475">+49 89 949-21475</a></td>
+	                            </tr>
+	                        	<tr class="fax">
+	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
+	                                <td class="content"><a title="
+Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
+	                            </tr>
+	                            <tr class="email">
+	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
+	                                <td class="content"><a title="Email senden"href="mailto:bettina.schenk@messe-muenchen.de">E-Mail</a></td>
+	                        	</tr>
+                    	</table>
+                                            </li> </div>
+                                           
+                                        </ul></div> </div>
+											<?php
+										}
                                     } else {
 										?>
 <div class="sidebar-block"> 
@@ -1128,7 +1234,16 @@ rel="follow noopener"
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="http://frontend.mmicode.de/app.bundle.js?8c997a1f42b7b0e6a8b5"></script></body>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TWDGKKN');</script>
+<!-- End Google Tag Manager -->
+<script type="text/javascript" src="http://frontend.mmicode.de/app.bundle.js?8c997a1f42b7b0e6a8b5"></script>
+<script type="text/javascript" src="accordion.js"></script>
+<script type="text/javascript" src="analytics.js"></script>
+</body>
 
 </html>

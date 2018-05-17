@@ -15,7 +15,7 @@ if($sort == "manual") {
 } else if ($sort == "next") {
   $sorter = " WHERE datum > CURDATE() + 1 ORDER BY datum ASC";
 } else {
-  $sorter = " ORDER BY datum ASC";
+  $sorter = " ORDER BY titel DESC";
 }
 
 if($max == "-1") {
