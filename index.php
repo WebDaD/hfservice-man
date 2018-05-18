@@ -545,8 +545,8 @@ Messe München"></a>
     
                         <div class="mobile-contact-nav">
                             <ul>
-                                <li><a href="#"><i class="mmi mmi-envelope" aria-hidden="true"></i> Kontakt</a></li>
-                                <li><a href="#"><i class="mmi mmi-calendar" aria-hidden="true"></i> Messekalender</a></li>
+                                <li><a href="https://www.messe-muenchen.de/de/meta/kontakt/index.php/kontakt/"><i class="mmi mmi-envelope" aria-hidden="true"></i> Kontakt</a></li>
+                                <li><a href="https://www.messe-muenchen.de/de/technisches/veranstaltungen/index.php/veranstaltungen/kalender/"><i class="mmi mmi-calendar" aria-hidden="true"></i> Messekalender</a></li>
                             </ul>
                         </div>
     
@@ -621,7 +621,7 @@ Messe München"></a>
 				 
 					  <figcaption>
 
-  <h5>Während der Öffnungszeiten des Pressezentrums West</h5>
+  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudios</a></h5>
   <h4>Gabriel und Susanne Wirth<h4>
 </figcaption>
 <div class="detail-content">
@@ -646,7 +646,7 @@ E-Mail</a></td>
 
 </td>
 <td>
-<a href="http://www.newwaymedia.de"target="_blank">NewWayMedia</a>
+<a title="www.NewWayMedia.de" href="http://www.newwaymedia.de" target="_blank">NewWayMedia</a>
 </td>
 </tr>
 </table>
@@ -727,7 +727,7 @@ Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
 				 
 					  <figcaption>
 
-  <h5>Während der Öffnungszeiten des Pressezentrums West</h5>
+  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudios</a></h5>
   <h4>Gabriel und Susanne Wirth<h4>
 </figcaption>
 <div class="detail-content">
@@ -752,7 +752,7 @@ E-Mail</a></td>
 
 </td>
 <td>
-<a href="http://www.newwaymedia.de"target="_blank">NewWayMedia</a>
+<a title="www.NewWayMedia.de" href="http://www.newwaymedia.de" target="_blank">NewWayMedia</a>
 </td>
 </tr>
 </table>

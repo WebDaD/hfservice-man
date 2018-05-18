@@ -35,7 +35,7 @@ $mysql->close();
 <div class="sidebar-block">
 	
  
-  <h5>Das Hörfunkstudio West im 2. OG des Pressezentrums West öffnet zu folgenden Zeiten:
+  <h5>Das <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudio</a> im 2. OG des Pressezentrums West öffnet zu folgenden Zeiten:
   </h5>
   <ul>
     <li>

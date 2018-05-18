@@ -60,7 +60,7 @@ $mysql->close();
                   <div class="figImage"><img src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"></div>
                   <figcaption>
                       <strong><?php echo $messe["titel"];?></strong>
-                      <p>Alle Hörfunk-Beiträge zur Messe.</p>
+                      <p>Zu den Hörfunk-Beiträgen der Messe.</p>
                   </figcaption>
               </figure>
           </a>
