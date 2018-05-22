@@ -957,10 +957,7 @@ rel="noopener noopener"
         </div>
 
     </div>
-
-<script src="https://www.messe-muenchen.de/media/technisches/js/lib/jquery-321-min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	  	<script src="https://www.messe-muenchen.de/media/technisches/js/lib/bootstrap-min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	  	<script type="text/javascript" src="https://www.messe-muenchen.de/media/technisches/js/applikation-bundel-js.js"></script>
+	  	
 
 
  <footer>
@@ -1241,6 +1238,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TWDGKKN');</script>
 <!-- End Google Tag Manager -->
+<script type="text/javascript" src="https://www.messe-muenchen.de/media/technisches/js/applikation-bundel-js.js"></script>
 <script type="text/javascript" src="http://frontend.mmicode.de/app.bundle.js?8c997a1f42b7b0e6a8b5"></script>
 <script type="text/javascript" src="accordion.js"></script>
 <script type="text/javascript" src="analytics.js"></script>
