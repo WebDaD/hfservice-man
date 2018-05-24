@@ -48,54 +48,54 @@ $mysql->close();
   </ul>
 
 </div> 
-    <div class="sidebar-block"> 
+   <div class="sidebar-block"> 
 
-                      	<h4>Kontakt Hörfunkstudio</h4>
-  	 	<div class="contact-element size-large">
-			 
-                                         
-                                           
-                                                <figcaption>
-						
-							<h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudios</a></h5>
-							<h4>Gabriel und Susanne Wirth<h4>
-                    </figcaption>
-                    <div class="detail-content">
-                    	<table>
-	                        	<tr class="phone">
-	                            	<td class="icon"><i class="mmi mmi-phone blue"></i></td>
-	                                <td class="content"><a title="
+<h4>Kontakt Hörfunkstudio</h4>
+<div class="contact-element size-large">
+
+			   
+				 
+					  <figcaption>
+
+  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank">Hörfunkstudios</a></h5>
+  <h4>Gabriel und Susanne Wirth<h4>
+</figcaption>
+<div class="detail-content">
+<table>
+	  <tr class="phone">
+		  <td class="icon"><i class="mmi mmi-phone blue"></i></td>
+		  <td class="content"><a title="
 Anrufen" href="tel:+49 89 949-27000">+49 89 949-27000</a></td>
-	                            </tr>
-	                        	<tr class="fax">
-	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
-	                                <td class="content"><a title="
+	  </tr>
+	  <tr class="fax">
+		  <td class="icon"><i class="mmi mmi-fax blue"></i></td>
+		  <td class="content"><a title="
 Fax senden" href="tel:+49 89 949-27002">+49 89 949-27002</a></td>
-	                            </tr>
-	                            <tr class="email">
-	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
-	                                <td class="content"><a title="
+	  </tr>
+	  <tr class="email">
+		   <td class="icon"><i class="mmi mmi-email blue"></i></td>
+		  <td class="content"><a title="
 Email senden" href="mailto:studio@messeradio-muenchen.de">
 E-Mail</a></td>
-	                        	</tr> <tr>
-          <td>
-           
-          </td>
-          <td>
-            <a href="http://www.newwaymedia.de"target="_blank">NewWayMedia</a>
-          </td>
-        </tr>
-                    	</table>
-                                            </li>
-                                           
-                                        </ul> 
-                                    
+	  </tr> <tr>
+<td>
+
+</td>
+<td>
+<a title="www.NewWayMedia.de" href="http://www.newwaymedia.de" target="_blank">NewWayMedia</a>
+</td>
+</tr>
+</table>
+				 
+				 
+			  
+		  
 </div>     </div> </div><?php endif;?>
 
 <div class="sidebar-block">
                                        
                                         <h4>Ihr Kontakt zu unserem Presseteam</h4>
-                                        <ul>
+
   
 <div class="contact-element size-large">
 <?php if($data["presseteam"] == "1"): ?>
@@ -120,9 +120,10 @@ E-Mail</a></td>
 	                                <td class="content"><a title="Email senden"href="mailto:christine.heufer@messe-muenchen.de">E-Mail</a></td>
 	                        	</tr>
                     	</table>
-                                            </li>
+                                           </div>  </div>  
                                            
-                                        </ul>
+                                       
+                                           
                                       
                                         
                                         <div class="contact-element size-large">
@@ -149,9 +150,8 @@ Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
 	                                <td class="content"><a title="Email senden"href="mailto:bettina.schenk@messe-muenchen.de">E-Mail</a></td>
 	                        	</tr>
                     	</table>
-                                            </li> </div>
+                                             </div>  </div>    </div>  
                                            
-                                        </ul></div> </div>
 <?php else:?>
 
 <div class="contact-element size-large">
@@ -160,7 +160,7 @@ Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
 						</figure>
                     <figcaption>
 							<h4>Willi Bock</h4>
-							<p>Leiter Unternehmens-PR<br>Pressesprecher</p>
+							<p>Leiter Unternehmens-PR  Pressesprecher</p>
                     </figcaption>
                     <div class="detail-content">
                     	<table>
@@ -187,6 +187,6 @@ E-Mail</a></td>
 	                        	</tr>
                     	</table>  
                                             
-                                        </li> </div>
+                                        </div>  </div>  </div>
                                            
-                                        </ul></div>      	<?php endif;?>
+                                       </div>      	<?php endif;?>

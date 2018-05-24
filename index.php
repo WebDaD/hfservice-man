@@ -23,10 +23,10 @@
     
                     <!-- large devices -->
                      <a class="navbar-brand large-device" href="https://www.messe-muenchen.de/de/">
-                        <img src=http://frontend.mmicode.de/img/logo-messe-muenchen.png srcset="http://frontend.mmicode.de/img/logo-messe-muenchen.png 1x, http://frontend.mmicode.de/img/logo-messe-muenchen@2x.png 2x" class="nav-logo" alt="The alternative Image Text">
+                        <img src="http://frontend.mmicode.de/img/logo-messe-muenchen.png" srcset="http://frontend.mmicode.de/img/logo-messe-muenchen.png 1x, http://frontend.mmicode.de/img/logo-messe-muenchen@2x.png 2x" class="nav-logo" alt="The alternative Image Text">
                         <!-- @david do not include this -->
                         <div class="hiddenforwebpackexport">
-                            <img src=https://www.messe-muenchen.de/media/technisches/bilder/logo-messe-muenchen@2x.png>
+                            <img src="https://www.messe-muenchen.de/media/technisches/bilder/logo-messe-muenchen@2x.png">
                         </div>
                         <!-- do not include end -->
                     </a>
@@ -559,7 +559,7 @@ Messe München"></a>
     <div class="mood-header broadcasting-header" style="background-image:url(http://frontend.mmicode.de/img/1170x578-drohnea_section_slider_image_1600.jpg);">
     <!-- use class mood-header-large for 600px high header -->
         <!-- ignore this @susi & david - only for webpack export! -->
-        <div class="hiddenforwebpackexport"><img src=http://frontend.mmicode.de/img/1170x578-drohnea_section_slider_image_1600.jpg></div>
+        <div class="hiddenforwebpackexport"><img src="http://frontend.mmicode.de/img/1170x578-drohnea_section_slider_image_1600.jpg"></div>
         <!-- ignore this end -->
         <div class="flexy">
             <div class="flex-content">
@@ -621,7 +621,7 @@ Messe München"></a>
 				 
 					  <figcaption>
 
-  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudios</a></h5>
+  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank">Hörfunkstudios</a></h5>
   <h4>Gabriel und Susanne Wirth<h4>
 </figcaption>
 <div class="detail-content">
@@ -650,15 +650,15 @@ E-Mail</a></td>
 </td>
 </tr>
 </table>
-				  </li>
 				 
-			  </ul> 
+				 
+			  
 		  
 </div>     </div> </div>
 <div class="sidebar-block">
                                        
                                         <h4>Ihr Kontakt zu unserem Presseteam</h4>
-                                        <ul>
+                                       
   
 <div class="contact-element size-large">
 <figure>
@@ -682,9 +682,9 @@ E-Mail</a></td>
 	                                <td class="content"><a title="Email senden"href="mailto:christine.heufer@messe-muenchen.de">E-Mail</a></td>
 	                        	</tr>
                     	</table>
-                                            </li>
-                                           
-                                        </ul>
+                                          
+                                        </div>   </div>
+                                      
                                       
                                         
                                         <div class="contact-element size-large">
@@ -711,9 +711,9 @@ Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
 	                                <td class="content"><a title="Email senden"href="mailto:bettina.schenk@messe-muenchen.de">E-Mail</a></td>
 	                        	</tr>
                     	</table>
-                                            </li> </div>
+                                           </div>
                                            
-                                        </ul></div> </div>
+                                       </div> </div>
 											<?php
 										}
                                     } else {
@@ -727,7 +727,7 @@ Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
 				 
 					  <figcaption>
 
-  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudios</a></h5>
+  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank">Hörfunkstudios</a></h5>
   <h4>Gabriel und Susanne Wirth<h4>
 </figcaption>
 <div class="detail-content">
@@ -756,15 +756,15 @@ E-Mail</a></td>
 </td>
 </tr>
 </table>
-				  </li>
 				 
-			  </ul> 
+				 
+			  
 		  
 </div>     </div> </div>
 <div class="sidebar-block">
                                        
                                         <h4>Ihr Kontakt zu unserem Presseteam</h4>
-                                        <ul>
+                                       
   
 <div class="contact-element size-large">
 <figure>
@@ -788,9 +788,9 @@ E-Mail</a></td>
 	                                <td class="content"><a title="Email senden"href="mailto:christine.heufer@messe-muenchen.de">E-Mail</a></td>
 	                        	</tr>
                     	</table>
-                                            </li>
-                                           
-                                        </ul>
+                                          
+                                        </div>   </div>
+                                      
                                       
                                         
                                         <div class="contact-element size-large">
@@ -817,9 +817,9 @@ Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
 	                                <td class="content"><a title="Email senden"href="mailto:bettina.schenk@messe-muenchen.de">E-Mail</a></td>
 	                        	</tr>
                     	</table>
-                                            </li> </div>
+                                           </div>
                                            
-                                        </ul></div> </div>
+                                       </div> </div>
 										<?php
 									}
                                 ?>
@@ -1239,7 +1239,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-TWDGKKN');</script>
 <!-- End Google Tag Manager -->
 <script type="text/javascript" src="https://www.messe-muenchen.de/media/technisches/js/applikation-bundel-js.js"></script>
-<script type="text/javascript" src="http://frontend.mmicode.de/app.bundle.js?8c997a1f42b7b0e6a8b5"></script>
+
 <script type="text/javascript" src="accordion.js"></script>
 <script type="text/javascript" src="analytics.js"></script>
 </body>
