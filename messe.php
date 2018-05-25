@@ -98,7 +98,7 @@ $mysql->close();
             <h5 style="clear: left;padding-top: 10px;">Tonspur abspielen</h5>
             <audio src="/uploads/<?php echo $oton["mp3"]; ?>" controls data-title="<?php echo $oton["titel"]; ?>" preload="none"></audio>
             <div>
-                <a href="/uploads/<?php echo $oton["mp3"]; ?>"  onclick="window.open(this.href, 'Download', 'width=500,height=100'); return false" type="audio/mp3" class="btn btn-default btn-lg"><i class="mmi mmi-cloud-download" aria-hidden="true"></i>  
+                <a href="/uploads/<?php echo $oton["mp3"]; ?>"  type="audio/mp3" class="btn btn-default btn-lg"><i class="mmi mmi-cloud-download" aria-hidden="true"></i>  
                     MP3-Download</a>
             </div>
             <?php if ($oton["posttext"] != ""): ?>
