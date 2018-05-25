@@ -30,3 +30,9 @@
   margin-top: 10px;
   padding-top: 10px;
 }
+
+/* invert padding */
+.invert-pade {
+  padding-left: 0px;
+  padding-right: 15px;
+}

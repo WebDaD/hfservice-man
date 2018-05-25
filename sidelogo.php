@@ -55,7 +55,7 @@ $mysql->close();
   
   <div class="row">
     <?php foreach ($messen as $messe): ?>
-      <div class="col-md-4 .col-xs-8">
+      <div class="col-md-4 col-xs-8 invert-pad">
           <a href="<?php echo $messe["slug"];?>" class="location">
               <figure>
                   <div class="figImage"><img src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"></div>
