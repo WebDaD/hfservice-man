@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="http://www.messe-muenchen.de/favicon.ico">
+    <title>Messe München Hörfunkservice | Messe München</title>
     <!-- Latest compiled and minified CSS -->
      <link rel="stylesheet" href="accordion.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -35,6 +36,10 @@
                         <ul class="meta-navigation">
                             <li><a href="http://www.messe-muenchen.de/en/company/about-us/profile/"><i class="mmi mmi-globe" aria-hidden="true"></i> English</a></li>
                             <li><a href="http://www.messe-muenchen.de/de/meta/kontakt/index.php/kontakt/"><i class="mmi mmi-envelope" aria-hidden="true"></i> Kontakt</a></li>
+                            <li>
+<a href="http://www.messe-muenchen.de/de/technisches/veranstaltungen/index.php/veranstaltungen/kalender/" 
+	
+><i class="mmi mmi-logo-minimal" aria-hidden="true"></i>Veranstaltungen</a></li>
                             <!-- search item -->
                             <li class="large-device">
                                 <div class="nav-search-box large-device">
@@ -546,7 +551,7 @@ Messe München"></a>
                         <div class="mobile-contact-nav">
                             <ul>
                                 <li><a href="https://www.messe-muenchen.de/de/meta/kontakt/index.php/kontakt/"><i class="mmi mmi-envelope" aria-hidden="true"></i> Kontakt</a></li>
-                                <li><a href="https://www.messe-muenchen.de/de/technisches/veranstaltungen/index.php/veranstaltungen/kalender/"><i class="mmi mmi-calendar" aria-hidden="true"></i> Messekalender</a></li>
+                                <li><a href="https://www.messe-muenchen.de/de/technisches/veranstaltungen/index.php/veranstaltungen/kalender/"><i class="mmi mmi-calendar" aria-hidden="true"></i> Veranstaltungen</a></li>
                             </ul>
                         </div>
     
@@ -556,28 +561,54 @@ Messe München"></a>
         </nav>
     </header>
 
-    <div class="mood-header broadcasting-header" style="background-image:url(http://frontend.mmicode.de/img/1170x578-drohnea_section_slider_image_1600.jpg);">
-    <!-- use class mood-header-large for 600px high header -->
-        <!-- ignore this @susi & david - only for webpack export! -->
-        <div class="hiddenforwebpackexport"><img src="http://frontend.mmicode.de/img/1170x578-drohnea_section_slider_image_1600.jpg"></div>
-        <!-- ignore this end -->
-        <div class="flexy">
-            <div class="flex-content">
-                <h1>Hörfunk-Service</h1>
+   <div class="mood-header mood-header-large" style="background-image:url('https://www.messe-muenchen.de/media/meta/bilder/presse/header-presse_header_image_high_1240.jpg');"></div>
+	  	<div class="container">
+	<div class="breadcrumb-navigation">
+		<ul class="breadcrumb">
+			<li><a href="/">
+Start</a></li> 
+				<li>Presse</li>
+				<li>Media-Services</li>
+				<li><span>Hörfunk-Service</span></li> 
+		</ul>
+		<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "BreadcrumbList",
+		  "itemListElement": [
+		  	{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+					"@id": "",
+					"name": "
+Start"
+					}
+			}
+		  	,
+		  	{
+				"@type": "ListItem",
+				"position": 2,  
+				"item": {
+					"@id": "",
+					"name": "Hörfunk-Service"
+				}
+			}
+		  ]
+		}
+		</script>
+	</div>
+		<h1>Hörfunk-Service</h1>
                 <p>
                    
                 </p>
             </div>
-        </div>
-    </div>
+        
+  
 
     <div class="container">
 
-        <div class="breadcrumb-navigation">
-            <ul class="breadcrumb">
-                <li><a href="index.php">Hörfunk-Service</a></li>
-            </ul>
-        </div>
+        
 
         <div id="fs-unique-content-section">
             <h1>O-Ton-Pakete für Ihre Berichterstattung</h1>
@@ -612,254 +643,268 @@ Messe München"></a>
                                             include("sidebar.php");
                                         } else {
 											?>
-<div class="sidebar-block"> 
 
-<h4>Kontakt Hörfunkstudio</h4>
-<div class="contact-element size-large">
-
-			   
-				 
-					  <figcaption>
-
-  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank">Hörfunkstudios</a></h5>
-  <h4>Gabriel und Susanne Wirth<h4>
-</figcaption>
-<div class="detail-content">
-<table>
-	  <tr class="phone">
-		  <td class="icon"><i class="mmi mmi-phone blue"></i></td>
-		  <td class="content"><a title="
-Anrufen" href="tel:+49 89 949-27000">+49 89 949-27000</a></td>
-	  </tr>
-	  <tr class="fax">
-		  <td class="icon"><i class="mmi mmi-fax blue"></i></td>
-		  <td class="content"><a title="
-Fax senden" href="tel:+49 89 949-27002">+49 89 949-27002</a></td>
-	  </tr>
-	  <tr class="email">
-		   <td class="icon"><i class="mmi mmi-email blue"></i></td>
-		  <td class="content"><a title="
-Email senden" href="mailto:studio@messeradio-muenchen.de">
-E-Mail</a></td>
-	  </tr> <tr>
-<td>
-
-</td>
-<td>
-<a title="www.NewWayMedia.de" href="http://www.newwaymedia.de" target="_blank">NewWayMedia</a>
-</td>
-</tr>
-</table>
-				 
-				 
-			  
-		  
-</div>     </div> </div>
-<div class="sidebar-block">
+<!-- ********************Alle Messen******************** -->
+                              <div class="sidebar-block">
                                        
-                                        <h4>Ihr Kontakt zu unserem Presseteam</h4>
-                                       
-  
-<div class="contact-element size-large">
-<figure>
-<img alt="Christine Heufer"src="https://files.messe-muenchen.de/corporate/media/global_media/kontaktbilder/kontakte_g_l/Christine_Heufer_section_contacts_370.jpg" >
-</figure>
-                                                <figcaption>
-                                                <h4>Christine Heufer</h4>
-                    </figcaption>
-                    <div class="detail-content">
-                    	<table>
-                        <tr class="phone">
-                          <td class="icon"><i class="mmi mmi-phone blue"></i></td>
-                                <td class="content"><a title="Anrufen" href="tel:+498994920762">+49 89 949-20762</a></td>
-	                            </tr>
-	                        	<tr class="fax">
-	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
-	                                <td class="content"><a title="Fax senden" href="tel:+498994920715">+49 89 949-20715</a></td>
-	                            </tr>
-	                            <tr class="email">
-	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
-	                                <td class="content"><a title="Email senden"href="mailto:christine.heufer@messe-muenchen.de">E-Mail</a></td>
-	                        	</tr>
-                    	</table>
-                                          
-                                        </div>   </div>
-                                      
-                                      
-                                        
-                                        <div class="contact-element size-large">
-			 			<figure>
-	<img alt="Bettina Schenk" title="Bettina Schenk"  src="https://files.messe-muenchen.de/corporate/media/global_media/kontaktbilder/kontakte_s_z/Bettina_Schenk_section_contacts_370.jpg" >
-						</figure>
-                    <figcaption>
-							<h4>Bettina Schenk</h4>
-                    </figcaption>
-                    <div class="detail-content">
-                    	<table>
-	                        	<tr class="phone">
-	                            	<td class="icon"><i class="mmi mmi-phone blue"></i></td>
-	                                <td class="content"><a title="
-Anrufen" href="tel:+498994921475">+49 89 949-21475</a></td>
-	                            </tr>
-	                        	<tr class="fax">
-	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
-	                                <td class="content"><a title="
-Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
-	                            </tr>
-	                            <tr class="email">
-	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
-	                                <td class="content"><a title="Email senden"href="mailto:bettina.schenk@messe-muenchen.de">E-Mail</a></td>
-	                        	</tr>
-                    	</table>
-                                           </div>
-                                           
-                                       </div> </div>
+                                        <h4>Kontaktieren Sie uns!</h4>
+                                        <h5>Ihr Kontakt zu unserem Presseteam</h5>
+                                        <ul>
+                                            <li class="portrait">
+                                                <figure>
+                                                    <img src="media/Christine_Heufer_section_contacts_150x180.jpg" srcset="media/Christine_Heufer_section_contacts_150x180.jpg" alt="Christine Heufer">
+                
+                                                    <!-- ignore this @susi & david - only for webpack export! -->
+                                                    <div class="hiddenforwebpackexport"><img src="media/Christine_Heufer_section_contacts_150x180.jpg" alt="Christine Heufer"></div>
+                                                    <!-- ignore this end -->
+                                                </figure>
+                                            </li>
+                                            <li class="person">
+                                                Christine Heufer<br>
+                                                Broadcast Media Manager
+                                            </li>
+    
+                                            <li class="address">
+                                                <table>
+                                                        <tr>
+                                                            <td>
+                                                                Tel.
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-20762
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Fax
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-9720762
+                                                            </td>
+                                                        </tr>
+                                                </table>
+                                            </li>
+                                            <li class="email"><a href="mailto:Christine.Heufer@messe-muenchen.de">E-Mail schreiben</a></li>
+                                        </ul>
+                                        <ul class="extra-margin-top">
+                                            <li class="portrait">
+                                                <figure>
+                                                    <img src="media/Bettina_Schenk_section_contacts_150x180.jpg" srcset="media/Bettina_Schenk_section_contacts_150x180.jpg" alt="Bettina Schenk">
+                
+                                                    <!-- ignore this @susi & david - only for webpack export! -->
+                                                    <div class="hiddenforwebpackexport"><img src="media/Bettina_Schenk_section_contacts_150x180.jpg" alt="Bettina Schenk"></div>
+                                                    <!-- ignore this end -->
+                                                </figure>
+                                            </li>
+                                            <li class="person">
+                                                Bettina Schenk<br>
+                                                Broadcast Media Manager
+                                            </li>
+    
+                                            <li class="address">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            Tel.
+                                                        </td>
+                                                        <td>
+                                                            +49 89 949-21475
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Fax
+                                                        </td>
+                                                        <td>
+                                                            +49 89 949-9721475
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <li class="email"><a href="mailto:Bettina.Schenk@messe-muenchen.de">E-Mail schreiben</a></li>
+                                        </ul>
+
+                                </div>
+
+                             
+                
+
+                    </div>
+                </div>
+                           
+                
+                  
+                                    
+                                    
 											<?php
 										}
                                     } else {
 										?>
-<div class="sidebar-block"> 
+ 
 
-<h4>Kontakt Hörfunkstudio</h4>
-<div class="contact-element size-large">
+<!-- ********************Startseite******************** -->
 
-			   
-				 
-					  <figcaption>
-
-  <h5>Während der Öffnungszeiten des <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank">Hörfunkstudios</a></h5>
-  <h4>Gabriel und Susanne Wirth<h4>
-</figcaption>
-<div class="detail-content">
-<table>
-	  <tr class="phone">
-		  <td class="icon"><i class="mmi mmi-phone blue"></i></td>
-		  <td class="content"><a title="
-Anrufen" href="tel:+49 89 949-27000">+49 89 949-27000</a></td>
-	  </tr>
-	  <tr class="fax">
-		  <td class="icon"><i class="mmi mmi-fax blue"></i></td>
-		  <td class="content"><a title="
-Fax senden" href="tel:+49 89 949-27002">+49 89 949-27002</a></td>
-	  </tr>
-	  <tr class="email">
-		   <td class="icon"><i class="mmi mmi-email blue"></i></td>
-		  <td class="content"><a title="
-Email senden" href="mailto:studio@messeradio-muenchen.de">
-E-Mail</a></td>
-	  </tr> <tr>
-<td>
-
-</td>
-<td>
-<a title="www.NewWayMedia.de" href="http://www.newwaymedia.de" target="_blank">NewWayMedia</a>
-</td>
-</tr>
-</table>
-				 
-				 
-			  
-		  
-</div>     </div> </div>
 <div class="sidebar-block">
                                        
-                                        <h4>Ihr Kontakt zu unserem Presseteam</h4>
-                                       
-  
-<div class="contact-element size-large">
-<figure>
-<img alt="Christine Heufer"src="https://files.messe-muenchen.de/corporate/media/global_media/kontaktbilder/kontakte_g_l/Christine_Heufer_section_contacts_370.jpg" >
-</figure>
-                                                <figcaption>
-                                                <h4>Christine Heufer</h4>
-                    </figcaption>
-                    <div class="detail-content">
-                    	<table>
-                        <tr class="phone">
-                          <td class="icon"><i class="mmi mmi-phone blue"></i></td>
-                                <td class="content"><a title="Anrufen" href="tel:+498994920762">+49 89 949-20762</a></td>
-	                            </tr>
-	                        	<tr class="fax">
-	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
-	                                <td class="content"><a title="Fax senden" href="tel:+498994920715">+49 89 949-20715</a></td>
-	                            </tr>
-	                            <tr class="email">
-	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
-	                                <td class="content"><a title="Email senden"href="mailto:christine.heufer@messe-muenchen.de">E-Mail</a></td>
-	                        	</tr>
-                    	</table>
-                                          
-                                        </div>   </div>
-                                      
-                                      
+                                        <h4>Kontaktieren Sie uns!</h4>
+                                        <h5>Ihr Kontakt zu unserem Presseteam</h5>
+                                        <ul>
+                                            <li class="portrait">
+                                                <figure>
+                                                    <img src="media/Christine_Heufer_section_contacts_150x180.jpg" srcset="media/Christine_Heufer_section_contacts_150x180.jpg" alt="Christine Heufer">
+                
+                                                    <!-- ignore this @susi & david - only for webpack export! -->
+                                                    <div class="hiddenforwebpackexport"><img src="media/Christine_Heufer_section_contacts_150x180.jpg" alt="Christine Heufer"></div>
+                                                    <!-- ignore this end -->
+                                                </figure>
+                                            </li>
+                                            <li class="person">
+                                                Christine Heufer<br>
+                                                Broadcast Media Manager
+                                            </li>
+    
+                                            <li class="address">
+                                                <table>
+                                                        <tr>
+                                                            <td>
+                                                                Tel.
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-20762
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Fax
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-9720762
+                                                            </td>
+                                                        </tr>
+                                                </table>
+                                            </li>
+                                            <li class="email"><a href="mailto:Christine.Heufer@messe-muenchen.de">E-Mail schreiben</a></li>
+                                        </ul>
+                                        <ul class="extra-margin-top">
+                                            <li class="portrait">
+                                                <figure>
+                                                    <img src="media/Bettina_Schenk_section_contacts_150x180.jpg" srcset="media/Bettina_Schenk_section_contacts_150x180.jpg" alt="Bettina Schenk">
+                
+                                                    <!-- ignore this @susi & david - only for webpack export! -->
+                                                    <div class="hiddenforwebpackexport"><img src="media/Bettina_Schenk_section_contacts_150x180.jpg" alt="Bettina Schenk"></div>
+                                                    <!-- ignore this end -->
+                                                </figure>
+                                            </li>
+                                            <li class="person">
+                                                Bettina Schenk<br>
+                                                Broadcast Media Manager
+                                            </li>
+    
+                                            <li class="address">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            Tel.
+                                                        </td>
+                                                        <td>
+                                                            +49 89 949-21475
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Fax
+                                                        </td>
+                                                        <td>
+                                                            +49 89 949-9721475
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </li>
+                                            <li class="email"><a href="mailto:Bettina.Schenk@messe-muenchen.de">E-Mail schreiben</a></li>
+                                        </ul>
+    
+                                    </div>
+                                     <div class="sidebar-block">
+                                        <h4>Kontakt Hörfunkstudio</h4>
+                                        <h5>Während der Öffnungszeiten des Hörfunkstudios</h5>
+                                        <ul>
+    
+                                            <li class="person">
+                                                Gabriel und Susanne Wirth
+                                            </li>
+    
+                                            <li class="address">
+                                                <table>
+                                                        <tr>
+                                                            <td>
+                                                                Tel.
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-27000
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Technik
+                                                            </td>
+                                                            <td>
+                                                                <a title="www.NewWayMedia.de" href="http://www.newwaymedia.de" target="_blank">NewWayMedia</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Fax
+                                                            </td>
+                                                            <td>
+                                                                +49 89 949-27002
+                                                            </td>
+                                                        </tr>
+                                                </table>
+                                            </li>
+                                        </ul>
+    
+                                    </div>
+                                       <div class="sidebar-block">
+                                  
+                                        <h4>Downloadbereich</h4> 
+                             
+                                     <?php
+                      $_GET['type'] = "stripe";
+                      $_GET['max'] = "3";
+                      include("sidelogo.php");   
+                    ?>   
+                    
+                        <div class="clb"></div>
+                                    </div>     
+                            
                                         
-                                        <div class="contact-element size-large">
-			 			<figure>
-	<img alt="Bettina Schenk" title="Bettina Schenk"  src="https://files.messe-muenchen.de/corporate/media/global_media/kontaktbilder/kontakte_s_z/Bettina_Schenk_section_contacts_370.jpg" >
-						</figure>
-                    <figcaption>
-							<h4>Bettina Schenk</h4>
-                    </figcaption>
-                    <div class="detail-content">
-                    	<table>
-	                        	<tr class="phone">
-	                            	<td class="icon"><i class="mmi mmi-phone blue"></i></td>
-	                                <td class="content"><a title="
-Anrufen" href="tel:+498994921475">+49 89 949-21475</a></td>
-	                            </tr>
-	                        	<tr class="fax">
-	                            	<td class="icon"><i class="mmi mmi-fax blue"></i></td>
-	                                <td class="content"><a title="
-Fax senden" href="tel:+49899499721475">+49 89 949-9721475</a></td>
-	                            </tr>
-	                            <tr class="email">
-	                             	<td class="icon"><i class="mmi mmi-email blue"></i></td>
-	                                <td class="content"><a title="Email senden"href="mailto:bettina.schenk@messe-muenchen.de">E-Mail</a></td>
-	                        	</tr>
-                    	</table>
-                                           </div>
-                                           
-                                       </div> </div>
+
+
+                                <div class="sidebar-block">
+                                    <a href="all" class="btn btn-default btn-lg"><i class="mmi mmi-chevron-right" aria-hidden="true"></i> 
+                                    Alle Messen anzeigen</a>
+                                </div>                             </div>
+                
+                    
+
+
+
 										<?php
 									}
                                 ?>
                                     
 
-                                    
-
-                                  <div class="sidebar-block">
-                                  
-                                        <h4>Downloadbereich</h4>
-                                  <div class="broadcasting-sidebar-downloads">
-                                     <?php
-                      $_GET['type'] = "stripe";
-                      $_GET['max'] = "12";
-                      include("sidelogo.php");   
-                    ?>   
-                                   
-                            
-                                            <div class="clb"></div>
-                                        </div>
-                                    </div> 
-                                   
-
-                                <div class="sidebar-block">
-                                    <a href="all" class="btn btn-default btn-lg"><i class="mmi mmi-chevron-right" aria-hidden="true"></i> 
-                                    Alle Messen anzeigen</a>
-                                </div>
-
-                            </div>
-                
-                        </div>
+                                    </div>
                     </div>
-                </div>
+                </div>     </div>   
 
+                               
                 <div class="social-sharing">
                     <div class="shariff" data-lang="de" data-theme="white" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;xing&quot;,&quot;twitter&quot;]"></div>
                 </div>
 
 <div id="cookiebarContent" data-text="Diese Webseite verwendet Cookies. Mit der Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies verwenden." data-accept="Cookies akzeptieren" data-poltext="Datenschutzerklärung" data-polurl="				
-				/de/datenschutzerklaerung/
+				http://www.messe-muenchen.de/de/datenschutzerklaerung/
 			"></div>
 <div id="side-strap">
     <ul class="buttons">
@@ -947,16 +992,16 @@ rel="noopener noopener"
                    <h2>Kommende Veranstaltungen</h2>
                     <?php
                       $_GET['type'] = "stripe";
-                      $_GET['max'] = "3";
+                      $_GET['max'] = "4";
                       include("navbar.php");   
                     ?>   
                 </div>
+ </div>
 
+           
+       
 
-            </div>
-        </div>
-
-    </div>
+ 
 	  	
 
 

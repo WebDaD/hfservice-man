@@ -18,15 +18,19 @@ if ($result_now->num_rows > 0) {
 $mysql->close();
 
 ?>
-  <div id="unique-image-text-section-oben">
-   <div class="sidebar-section">
+   <div class="row no-padding-outside">
+                <div class="broadcasting">
+                    <div class="row">
+                   
 
-    
-    
-      <div class="teaser-locations">
-        <div class="row locations">
+                            <div id="unique-image-text-section-oben">
+
+
+                                <div class="teaser-locations">
+                                    <div class="row locations">
+                                       
           <?php foreach ($now as $messe): ?>
-          <div class="col-sm-4 col-xs-12">
+          <div class="col-md-4 col-xs-12">
             <a href="<?php echo $messe["slug"];?>" class="location">
               <figure>
                 <div class="figImage">
@@ -40,6 +44,11 @@ $mysql->close();
          
         </div>
       </div>
+      </div>
+      </div>
+
+    
+    
 
     </div>
   </div>

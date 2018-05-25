@@ -22,15 +22,15 @@ $mysql->close();
     <link>http://www.messeradio-muenchen.de/</link>
     <language>de-DE</language>
     <copyright>&#xA9;2018</copyright>
-    <webMaster>info@newwaymedia.de (Marko Kamnisky)</webMaster>
-    <managingEditor>info@newwaymedia.de (Marko Kamnisky)</managingEditor>
+    <webMaster>info@newwaymedia.de (Marko Kaminsky)</webMaster>
+    <managingEditor>info@newwaymedia.de (Marko Kaminsky)</managingEditor>
     <image>
       <url>http://www.messeradio-muenchen.de//header.jpg</url>
       <title>Hörfunkservice der Messe München</title>
       <link>http://www.messeradio-muenchen.de/</link>
     </image>
     <itunes:owner>
-      <itunes:name>Marko Kamnisky</itunes:name>
+      <itunes:name>Marko Kaminsky</itunes:name>
       <itunes:email>info@newwaymedia.de</itunes:email>
     </itunes:owner>
     <itunes:category text="Education">

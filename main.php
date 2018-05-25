@@ -28,7 +28,7 @@
               Mailen Sie bitte an
               <a href="mailto:christine.heufer@messe-muenchen.de">Christine Heufer</a> oder <a href="mailto:bettina.schenk@messe-muenchen.de">Bettina Schenk</a>.
       </p>
-      <h3>Modernes Digitalstudio </h3>
+      <h2>Modernes Digitalstudio </h2>
       Unser <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des Hörfunkstudios " target="_blank ">Hörfunkstudio </a>steht Ihnen während der Messen und Veranstaltungen zum Produzieren Ihrer Berichte
               und Reportagen zur Verfügung. Sie können auch direkt aus dem Studio senden. Gerne unterstützen
               Sie vor Ort unsere rundfunkerfahrenen Mitarbeiter.
@@ -36,21 +36,6 @@
               Sie finden uns im Eingang West, im zweiten Stock des Pressezentrums West. Orientieren Sie sich über unseren
               <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des Hörfunkstudios " target="_blank ">detaillierten Lageplan.</a> Reservierungsanfragen zur Nutzung des Studios richten Sie bitte an
               <a href="mailto:christine.heufer@messe-muenchen.de">Christine Heufer</a>  oder <a href="mailto:bettina.schenk@messe-muenchen.de">Bettina Schenk</a>. </p>
-            <p>
-            <br>
-              <strong>Kontakt Hörfunkstudio im Pressezentrum West</strong>
-              <br> (während der Öffnungszeiten)
-              <br> Gabriel und Susanne Wirth
-              <br> Tel.: +49 89 949-27000
-              <br> Technik:
-              <a href="http://www.newwaymedia.de" title="NewWayMedia" target="_blank">NewWayMedia</a>
-                <br>
-            
-              Tel.: +49 89 949-27002
-              <br> E-Mail:
-              <a href="mailto:studio@messeradio-muenchen.de">studio@messeradio-muenchen.de</a>
-              <br>
-              <br>
-            </p>
+          
   </div>
 </div>

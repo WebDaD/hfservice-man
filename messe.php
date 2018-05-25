@@ -70,14 +70,14 @@ $mysql->close();
   <div class="accordion" id="unique-section">
     <dl>
     <?php foreach ($themen as &$thema): ?>
-      <dt class="accordion-title <?php if($thema["oton"] != ""){echo "green";}else {echo "red";} ?>" id="accordion-<?php echo $thema["id"]; ?>">
+      <dt class="accordion-title <?php if($thema["oton"] != "" || $thema["youtube"] != ""){echo "green";}else {echo "red";} ?>" id="accordion-<?php echo $thema["id"]; ?>">
             <span><?php echo $thema["titel"]; ?></span>
             <a href="#accordion-<?php echo $thema["id"]; ?>" class="plusminus closed"><i class="mmi mmi-accordion-plus" aria-hidden="true"></i></a>
       </dt>
       <dd class="accordion-content">
         <?php if ($thema["youtube"] != ""): ?>
               <h6>LiveStream</h6>
-              <iframe width="560" height="315" src="<?php echo $thema["youtube"];?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe width="560" height="560" src="<?php echo $thema["youtube"];?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <?php endif; ?>
         <?php if ($thema["pdf"] != ""): ?>
           <a href="/uploads/<?php echo $thema["pdf"]; ?>" target="_blank" type="application/pdf" class="btn btn-default btn-lg">
@@ -107,7 +107,9 @@ $mysql->close();
             <hr/>
           <?php endforeach; ?>
         <?php else: ?>
-          <p>Noch keine O-T&ouml;ne vorhanden</p>
+          <?php if ($thema["youtube"] != ""): ?>
+            <p>Noch keine O-T&ouml;ne vorhanden</p>
+          <?php endif; ?>
         <?php endif; ?>
       </dd>
     <?php endforeach; ?>

@@ -52,9 +52,10 @@ $mysql->close();
   </div>
 </div>
 <?php elseif($type == "stripe"): ?>
-  <div class="row locations">
+  
+  <div class="row">
     <?php foreach ($messen as $messe): ?>
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-4 .col-xs-8">
           <a href="<?php echo $messe["slug"];?>" class="location">
               <figure>
                   <div class="figImage"><img src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"></div>
