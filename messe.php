@@ -76,8 +76,8 @@ $mysql->close();
       </dt>
       <dd class="accordion-content">
         <?php if ($thema["youtube"] != ""): ?>
-              <h6>LiveStream</h6>
-              <iframe style="width: 100%;height: 560px;" width="560" height="560" src="<?php echo $thema["youtube"];?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+             
+              <iframe style="width: 100%;height: 360px;" width="580" height="360" src="<?php echo $thema["youtube"];?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <?php endif; ?>
         <?php if ($thema["pdf"] != ""): ?>
           <a href="/uploads/<?php echo $thema["pdf"]; ?>" target="_blank" type="application/pdf" class="btn btn-default btn-lg">
