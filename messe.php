@@ -77,7 +77,7 @@ $mysql->close();
       <dd class="accordion-content">
         <?php if ($thema["youtube"] != ""): ?>
               <h6>LiveStream</h6>
-              <iframe width="560" height="560" src="<?php echo $thema["youtube"];?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe style="width: 100%;height: 560px;" width="560" height="560" src="<?php echo $thema["youtube"];?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <?php endif; ?>
         <?php if ($thema["pdf"] != ""): ?>
           <a href="/uploads/<?php echo $thema["pdf"]; ?>" target="_blank" type="application/pdf" class="btn btn-default btn-lg">
@@ -107,7 +107,7 @@ $mysql->close();
             <hr/>
           <?php endforeach; ?>
         <?php else: ?>
-          <?php if ($thema["youtube"] != ""): ?>
+          <?php if ($thema["youtube"] == ""): ?>
             <p>Noch keine O-T&ouml;ne vorhanden</p>
           <?php endif; ?>
         <?php endif; ?>
