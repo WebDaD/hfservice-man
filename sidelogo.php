@@ -53,16 +53,16 @@ $mysql->close();
 </div>
 <?php elseif($type == "stripe"): ?>
   
-  <div class="row">
+ <div class="broadcasting-sidebar-downloads">
     <?php foreach ($messen as $messe): ?>
-      <div class="col-md-4 col-xs-8 invert-pad">
+      
           <a href="<?php echo $messe["slug"];?>" class="location">
               <figure>
                   <div class="figImage"><img src="/uploads/<?php echo $messe["bild"];?>" alt="<?php echo $messe["titel"];?>"></div>
                 
               </figure>
           </a>
-      </div>
+      
     <?php endforeach; ?>
   </div>
 <?php else: ?>

@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="http://www.messe-muenchen.de/favicon.ico">
     <title>Messe München Hörfunkservice | Messe München</title>
     <!-- Latest compiled and minified CSS -->
-     <link rel="stylesheet" href="accordion.css">
+         <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link href="http://frontend.mmicode.de/css/app.css?8c997a1f42b7b0e6a8b5" rel="stylesheet">
 </head>
@@ -903,8 +903,8 @@ Start"
                     <div class="shariff" data-lang="de" data-theme="white" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;xing&quot;,&quot;twitter&quot;]"></div>
                 </div>
 
-<div id="cookiebarContent" data-text="Diese Webseite verwendet Cookies. Mit der Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies verwenden." data-accept="Cookies akzeptieren" data-poltext="Datenschutzerklärung" data-polurl="				
-				http://www.messe-muenchen.de/de/datenschutzerklaerung/
+<div id="cookiebarContent" data-text="Diese Webseite verwendet Cookies. Mit der Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies verwenden." data-accept="Cookies akzeptieren" data-poltext="Datenschutzhinweise" data-polurl="				
+				https://messe-muenchen.de/de/datenschutzhinweise/
 			"></div>
 <div id="side-strap">
     <ul class="buttons">
@@ -1250,9 +1250,9 @@ rel="follow noopener"
 	
 > Impressum</a></li>
 						<li>
-<a href="http://messe-muenchen.de/de/datenschutzerklaerung/" 
+<a href="https://messe-muenchen.de/de/datenschutzhinweise/" 
 	
-> Datenschutzerklärung</a></li>
+> Datenschutzhinweise</a></li>
 						<li>
 <a href="http://messe-muenchen.de/de/agb-der-messe-muenchen-gmbh/" 
 	
