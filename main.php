@@ -3,13 +3,16 @@
       <div id="fs-uid">
           <div class="slider story-slider broadcasting-slider">
               <figure class="figure-element">
-                  <img src=img_new/104.jpg alt="ixm">
+                  <img src=media/MM18_CW_hoerfunk_Slider_745x497_1.jpg alt="ixm">
               </figure>
               <figure class="figure-element">
-                  <img src=img_new/104.jpg alt="The alternative Image Text">
+                  <img src=media/MM18_CW_hoerfunk_Slider_745x497_2.jpg alt="The alternative Image Text">
+              </figure>
+                <figure class="figure-element">
+                  <img src=media/MM18_CW_hoerfunk_Slider_745x497_3.jpg alt="The alternative Image Text">
               </figure>
               <figure class="figure-element">
-                  <img src=img_new/104.jpg alt="The alternative Image Text">
+                  <img src=media/MM18_CW_hoerfunk_Slider_745x497_4.jpg alt="The alternative Image Text">
               </figure>
           </div>
       </div>
