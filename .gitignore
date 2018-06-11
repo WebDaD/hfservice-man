@@ -1,4 +1,5 @@
 config.php
+config.demo.php
 admin/node_modules
 uploads
 .vscode

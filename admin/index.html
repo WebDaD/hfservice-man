@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de" ng-app="hfManager">
+
+<head>
+  <meta name="author" content="Dominik Sigmund" />
+  <meta name="publisher" content="Dominik Sigmund" />
+  <meta name="copyright" content="Dominik Sigmund" />
+  <meta name="description" content="Website zur Verwaltung des Messe-Radio München" />
+  <meta name="page-topic" content="Forschung Technik" />
+  <meta name="page-type" content="HTML-Formular" />
+  <meta name="audience" content="All" />
+  <meta http-equiv="content-language" content="de" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/palette.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/spinner.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192" />
+  <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="/images/manifest.json" />
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#3F51B5" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#3F51B5" />
+  <meta name="msapplication-TileImage" content="/images/mstile-144x144.png" />
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+  <meta name="theme-color" content="#3F51B5" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="application-name" content="hfManager" />
+  <title>HFServiceMan</title>
+</head>
+
+<body class="no-skin">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+      <img src="images/android-chrome-192x192.png" width="72" height="72" class="d-inline-block align-top" alt=""> HFServiceMan
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" ng-class="{ active: isActive('/messen')}">
+          <a class="nav-link" href="#!/messen">Messen</a>
+        </li>
+        <li class="nav-item" ng-class="{ active: isActive('/themen')}">
+          <a class="nav-link" href="#!/themen">Themen</a>
+        </li>
+        <li class="nav-item" ng-class="{ active: isActive('/otone')}">
+          <a class="nav-link" href="#!/otone">O-T&ouml;ne</a>
+        </li>
+        <li class="nav-item" ng-class="{ active: isActive('/user')}">
+          <a class="nav-link" href="#!/user">User</a>
+        </li>
+      </ul>
+    </div>
+    <form class="form-inline my-2 my-lg-0">
+        <button type="button" ng-click="logout()" ng-show="id !== ''" class="btn  my-2 my-sm-0 btn-outline-light">Logout</button>
+    </form>
+  </nav>
+  <div class="container">
+    <div id="ng-view" ng-view=""></div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <a style="color:white;font-size: 10px;" href="http://webdad.eu" target="_blank" class="btn btn-link">Powered by WebDaD</a>
+        </div>
+        <div class="col-sm">
+          <a style="color:white;font-size: 10px;" href="http://webdad.eu/impressum.html" target="_blank" class="btn btn-link pull-right">Impressum</a>
+          <a style="color:white;font-size: 10px;" href="http://webdad.eu/datenschutz.html" target="_blank" class="btn btn-link pull-right">Datenschutzerklärung</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- angular specific scripts-->
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
+  <!-- hfManager specific scripts-->
+  <script src="js/hfManager.js"></script>
+  <script src="js/hfManager-svc.js"></script>
+  <script src="js/hfManager-dir.js"></script>
+  <script src="js/controllers/hfManager-messe.js"></script>
+  <script src="js/controllers/hfManager-oton.js"></script>
+  <script src="js/controllers/hfManager-thema.js"></script>
+  <script src="js/controllers/hfManager-user.js"></script>
+</body>
+
+</html>

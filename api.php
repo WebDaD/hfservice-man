@@ -1,20 +1,26 @@
 <?php
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN']);
+header('Access-Control-Allow-Methods: POST, PUT, DELETE, GET, OPTIONS');
+header('Access-Control-Allow-Headers: token, id');
+header('Access-Control-Max-Age: 1728000');
 $method = $_SERVER['REQUEST_METHOD']; // 'GET', 'HEAD', 'POST', 'PUT', 'DELETE'
 $object = $_GET["object"]; // messe, thema, oton, user
 $id = $_GET["id"]; // id or empty
 $file = $_GET["file"]; // type of file or empty
 $data = $_POST["data"]; // JSON or empty
-$token = $_SERVER["HTTP_HFSTOKEN"]; // token
-$userId = $_SERVER["HTTP_HFSUSERID"]; // token
+$headers = getallheaders ();
+$token = $headers["id"]; // token
+$userId = $headers["token"]; // token
 
-include 'config.php';
+include 'config.demo.php';
 $mysql = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+if ($mysql->connect_errno) {
+  echo "Failed to connect to MySQL: (" . $mysql->connect_errno . ") " . $mysql->connect_error;
+}
 $mysql->query("SET NAMES utf8"); 
-if ($mysql->connect_error) {
-  die("Connection failed: " . $mysql->connect_error);
-} 
 
+/* TODO: activate!
 if ($method == "GET" && $object == "login") {
   echo login($mysql, $data);
   exit(0);
@@ -23,7 +29,7 @@ if ($method == "GET" && $object == "login") {
     die("{error:'Token Error.'}");
   }
 }
-
+*/
 switch($object) {
   case "messe":
     switch($method) {

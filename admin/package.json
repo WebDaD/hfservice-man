@@ -10,7 +10,10 @@
   "license": "Unlicense",
   "dependencies": {
     "angular": "^1.6.9",
+    "angular-cookies": "^1.6.9",
     "angular-route": "^1.6.9",
-    "bootstrap": "^4.0.0"
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
   }
 }
