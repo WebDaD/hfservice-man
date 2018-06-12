@@ -1,0 +1,57 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ctrl.messe.titel}} bearbeiten</h5>
+  <button type="button" class="close" aria-label="Schließen" ng-click="ctrl.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label for="titel">Titel</label>
+      <input type="text" class="form-control form-control-sm" id="titel" placeholder="Title der Messe" ng-model="ctrl.messe.titel"
+      />
+    </div>
+    <div class="form-group">
+      <label for="slug">Slug</label>
+      <input type="text" class="form-control form-control-sm" id="slug" placeholder="Slug der Messe" ng-model="ctrl.messe.slug"
+      />
+    </div>
+    <div class="form-group">
+      <label for="text">Text</label>
+      <textarea class="form-control form-control-sm" id="text" placeholder="Text der Messe" ng-model="ctrl.messe.text"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="bild">Logo</label>
+      <input type="file" accept="image/*" class="form-control form-control-sm" id="bild" placeholder="Logo der Messe" ng-model="ctrl.messe.bild"
+      />
+      <img ng-src="http://hfservice.webdad.eu/uploads/{{ctrl.messe.bild}}" />
+    </div>
+    <div class="form-group">
+      <label for="link">Link</label>
+      <input type="text" class="form-control form-control-sm" id="link" placeholder="Link zum Pressebereich der Messe" ng-model="ctrl.messe.link"
+      />
+    </div>
+    <div class="form-group">
+      <label for="datum">Datum</label>
+      <input type="text" class="form-control form-control-sm" id="datum" placeholder="Beginn der Messe" ng-model="ctrl.messe.datum"
+      />
+    </div>
+    <div class="form-group">
+      <label for="enddatum">End-Datum</label>
+      <input type="text" class="form-control form-control-sm" id="enddatum" placeholder="Ende der Messe" ng-model="ctrl.messe.enddatum"
+      />
+    </div>
+    <div class="form-group">
+      <label for="themenservice">Themenservice</label>
+      <input type="file" accept="application/pdf" class="form-control form-control-sm" id="themenservice" placeholder="Themenservice der Messe"
+        ng-model="ctrl.messe.themenservice" />
+      <a ng-href="http://hfservice.webdad.eu/uploads/{{ctrl.messe.themenservice}}" target="_blank">
+        {{ctrl.messe.themenservice}}
+      </a>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" ng-click="ctrl.close()">Abbrechen</button>
+  <button type="button" class="btn btn-primary btn-sm" ng-click="ctrl.save()">Speichern</button>
+</div>

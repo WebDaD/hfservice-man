@@ -1,14 +1,69 @@
 <h1>Messen</h1>
 <p class="well">Hier können die Messen verwaltet werden.</p>
 <div class="spinner" ng-show="ctrl.isLoading"></div>
-<table class="table table-bordered table-striped" ng-show="!ctrl.isLoading">
-  <thead>
-<!-- TODO: Spaltenheader -->
-  </thead>
-  <tbody>
-      <tr ng-repeat="row in ctrl.messen"  emit-last-repeater-element>
-        <!-- TODO: Data + Button EDIT (Modal)-->
+<div class="table-responsive" ng-show="!ctrl.isLoading">
+  <table class="table table-bordered table-striped table-hover table-sm">
+    <thead>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'id'; ctrl.sortReverse = !ctrl.sortReverse">
+          ID
+          <span ng-show="ctrl.sortType == 'id' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'id' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'titel'; ctrl.sortReverse = !ctrl.sortReverse">
+          Titel
+          <span ng-show="ctrl.sortType == 'titel' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'titel' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'slug'; ctrl.sortReverse = !ctrl.sortReverse">
+          Slug
+          <span ng-show="ctrl.sortType == 'slug' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'slug' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'datum'; ctrl.sortReverse = !ctrl.sortReverse">
+          Datum
+          <span ng-show="ctrl.sortType == 'datum' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'datum' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'sortierung'; ctrl.sortReverse = !ctrl.sortReverse">
+          Sortierung
+          <span ng-show="ctrl.sortType == 'sortierung' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'sortierung' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="row in ctrl.messen | orderBy:ctrl.sortType:ctrl.sortReverse" emit-last-repeater-element>
+        <td>{{row.id}}</td>
+        <td>{{row.titel}}</td>
+        <td>{{row.slug}}</td>
+        <td>{{row.datum}}</td>
+        <td>{{row.sortierung}}</td>
+        <td>
+          <button type="button" class="btn btn-info btn-sm" ng-click="ctrl.showMesse(row)" title="Anzeigen">
+            <i class="fa fa-search"></i>
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" ng-click="ctrl.editMesse(row)" title="Bearbeiten">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.deleteMesse(row)" title="Löschen">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
       </tr>
-  </tbody>
-</table>
-<!-- TODO: Button New-->
+    </tbody>
+  </table>
+</div>
+<button type="button" class="btn btn-primary plusButton" ng-click="ctrl.addMesse()" ng-show="!ctrl.isLoading">
+  <i class="fa fa-plus"></i>
+  Neue Messe
+</button>

@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ctrl.messe.titel}} Löschen?</h5>
+  <button type="button" class="close" aria-label="Schließen" ng-click="ctrl.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>Wollen Sie wirklich die Messe {{ctrl.messe.titel}} löschen?</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" ng-click="ctrl.close()">Abbrechen</button>
+    <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.delete()">Löschen</button>
+</div>
