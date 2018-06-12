@@ -26,7 +26,9 @@
           controllerAs: 'ctrl'
         })
         modalInstance.result.then(function (messe) {
-          // TODO: save into database and reload page
+          hfManagerDataProvider.addMesse(messe).then(function (result) {
+            self.loadMessen()
+          })
         })
       }
       self.showMesse = function (messe) {
@@ -57,7 +59,9 @@
           }
         })
         modalInstance.result.then(function (messe) {
-          // TODO: save into database and reload page
+          hfManagerDataProvider.editMesse(messe.id, messe).then(function (result) {
+            self.loadMessen()
+          })
         })
       }
       self.deleteMesse = function (messe) {
@@ -74,7 +78,9 @@
           }
         })
         modalInstance.result.then(function (messe) {
-          // TODO: delete from database and reload page
+          hfManagerDataProvider.deleteMesse(messe.id).then(function (result) {
+            self.loadMessen()
+          })
         })
       }
 
