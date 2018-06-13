@@ -56,7 +56,7 @@ $mysql->close();
               Das Team vom Messeradio ist auch diesmal wieder auf der <?php echo $data["titel"];?> für Sie unterwegs, um die unterschiedlichsten Themen redaktionell zu bearbeiten. Wir bieten Ihnen alle Audiomaterialien, die Sie zur Produktion Ihres Beitrags brauchen. Hier im Downloadbereich stellen wir Ihnen kostenfrei unser Tonmaterial in Sendequalität (MP3) zur Verfügung. Wir freuen uns, wenn Sie uns über den Einsatz informieren. <p> </p>
               Wenn Sie persönlich und direkt auf der Messe produzieren möchten, können Sie unser <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios" target="_blank">Hörfunkstudio</a> im Pressezentrum West nutzen.
      
-          In diesem, mit modernster Digitaltechnik ausgestatteten Studio, können Sie Ihre Beiträge bearbeiten, überspielen oder gleich live aus dem Studio senden. Unser <a href="http://www.newwaymedia.de" title="www.NewWayMedia.de" "target="_blank">Technik-Team</a> unterstützt Sie gerne direkt vor Ort.
+          In diesem, mit modernster Digitaltechnik ausgestatteten Studio, können Sie Ihre Beiträge bearbeiten, überspielen oder gleich live aus dem Studio senden. Unser <a href="http://www.newwaymedia.de" title="www.NewWayMedia.de" target="_blank">Technik-Team</a> unterstützt Sie gerne direkt vor Ort.
       </p>
       <?php if($data["themenservice"] !== ""):?>
         <a href="/uploads/<?php echo $data["themenservice"]; ?>" target="_blank" type="application/pdf" title="unser Themenservice als PDF-Dokument" class="btn btn-default btn-lg"><i class="mmi mmi-pdf-document" aria-hidden="true"></i>  
