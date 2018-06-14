@@ -230,7 +230,7 @@ $mysql->close();
                              
                                      <?php
                       $_GET['type'] = "stripe";
-                      $_GET['max'] = "3";
+                      $_GET['max'] = "5";
                       include("sidelogo.php");   
                     ?>   
                     
@@ -242,7 +242,7 @@ $mysql->close();
 
                                 <div class="sidebar-block">
                                     <a href="all" class="btn btn-default btn-lg"><i class="mmi mmi-chevron-right" aria-hidden="true"></i> 
-                                    Alle Messen anzeigen</a>
+                                    Alle Veranstaltungen</a>
                                 </div>                             </div>
                 
                     
