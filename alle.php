@@ -1,5 +1,9 @@
 <?php
-include 'config.php';
+if (strpos($_SERVER['SERVER_NAME'],'demo.') !== false) {
+  include 'config.demo.php';
+} else {
+  include 'config.php';
+}
 $mysql = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $mysql->query("SET NAMES utf8"); 
 if ($mysql->connect_error) {

@@ -3,7 +3,11 @@ $type = $_GET["type"]; // list (default) | grid | stripe
 $sort = $_GET["sort"]; // manual | datum (default) | next (date+1)
 $columns = !empty($_GET['columns']) && is_string($_GET['columns']) ? $_GET['columns'] : 3; //nr of columns for grid-view. defaults to 3
 $max = !empty($_GET['max']) && is_string($_GET['max']) ? $_GET['max'] : -1; //nr of results. defaults to -1 (all)
-include 'config.php';
+if (strpos($_SERVER['SERVER_NAME'],'demo.') !== false) {
+  include 'config.demo.php';
+} else {
+  include 'config.php';
+}
 $mysql = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $mysql->query("SET NAMES utf8"); 
 if ($mysql->connect_error) {
