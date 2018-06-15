@@ -43,7 +43,8 @@ CREATE TABLE IF NOT EXISTS `hfs_otoene` (
   `bild` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mp3` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `upload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `posttext` text COLLATE utf8_unicode_ci
+  `posttext` text COLLATE utf8_unicode_ci,
+  `sortierung` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=377 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -58,7 +59,8 @@ CREATE TABLE IF NOT EXISTS `hfs_themen` (
   `text` text COLLATE utf8_unicode_ci NOT NULL,
   `messen_id` int(11) NOT NULL,
   `pdf` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `youtube` text COLLATE utf8_unicode_ci
+  `youtube` text COLLATE utf8_unicode_ci,
+  `sortierung` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
