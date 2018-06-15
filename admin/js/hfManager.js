@@ -13,6 +13,11 @@
           controllerAs: 'ctrl',
           templateUrl: 'templates/thema.html'
         })
+        .when('/themen/:messe', {
+          controller: 'hfManager-Themen',
+          controllerAs: 'ctrl',
+          templateUrl: 'templates/thema.html'
+        })
         .when('/otone', {
           controller: 'hfManager-Otone',
           controllerAs: 'ctrl',

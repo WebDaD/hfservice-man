@@ -3,8 +3,8 @@
   angular.module('hfManager')
     .controller('hfManager-Messen', ['$scope', 'hfManagerDataProvider', '$uibModal', function ($scope, hfManagerDataProvider, $uibModal) {
       var self = this
-      self.actions = []
-      self.tableParams = {}
+
+      self.messen = []
 
       self.sortType = 'titel' // set the default sort type
       self.sortReverse = false // set the default sort order
@@ -13,8 +13,8 @@
 
       self.loadMessen = function () {
         hfManagerDataProvider.messen().then(function (messen) {
-          self.messen = messen.data
           self.isLoading = false
+          self.messen = messen.data
         })
       }
       self.addMesse = function () {
