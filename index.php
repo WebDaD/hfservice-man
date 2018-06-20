@@ -120,8 +120,7 @@ Messe München"></a>
 
   
    
-	
-	<div class="container">
+		<div class="container">
 		<div class="breadcrumb-navigation">
 			<ul class="breadcrumb">
 				<li>
@@ -132,11 +131,11 @@ Messe München"></a>
 					if($_GET["messe"] == "search") {
 						echo "<li><a href=\"search\">Suche</a></li>";
                 	} elseif($_GET["messe"] == "all") {
-                    	echo "<li><a href=\"all\">Unsere Veranstaltungen</a></li>";
+                    	echo "<li>Unsere Veranstaltungen</li>";
                 	} else {
-						echo "<li><a href=\"".$_GET["messe"]."\">";
+						echo "<li><".$_GET["messe"]."\">";
 						include("messe-name.php");
-						echo "</a></li>";
+						echo "</li>";
                     }
                 } else {
                     echo "";

@@ -47,7 +47,7 @@ foreach ($themen as &$thema) {
 }
 $mysql->close();
 ?>
-<div id="unique-image-text-section-oben">
+  <div id="unique-image-text-section-oben">
   <div class="text-section">
       <h2>
               Unser Hörfunk-Service zur <?php echo $data["titel"];?>
@@ -56,17 +56,18 @@ $mysql->close();
               Sie möchten über die <?php echo $data["titel"];?> im Radio berichten? Hier finden Sie alles, was Sie dazu brauchen!
       </h3>
       <p> </p>
-      <p>
-              Das Team vom Messeradio ist auch diesmal wieder auf der <?php echo $data["titel"];?> für Sie unterwegs, um die unterschiedlichsten Themen redaktionell zu bearbeiten. Wir bieten Ihnen alle Audiomaterialien, die Sie zur Produktion Ihres Beitrags brauchen. Hier im Downloadbereich stellen wir Ihnen kostenfrei unser Tonmaterial in Sendequalität (MP3) zur Verfügung. Wir freuen uns, wenn Sie uns über den Einsatz informieren. <p> </p>
-              Wenn Sie persönlich und direkt auf der Messe produzieren möchten, können Sie unser <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios" target="_blank">Hörfunkstudio</a> im Pressezentrum West nutzen.
+      
+              Das Team vom Messeradio ist auch diesmal wieder auf der <?php echo $data["titel"];?> für Sie unterwegs, um die unterschiedlichsten Themen redaktionell zu bearbeiten. Wir bieten Ihnen alle Audiomaterialien, die Sie zur Produktion Ihres Beitrags brauchen. Hier im Downloadbereich stellen wir Ihnen kostenfrei unser Tonmaterial in Sendequalität (MP3) zur Verfügung. Wir freuen uns, wenn Sie uns über den Einsatz informieren.
+               <p> </p>
+              Wenn Sie persönlich und direkt auf der Messe produzieren möchten, können Sie unser <a href="media/hoerfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios" target="_blank">Hörfunkstudio</a> im <a href="media/pressezentrum-west.pdf" title="Lageplan des Pressezentrums West" target="_blank">Pressezentrum West</a> nutzen.
      
-          In diesem, mit modernster Digitaltechnik ausgestatteten Studio, können Sie Ihre Beiträge bearbeiten, überspielen oder gleich live aus dem Studio senden. Unser <a href="http://www.newwaymedia.de" title="www.NewWayMedia.de" target="_blank">Technik-Team</a> unterstützt Sie gerne direkt vor Ort.
-      </p>
+          In diesem, mit modernster Digitaltechnik ausgestatteten Studio, können Sie Ihre Beiträge bearbeiten, überspielen oder gleich live aus dem Studio senden. <br>Unser <a href="http://www.newwaymedia.de" title="www.NewWayMedia.de" target="_blank">Technik-Team</a> unterstützt Sie gerne direkt vor Ort.
+       <p> </p>
       <?php if($data["themenservice"] !== ""):?>
         <a href="/uploads/<?php echo $data["themenservice"]; ?>" target="_blank" type="application/pdf" title="unser Themenservice als PDF-Dokument" class="btn btn-default btn-lg"><i class="mmi mmi-pdf-document" aria-hidden="true"></i>  
             Unser Themen-Service als Download</a>
       <?php endif; ?>
-          <br><br>
+                 <p> </p>       
       <h5>Nachfolgend finden Sie Manuskripte und <?php echo $count_ton; ?> O-Töne zum Download</h5>
   </div>
 </div>

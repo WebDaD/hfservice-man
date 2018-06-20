@@ -10,7 +10,7 @@ if ($mysql->connect_error) {
   die("Connection failed: " . $mysql->connect_error);
 } 
 
-$sql_now = "SELECT titel, slug, bild FROM ".DB_PREFIX."_messen ORDER BY titel ASC";
+$sql_now = "SELECT titel, slug, bild FROM ".DB_PREFIX."_messen ORDER BY sortierung ASC";
 $result_now = $mysql->query($sql_now);
 $now = array();
 if ($result_now->num_rows > 0) {

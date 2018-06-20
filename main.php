@@ -1,7 +1,8 @@
 <div id="unique-image-text-section-oben">
   <div class="text-section">
       <div id="fs-uid">
-          <div class="slider story-slider broadcasting-slider">
+          <div class="slider story-slider broadcasting-slider" data-slick='{"speed": 3000, "autoplay": true, "autoplaySpeed": 3000}'>
+         
               <figure class="figure-element">
                   <img src=media/MM18_CW_hoerfunk_Slider_745x497_1.jpg alt="ixm">
               </figure>
@@ -32,12 +33,12 @@
               <a href="mailto:christine.heufer@messe-muenchen.de">Christine Heufer</a> oder <a href="mailto:bettina.schenk@messe-muenchen.de">Bettina Schenk</a>.
       </p>
       <h2>Modernes Digitalstudio </h2>
-      Unser <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des Hörfunkstudios " target="_blank ">Hörfunkstudio </a>steht Ihnen während der Messen und Veranstaltungen zum Produzieren Ihrer Berichte
+      Unser <a href="https://messe-muenchen.de/media/projekt/pdf/locations/mm/hoerfunkstudio.pdf" title="Lageplan des Hörfunkstudios " target="_blank ">Hörfunkstudio </a>steht Ihnen während der Messen und Veranstaltungen zum Produzieren Ihrer Berichte
               und Reportagen zur Verfügung. Sie können auch direkt aus dem Studio senden. Gerne unterstützen
               Sie vor Ort unsere rundfunkerfahrenen Mitarbeiter.
             <p>
               Sie finden uns im Eingang West, im zweiten Stock des Pressezentrums West. Orientieren Sie sich über unseren
-              <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des Hörfunkstudios " target="_blank ">detaillierten Lageplan.</a> Reservierungsanfragen zur Nutzung des Studios richten Sie bitte an
+              <a href="https://messe-muenchen.de/media/projekt/pdf/locations/mm/hoerfunkstudio.pdf" title="Lageplan des Hörfunkstudios " target="_blank ">detaillierten Lageplan.</a> Reservierungsanfragen zur Nutzung des Studios richten Sie bitte an
               <a href="mailto:christine.heufer@messe-muenchen.de">Christine Heufer</a>  oder <a href="mailto:bettina.schenk@messe-muenchen.de">Bettina Schenk</a>. </p>
           
   </div>

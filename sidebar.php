@@ -24,22 +24,22 @@ if ($result->num_rows == 1) {
 $mysql->close();
 ?>
 
-<div class="sidebar-block">
+	<div class="sidebar-block">
 
   <figure>
     <img src="/uploads/<?php echo $data["bild"]; ?>"/>
   </figure>
   <br>
-  <a href="<?php echo $data["link"]; ?>"target="_blank" class="btn btn-default btn-lg">
+  <a href="<?php echo $data["link"]; ?>" target= "_blank" class="btn btn-default btn-lg">
     <i class="mmi mmi-chevron-right" aria-hidden="true"></i>
     Pressebereich aufrufen</a>
 </div>
 <?php if($data["kontakt_aktiv"] == "1"): ?>
-  <h4>Öffnungszeiten zur <?php echo $data["titel"];?></h4>
+  <h4>Öffnungszeiten zur <br> <?php echo $data["titel"];?></h4>
 <div class="sidebar-block">
 	
  
-  <h5>Das <a href="https://messe-muenchen.de/media/medien-des-projektes/pdf/locations/mm/horfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudio</a> im 2. OG des Pressezentrums West öffnet zu folgenden Zeiten:
+  <h5>Das <a href="media/hoerfunkstudio.pdf" title="Lageplan des H&ouml;rfunkstudios " target="_blank ">Hörfunkstudio</a> im 2. OG <br> des <a href="media/pressezentrum-west.pdf" title="Lageplan des Pressezentrums West" target="_blank">Pressezentrums West</a><br> öffnet zu folgenden Zeiten:
   </h5>
   
     
