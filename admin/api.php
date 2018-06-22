@@ -140,9 +140,9 @@ function deleteMesse($mysql,$id) {
 function getThema($mysql,$id) {
   $where = "";
   if($id) {
-    $where = " WHERE id=".$id;
+    $where = " AND id=".$id;
   }
-  $sql = "SELECT id, titel, `text`, messen_id, pdf FROM " . DB_PREFIX . "_themen".$where;
+  $sql = "SELECT t.id, t.titel, t.`text`, t.messen_id, m.slug AS messe, t.pdf, t.sortierung FROM " . DB_PREFIX . "_themen t, " . DB_PREFIX . "_messen m WHERE m.id=t.messen_id".$where;
   return getObject($mysql, $sql);
 }
 function addThema($mysql,$data) {

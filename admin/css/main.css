@@ -45,19 +45,6 @@ footer {
   }
 }
 
-/* better typhography */
-
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  padding-bottom: 140px;
-  font-size: 20px;
-  font-size: 1.8rem;
-  letter-spacing: -0.01em;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.4;
-  word-wrap: normal;
-}
 
 @media (min-width: 1200px) {
   body {
@@ -65,17 +52,14 @@ body {
   }
 }
 
-p,
-figcaption,
-td,
-.btn {
-  font-size: 20px;
-  font-size: 1.8rem;
-  letter-spacing: -.01em;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.4;
-  word-wrap: normal;
+
+.input-group-prepend {
+  width : 10%; /*adjust as needed*/
+}
+
+.input-group-prepend label {
+  width: 100%;
+  overflow: hidden;
 }
 
 /* plus Button */

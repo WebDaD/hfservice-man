@@ -1,9 +1,14 @@
-<h1>Messen</h1>
+<h1>Themen</h1>
 <div class="spinner" ng-show="ctrl.isLoading"></div>
-<select ng-model="ctrl.sortFilter" ng-show="!ctrl.isLoading">
-  <option value="">--- Auswahl ---</option>
-  <option ng-repeat="option in ctrl.messen" value="{{option.slug}}">{{option.slug}}</option>
-</select>
+<div class="input-group mb-3" ng-show="!ctrl.isLoading">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="filter-messe">Messe:</span>
+  </div>
+  <select class="custom-select form-control" ng-model="ctrl.sortFilter" aria-label="MesseFilter" aria-describedby="filter-messe">
+    <option value="">--- Auswahl ---</option>
+    <option ng-repeat="option in ctrl.messen" value="{{option.slug}}">{{option.titel}}</option>
+  </select>
+</div>
 <div class="table-responsive" ng-show="!ctrl.isLoading">
   <table class="table table-bordered table-striped table-hover table-sm">
     <thead>
@@ -53,6 +58,9 @@
           <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.deleteThema(row)" title="Löschen">
             <i class="fa fa-trash"></i>
           </button>
+          <a ng-href="#!/otone/{{row.messe}}/{{row.id}}" class="btn btn-info btn-sm" title="O-Töne">
+            <i class="fa fa-chevron-right"></i>
+          </a>
         </td>
       </tr>
     </tbody>

@@ -6,19 +6,29 @@
         .when('/messen', {
           controller: 'hfManager-Messen',
           controllerAs: 'ctrl',
-          templateUrl: 'templates/messe.html'
+          templateUrl: 'templates/messe/index.html'
         })
         .when('/themen', {
-          controller: 'hfManager-Themen',
+          controller: 'hfManager-Thema',
           controllerAs: 'ctrl',
           templateUrl: 'templates/thema.html'
         })
         .when('/themen/:messe', {
-          controller: 'hfManager-Themen',
+          controller: 'hfManager-Thema',
           controllerAs: 'ctrl',
           templateUrl: 'templates/thema.html'
         })
         .when('/otone', {
+          controller: 'hfManager-Otone',
+          controllerAs: 'ctrl',
+          templateUrl: 'templates/oton.html'
+        })
+        .when('/otone/:messe', {
+          controller: 'hfManager-Otone',
+          controllerAs: 'ctrl',
+          templateUrl: 'templates/oton.html'
+        })
+        .when('/otone/:messe/:thema', {
           controller: 'hfManager-Otone',
           controllerAs: 'ctrl',
           templateUrl: 'templates/oton.html'

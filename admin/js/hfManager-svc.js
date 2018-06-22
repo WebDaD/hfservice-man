@@ -2,7 +2,7 @@
 ;(function () {
   angular.module('hfManager')
     .provider('hfManagerDataProvider', function hfManagerDataProvider () {
-      var restURL = '/api.php'
+      var restURL = '/admin/api.php'
       this.setURL = function (url) {
         restURL = url
       }

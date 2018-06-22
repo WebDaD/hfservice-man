@@ -21,9 +21,18 @@
         var modalInstance = $uibModal.open({
           animation: false,
           size: 'lg',
-          templateUrl: 'templates/modals/addMesse.html',
-          controller: 'hfManager-AddMesse',
-          controllerAs: 'ctrl'
+          templateUrl: 'templates/messe/modal.html',
+          controller: 'hfManager-MesseModal',
+          controllerAs: 'ctrl',
+          resolve: {
+            data: function () {
+              return {
+                disabled: false,
+                messe: {},
+                delete: false
+              }
+            }
+          }
         })
         modalInstance.result.then(function (messe) {
           hfManagerDataProvider.addMesse(messe).then(function (result) {
@@ -35,12 +44,16 @@
         $uibModal.open({
           animation: false,
           size: 'lg',
-          templateUrl: 'templates/modals/showMesse.html',
-          controller: 'hfManager-ShowMesse',
+          templateUrl: 'templates/messe/modal.html',
+          controller: 'hfManager-MesseModal',
           controllerAs: 'ctrl',
           resolve: {
-            messe: function () {
-              return messe
+            data: function () {
+              return {
+                disabled: true,
+                messe: messe,
+                delete: false
+              }
             }
           }
         })
@@ -49,12 +62,16 @@
         var modalInstance = $uibModal.open({
           animation: false,
           size: 'lg',
-          templateUrl: 'templates/modals/editMesse.html',
-          controller: 'hfManager-EditMesse',
+          templateUrl: 'templates/messe/modal.html',
+          controller: 'hfManager-MesseModal',
           controllerAs: 'ctrl',
           resolve: {
-            messe: function () {
-              return messe
+            data: function () {
+              return {
+                disabled: false,
+                messe: messe,
+                delete: false
+              }
             }
           }
         })
@@ -68,12 +85,16 @@
         var modalInstance = $uibModal.open({
           animation: false,
           size: 'lg',
-          templateUrl: 'templates/modals/deleteMesse.html',
-          controller: 'hfManager-DeleteMesse',
+          templateUrl: 'templates/messe/modal.html',
+          controller: 'hfManager-MesseModal',
           controllerAs: 'ctrl',
           resolve: {
             messe: function () {
-              return messe
+              return {
+                disabled: false,
+                messe: messe,
+                delete: true
+              }
             }
           }
         })
