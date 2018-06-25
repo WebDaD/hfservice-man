@@ -29,7 +29,7 @@ footer {
   width: 100%;
   padding-top: 2px;
   padding-bottom: 2px;
-  margin-top: 20px;
+  margin-top: 10px;
   bottom: 0px;
   position: fixed;
 }
@@ -66,7 +66,7 @@ footer {
 
 .plusButton {
   position: fixed;
-  bottom: 50px;
+  bottom: 70px;
   right: 10px;
 }
 
@@ -80,4 +80,8 @@ footer {
   .modal-lg {
     max-width: 1400px;
   }
+}
+
+.navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+  color: white;
 }
