@@ -53,6 +53,7 @@ switch($object) {
         }
         break;
       case "PUT": echo updateMesse($mysql,$id, $data);break;
+      case "PATCH": echo changeMesseSort($mysql,$id, $data);break;
       case "DELETE": echo deleteMesse($mysql,$id);break;
       default: die("{error:'Method ".$method." for Object " . $object . " not supported'}");
     }
@@ -130,6 +131,9 @@ function uploadThemenserviceForMesse($mysql,$id,$data) {
   // TODO: upload file in data, update db
 }
 function updateMesse($mysql,$id, $data) {
+  // TODO: update
+}
+function changeMesseSort($mysql,$id, $data) {
   // TODO: update
 }
 function deleteMesse($mysql,$id) {

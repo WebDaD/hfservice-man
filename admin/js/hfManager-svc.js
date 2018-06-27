@@ -33,6 +33,11 @@
               method: 'DELETE', url: restURL + '?object=messe&id=' + id
             })
           },
+          changeMesseSort: function (id, reverseSort, messeUp) {
+            return $http({
+              method: 'PATCH', url: restURL + '?object=messe&id=' + id, data: {reverseSort: reverseSort, messeUp: messeUp }
+            })
+          },
           otone: function () {
             return $http({
               method: 'GET', url: restURL + '?object=oton'

@@ -9,12 +9,16 @@
       self.sortType = 'titel' // set the default sort type
       self.sortReverse = false // set the default sort order
 
-      self.isLoading = true
+      self.isLoading = false
 
       self.loadMessen = function () {
         hfManagerDataProvider.messen().then(function (messen) {
-          self.isLoading = false
           self.messen = messen.data
+          self.messen.forEach(messe => {
+            messe.id = parseInt(messe.id)
+            messe.sortierung = parseInt(messe.sortierung)
+          })
+          self.isLoading = false
         })
       }
       self.addMesse = function () {
@@ -29,7 +33,7 @@
               return {
                 disabled: false,
                 messe: {},
-                delete: false
+                deletion: false
               }
             }
           }
@@ -52,7 +56,7 @@
               return {
                 disabled: true,
                 messe: messe,
-                delete: false
+                deletion: false
               }
             }
           }
@@ -70,7 +74,7 @@
               return {
                 disabled: false,
                 messe: messe,
-                delete: false
+                deletion: false
               }
             }
           }
@@ -89,11 +93,11 @@
           controller: 'hfManager-MesseModal',
           controllerAs: 'ctrl',
           resolve: {
-            messe: function () {
+            data: function () {
               return {
-                disabled: false,
+                disabled: true,
                 messe: messe,
-                delete: true
+                deletion: true
               }
             }
           }
@@ -105,6 +109,49 @@
         })
       }
 
+      self.messeUp = function (messe) {
+        hfManagerDataProvider.changeMesseSort(messe.id, self.sortReverse, true).then(function (result) {
+          self.loadMessen()
+        })
+      }
+      self.messeDown = function (messe) {
+        hfManagerDataProvider.changeMesseSort(messe.id, self.sortReverse, false).then(function (result) {
+          self.loadMessen()
+        })
+      }
+      self.topMesse = function (messe) {
+        if (self.sortReverse) { // highest sort is on top
+          return messe.sortierung === self.maxMesseSort()
+        } else { // lowest sort is on top
+          return messe.sortierung === self.minMesseSort()
+        }
+      }
+      self.bottomMesse = function (messe) {
+        if (self.sortReverse) { // highest sort is on top
+          return messe.sortierung === self.minMesseSort()
+        } else { // lowest sort is on top
+          return messe.sortierung === self.maxMesseSort()
+        }
+      }
+
+      self.minMesseSort = function () {
+        var min = Number.MAX_SAFE_INTEGER
+        self.messen.forEach(messe => {
+          if (messe.sortierung < min) {
+            min = messe.sortierung
+          }
+        })
+        return min
+      }
+      self.maxMesseSort = function () {
+        var max = 1
+        self.messen.forEach(messe => {
+          if (messe.sortierung > max) {
+            max = messe.sortierung
+          }
+        })
+        return max
+      }
       self.loadMessen()
     }])
 }())
