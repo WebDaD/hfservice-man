@@ -20,12 +20,12 @@
           },
           addMesse: function (messe) {
             return $http({
-              method: 'POST', url: restURL + '?object=messe', data: {messe: messe}
+              method: 'POST', url: restURL + '?object=messe', data: messe
             })
           },
           updateMesse: function (id, messe) {
             return $http({
-              method: 'PUT', url: restURL + '?object=messe&id=' + id, data: {messe: messe}
+              method: 'PUT', url: restURL + '?object=messe&id=' + id, data: messe
             })
           },
           deleteMesse: function (id) {

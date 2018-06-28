@@ -1,6 +1,6 @@
 /* global angular */
 ;(function () {
-  angular.module('hfManager', ['ngRoute', 'ngCookies', 'ngAnimate', 'ui.bootstrap'])
+  angular.module('hfManager', ['ngRoute', 'ngCookies', 'ngAnimate', 'ui.bootstrap', 'angularFileUpload'])
     .config(['$routeProvider', function ($routeProvider) {
       $routeProvider
         .when('/messen', {

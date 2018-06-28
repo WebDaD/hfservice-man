@@ -17,14 +17,20 @@
       <label class="input-group-text" id="messe-titel">Titel</label>
     </div>
     <input type="text" class="form-control" id="titel" placeholder="Titel der Messe" ng-model="ctrl.messe.titel" aria-label="Titel der Messe"
-      aria-describedby="messe-titel" ng-disabled="ctrl.disabled">
+      aria-describedby="messe-titel" ng-disabled="ctrl.disabled" required ng-class="{'is-invalid': !ctrl.messe.titel && ctrl.error, 'is-valid':ctrl.messe.titel && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.messe.titel && ctrl.error">
+        Titel ist leer
+      </div>
   </div>
   <div class="input-group mb-3" ng-show="!ctrl.deletion">
     <div class="input-group-prepend">
       <label class="input-group-text" id="messe-slug">Slug</label>
     </div>
     <input type="text" class="form-control" id="slug" placeholder="Slug der Messe" ng-model="ctrl.messe.slug" aria-label="Slug der Messe"
-      aria-describedby="messe-slug" ng-disabled="ctrl.disabled">
+      aria-describedby="messe-slug" ng-disabled="ctrl.disabled"  required ng-class="{'is-invalid': !ctrl.messe.slug && ctrl.error, 'is-valid':ctrl.messe.slug && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.messe.slug && ctrl.error">
+        Slug ist leer
+      </div>
   </div>
   <div class="input-group mb-3" ng-show="!ctrl.deletion">
     <div class="input-group-prepend">
@@ -37,12 +43,15 @@
     <div class="input-group-prepend">
       <label class="input-group-text" id="messe-logo">Logo</label>
     </div>
-    <input ng-show="!ctrl.disabled" type="file" accept="image/*" class="form-control" id="bild" placeholder="Logo der Messe"
-      ng-model="ctrl.messe.bild" aria-label="Logo der Messe" aria-describedby="messe-logo" ng-disabled="ctrl.disabled" />
-    <input ng-show="ctrl.disabled" type="text" class="form-static form-control" id="bild" placeholder="Logo der Messe" ng-model="ctrl.messe.bild"
-      aria-label="Logo der Messe" aria-describedby="messe-id" disabled>
+    <div class="custom-file">
+      <input type="file" accept="image/*" class="custom-file-input" id="bild" placeholder="Logo der Messe" ng-model="ctrl.messe.bild" aria-label="Logo der Messe" aria-describedby="messe-logo" ng-disabled="ctrl.disabled" nv-file-select uploader="ctrl.uploaderLogo" required ng-class="{'is-invalid': !ctrl.messe.bild && ctrl.error, 'is-valid':ctrl.messe.bild && ctrl.error}"/>
+      <label class="custom-file-label" for="bild">{{ctrl.messe.bild}}</label>
+      <div class="invalid-feedback" ng-show="!ctrl.messe.bild && ctrl.error">
+        Kein Bild ausgewählt
+      </div>
+    </div>
     <div class="input-group-append">
-      <a ng-href="../uploads/{{ctrl.messe.bild}}" target="_blank" class="input-group-text">
+      <a ng-href="../uploads/{{ctrl.messe.bild}}" target="_blank" class="input-group-text" ng-show="ctrl.messe.bild">
         <i class="fa fa-link"></i>
       </a>
     </div>
@@ -52,9 +61,12 @@
       <label class="input-group-text" id="messe-link">Link (Presse)</label>
     </div>
     <input type="text" class="form-control" id="link" placeholder="Link zum Pressebereich der Messe" ng-model="ctrl.messe.link"
-      aria-label="Link zum Pressebereich der Messe" aria-describedby="messe-link" ng-disabled="ctrl.disabled">
+      aria-label="Link zum Pressebereich der Messe" aria-describedby="messe-link" ng-disabled="ctrl.disabled"  required ng-class="{'is-invalid': !ctrl.messe.link && ctrl.error, 'is-valid':ctrl.messe.link && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.messe.link && ctrl.error">
+        Link ist leer
+      </div>
     <div class="input-group-append">
-      <a ng-href="{{ctrl.messe.link}}" target="_blank" class="input-group-text">
+      <a ng-href="{{ctrl.messe.link}}" target="_blank" class="input-group-text" ng-show="ctrl.messe.link">
         <i class="fa fa-link"></i>
       </a>
     </div>
@@ -64,31 +76,59 @@
       <label class="input-group-text" id="messe-datum">Datum</label>
     </div>
     <input type="text" class="form-control" id="datum" placeholder="Datum der Messe" ng-model="ctrl.messe.datum" aria-label="Datum der Messe"
-      aria-describedby="messe-datum" ng-disabled="ctrl.disabled">
+      aria-describedby="messe-datum" ng-disabled="ctrl.disabled"  required ng-class="{'is-invalid': !ctrl.messe.datum && ctrl.error, 'is-valid':ctrl.messe.datum && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.messe.datum && ctrl.error">
+        Datum ist leer
+      </div>
   </div>
   <div class="input-group mb-3" ng-show="!ctrl.deletion">
     <div class="input-group-prepend">
       <label class="input-group-text" id="messe-enddatum">End-Datum</label>
     </div>
     <input type="text" class="form-control" id="enddatum" placeholder="End-Datum der Messe" ng-model="ctrl.messe.enddatum" aria-label="End-Datum der Messe"
-      aria-describedby="messe-enddatum" ng-disabled="ctrl.disabled">
+      aria-describedby="messe-enddatum" ng-disabled="ctrl.disabled"  required ng-class="{'is-invalid': !ctrl.messe.enddatum && ctrl.error, 'is-valid':ctrl.messe.enddatum && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.messe.enddatum && ctrl.error">
+        Enddatum ist leer
+      </div>
   </div>
   <div class="input-group mb-3" ng-show="!ctrl.deletion">
     <div class="input-group-prepend">
       <label class="input-group-text" id="messe-themenservice">Themenservice</label>
     </div>
-    <input ng-show="!ctrl.disabled" type="file" accept="application/pdf" class="form-control" id="themenservice" placeholder="Themenservice der Messe"
-      ng-model="ctrl.messe.themenservice" aria-label="Themenservice der Messe" aria-describedby="messe-themenservice" ng-disabled="ctrl.disabled"
-    />
-    <input ng-show="ctrl.disabled" type="text" class="form-static form-control" id="themenservice" placeholder="Themenservice der Messe"
-      ng-model="ctrl.messe.themenservice" aria-label="Themenservice der Messe" aria-describedby="messe-id" disabled>
+    <div class="custom-file">
+      <input ng-show="!ctrl.disabled" type="file" accept="application/pdf" class="custom-file-input" id="themenservice" placeholder="Themenservice der Messe" ng-model="ctrl.messe.themenservice" aria-label="Themenservice der Messe" aria-describedby="messe-themenservice" ng-disabled="ctrl.disabled" nv-file-select uploader="ctrl.uploaderPDF"/>
+      <label class="custom-file-label" for="themenservice">{{ctrl.messe.themenservice}}</label>
+    </div>
     <div class="input-group-append">
-      <a ng-href="../uploads/{{ctrl.messe.themenservice}}" target="_blank" class="input-group-text">
+      <a ng-href="../uploads/{{ctrl.messe.themenservice}}" target="_blank" class="input-group-text" ng-show="ctrl.messe.themenservice">
         <i class="fa fa-link"></i>
       </a>
     </div>
   </div>
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="messe-kontakt_aktiv">Kontakt-Daten</label>
+    </div>
+    <label class="switch">
+      <input type="checkbox" class="form-control" id="kontakt_aktiv" placeholder="Kontakt Aktiv?" ng-model="ctrl.messe.kontakt_aktiv" aria-label="Kontakt Aktiv?"
+      aria-describedby="messe-kontakt_aktiv" ng-disabled="ctrl.disabled">
+      <span class="slider"></span>
+    </label>
+  </div>
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="messe-presseteam">Presseteam Messe</label>
+    </div>
+    <label class="switch">
+      <input type="checkbox" class="form-control" id="presseteam" placeholder="Presseteam?" ng-model="ctrl.messe.presseteam" aria-label="Presseteam?"
+      aria-describedby="messe-presseteam" ng-disabled="ctrl.disabled">
+      <span class="slider"></span>
+    </label>
+  </div>
   <p ng-show="ctrl.deletion">Wollen Sie wirklich die Messe {{ctrl.messe.titel}} löschen?</p>
+  <div class="alert alert-danger" role="alert" ng-show="ctrl.error">
+    {{ctrl.errorText}}
+  </div>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" ng-click="ctrl.close()">{{ctrl.cancel}}</button>

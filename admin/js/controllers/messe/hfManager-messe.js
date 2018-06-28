@@ -38,10 +38,12 @@
             }
           }
         })
-        modalInstance.result.then(function (messe) {
-          hfManagerDataProvider.addMesse(messe).then(function (result) {
+        modalInstance.result.then(function (status) {
+          if (status === true) {
             self.loadMessen()
-          })
+          } else {
+            console.error(status)
+          }
         })
       }
       self.showMesse = function (messe) {
@@ -79,10 +81,12 @@
             }
           }
         })
-        modalInstance.result.then(function (messe) {
-          hfManagerDataProvider.editMesse(messe.id, messe).then(function (result) {
+        modalInstance.result.then(function (status) {
+          if (status === true) {
             self.loadMessen()
-          })
+          } else {
+            console.error(status)
+          }
         })
       }
       self.deleteMesse = function (messe) {
@@ -102,10 +106,12 @@
             }
           }
         })
-        modalInstance.result.then(function (messe) {
-          hfManagerDataProvider.deleteMesse(messe.id).then(function (result) {
+        modalInstance.result.then(function (status) {
+          if (status === true) {
             self.loadMessen()
-          })
+          } else {
+            console.error(status)
+          }
         })
       }
 
