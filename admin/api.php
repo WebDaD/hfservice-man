@@ -7,7 +7,7 @@ header('Access-Control-Max-Age: 1728000');
 $method = $_SERVER['REQUEST_METHOD']; // 'GET', 'HEAD', 'POST', 'PUT', 'DELETE'
 $object = $_GET["object"]; // messe, thema, oton, user
 $id = $_GET["id"]; // id or empty
-$file = $_GET["file"]; // type of file or empty
+$type = $_GET["type"]; // sort or empty
 $data = json_decode(file_get_contents('php://input')); // JSON or empty
 $headers = getallheaders ();
 $token = $headers["id"]; // token
@@ -40,8 +40,13 @@ switch($object) {
     switch($method) {
       case "GET": echo getMesse($mysql,$id);break;
       case "POST": echo addMesse($mysql,$data); break;
-      case "PUT": echo updateMesse($mysql,$id, $data);break;
-      case "PATCH": echo changeMesseSort($mysql,$id, $data);break;
+      case "PUT": 
+        if ($type == "sort") {
+          echo changeMesseSort($mysql,$id, $data);
+        } else {
+          echo updateMesse($mysql,$id, $data);
+        }
+      break;
       case "DELETE": echo deleteMesse($mysql,$id);break;
       default: die("{error:'Method ".$method." for Object " . $object . " not supported'}");
     }
@@ -50,7 +55,13 @@ switch($object) {
     switch($method) {
       case "GET": echo getThema($mysql,$id);break;
       case "POST": echo addThema($mysql,$data); break;
-      case "PUT": echo updateThema($mysql,$id, $data);break; 
+      case "PUT": 
+        if ($type == "sort") {
+          echo changeThemaSort($mysql,$id, $data);
+        } else {
+          echo updateThema($mysql,$id, $data);
+        }
+      break;
       case "DELETE": echo deleteThema($mysql,$id);break;
       default: die("{error:'Method ".$method." for Object " . $object . " not supported'}");
     }
@@ -59,7 +70,13 @@ switch($object) {
     switch($method) {
       case "GET": echo getOton($mysql,$id);break;
       case "POST": echo addOton($mysql,$data); break;
-      case "PUT": echo updateOton($mysql,$id, $data);break;
+      case "PUT": 
+        if ($type == "sort") {
+          echo changeOtonSort($mysql,$id, $data);
+        } else {
+          echo updateOton($mysql,$id, $data);
+        }
+      break;
       case "DELETE": echo deleteOton($mysql,$id);break;
       default: die("{error:'Method ".$method." for Object " . $object . " not supported'}");
     }
@@ -98,22 +115,22 @@ function updateMesse($mysql,$id, $data) {
   return updateObject($mysql, $sql);
 }
 function changeMesseSort($mysql,$id, $data) {
-  $mySort = getField("SELECT sortierung FROM " . DB_PREFIX . "_messen WHERE id=".$id);
+  $mySort = getField($mysql,"SELECT sortierung FROM " . DB_PREFIX . "_messen WHERE id=".$id);
   if($data->messeUp) {
     if($data->reverseSort) {
-      $otherRow = getMultipleFields("SELECT id, sortierung FROM " . DB_PREFIX . "_messen WHERE sortierung > ".$mySort." ORDER by sortierung ASC LIMIT 1");
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_messen WHERE sortierung > ".$mySort." ORDER by sortierung ASC LIMIT 1");
     } else {
-      $otherRow = getMultipleFields("SELECT id, sortierung FROM " . DB_PREFIX . "_messen WHERE sortierung < ".$mySort." ORDER by sortierung DESC LIMIT 1");
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_messen WHERE sortierung < ".$mySort." ORDER by sortierung DESC LIMIT 1");
     }
   } else {
     if($data->reverseSort) {
-      $otherRow = getMultipleFields("SELECT id, sortierung FROM " . DB_PREFIX . "_messen WHERE sortierung < ".$mySort." ORDER by sortierung DESC LIMIT 1");
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_messen WHERE sortierung < ".$mySort." ORDER by sortierung DESC LIMIT 1");
     } else {
-      $otherRow = getMultipleFields("SELECT id, sortierung FROM " . DB_PREFIX . "_messen WHERE sortierung > ".$mySort." ORDER by sortierung ASC LIMIT 1");
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_messen WHERE sortierung > ".$mySort." ORDER by sortierung ASC LIMIT 1");
     }
   }
   $mysql->query("UPDATE " . DB_PREFIX . "_messen SET sortierung=".$otherRow[1]. " WHERE id=".$id);
-  return updateObject($mysql, "UPDATE " . DB_PREFIX . "_messen SET sortierung=".$mySort. " WHERE id=".$otherRow[1]);
+  return updateObject($mysql, "UPDATE " . DB_PREFIX . "_messen SET sortierung=".$mySort. " WHERE id=".$otherRow[0]);
 }
 function deleteMesse($mysql,$id) {
   $sql = "DELETE FROM " . DB_PREFIX . "_messen WHERE id=".$id;
@@ -126,18 +143,38 @@ function getThema($mysql,$id) {
   if($id) {
     $where = " AND id=".$id;
   }
-  $sql = "SELECT t.id, t.titel, t.`text`, t.messen_id, m.slug AS messe, t.pdf, t.sortierung FROM " . DB_PREFIX . "_themen t, " . DB_PREFIX . "_messen m WHERE m.id=t.messen_id".$where;
+  $sql = "SELECT t.id, t.titel, t.`text`, t.messen_id, m.slug AS messe, t.pdf, t.sortierung, t.youtube FROM " . DB_PREFIX . "_themen t, " . DB_PREFIX . "_messen m WHERE m.id=t.messen_id".$where;
   return getObject($mysql, $sql, $id);
 }
 function addThema($mysql,$data) {
-  $sql = "INSERT INTO  " . DB_PREFIX . "_themen (titel, `text`, messen_id) VALUES ('".$data["titel"]."', '".$data["text"]."', ".$data["messen_id"].")";
+  $sql = "INSERT INTO  " . DB_PREFIX . "_themen (titel, `text`, messen_id, pdf, sortierung, youtube) VALUES ('".$data->titel."', '".$data->text."', ".$data->messen_id.", '".$data->pdf."', '".$data->sortierung."', '".$data->youtube."')";
   return addObject($mysql, $sql);
 }
 function updateThema($mysql,$id, $data) {
-  // TODO: update
+  $sql = "UPDATE " . DB_PREFIX . "_themen SET titel='".$data->titel."', `text`='".$data->text."', messen_id='".$data->messen_id."', pdf='".$data->pdf."', sortierung='".$data->sortierung."', youtube='".$data->youtube."' WHERE id=".$id;
+  return updateObject($mysql, $sql);
+}
+function changeThemaSort($mysql,$id, $data) {
+  $mySort = getField($mysql,"SELECT sortierung FROM " . DB_PREFIX . "_themen WHERE id=".$id);
+  if($data->themaUp) {
+    if($data->reverseSort) {
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_themen WHERE sortierung > ".$mySort." ORDER by sortierung ASC LIMIT 1");
+    } else {
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_themen WHERE sortierung < ".$mySort." ORDER by sortierung DESC LIMIT 1");
+    }
+  } else {
+    if($data->reverseSort) {
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_themen WHERE sortierung < ".$mySort." ORDER by sortierung DESC LIMIT 1");
+    } else {
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_themen WHERE sortierung > ".$mySort." ORDER by sortierung ASC LIMIT 1");
+    }
+  }
+  $mysql->query("UPDATE " . DB_PREFIX . "_themen SET sortierung=".$otherRow[1]. " WHERE id=".$id);
+  return updateObject($mysql, "UPDATE " . DB_PREFIX . "_themen SET sortierung=".$mySort. " WHERE id=".$otherRow[0]);
 }
 function deleteThema($mysql,$id) {
-  // TODO: delete
+  $sql = "DELETE FROM " . DB_PREFIX . "_themen WHERE id=".$id;
+  return updateObject($mysql, $sql);
 }
 
 // Oton
@@ -146,18 +183,38 @@ function getOton($mysql,$id) {
   if($id) {
     $where = " WHERE id=".$id;
   }
-  $sql = "SELECT id, titel, `text`, bild, themen_id, mp3, upload FROM " . DB_PREFIX . "_otoene".$where;
+  $sql = "SELECT o.id, o.titel, o.`text`, o.bild, o.themen_id, o.mp3, o.upload, o.posttext, o.sortierung, t.titel as thema, t.id AS thema.id, m.slug AS messe FROM " . DB_PREFIX . "_otoene o," . DB_PREFIX . "_themen t, " . DB_PREFIX . "_messen m WHERE m.id=t.messen_id AND t.id=o.themen.id".$where;
   return getObject($mysql, $sql, $id);
 }
 function addOton($mysql,$data) {
-  $sql = "INSERT INTO  " . DB_PREFIX . "_otoene (titel, `text`, themen_id) VALUES ('".$data["titel"]."', '".$data["text"]."', ".$data["themen_id"].")";
+  $sql = "INSERT INTO  " . DB_PREFIX . "_otoene (titel, `text`, themen_id, bild, mp3, posttext, sortierung) VALUES ('".$data->titel."', '".$data->text."', ".$data->themen_id.", '".$data->bild."', '".$data->mp3."', '".$data->posttext."', '".$data->sortierung."')";
   return addObject($mysql, $sql);
 }
 function updateOton($mysql,$id, $data) {
-  // TODO: update
+  $sql = "UPDATE " . DB_PREFIX . "_otoene SET titel='".$data->titel."', `text`='".$data->text."', themen_id='".$data->themen_id."', bild='".$data->bild."', mp3='".$data->mp3."', posttext='".$data->posttext."', sortierung='".$data->sortierung."' WHERE id=".$id;
+  return updateObject($mysql, $sql);
+}
+function changeOtonSort($mysql,$id, $data) {
+  $mySort = getField($mysql,"SELECT sortierung FROM " . DB_PREFIX . "_otoene WHERE id=".$id);
+  if($data->otonUp) {
+    if($data->reverseSort) {
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_otoene WHERE sortierung > ".$mySort." ORDER by sortierung ASC LIMIT 1");
+    } else {
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_otoene WHERE sortierung < ".$mySort." ORDER by sortierung DESC LIMIT 1");
+    }
+  } else {
+    if($data->reverseSort) {
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_otoene WHERE sortierung < ".$mySort." ORDER by sortierung DESC LIMIT 1");
+    } else {
+      $otherRow = getMultipleFields($mysql,"SELECT id, sortierung FROM " . DB_PREFIX . "_otoene WHERE sortierung > ".$mySort." ORDER by sortierung ASC LIMIT 1");
+    }
+  }
+  $mysql->query("UPDATE " . DB_PREFIX . "_otoene SET sortierung=".$otherRow[1]. " WHERE id=".$id);
+  return updateObject($mysql, "UPDATE " . DB_PREFIX . "_otoene SET sortierung=".$mySort. " WHERE id=".$otherRow[0]);
 }
 function deleteOton($mysql,$id) {
-  // TODO: delete
+  $sql = "DELETE FROM " . DB_PREFIX . "_otoene WHERE id=".$id;
+  return updateObject($mysql, $sql);
 }
 
 // User
@@ -170,14 +227,16 @@ function getUser($mysql,$id) {
   return getObject($mysql, $sql, $id);
 }
 function addUser($mysql,$data) {
-  $sql = "INSERT INTO " . DB_PREFIX . "_user (login, password) VALUES ('".$data["login"]."', SHA('".$data["password"]."',256))";
+  $sql = "INSERT INTO " . DB_PREFIX . "_user (login, password) VALUES ('".$data->login."', SHA('".$data->password."',256))";
   return addObject($mysql, $sql);
 }
 function updateUser($mysql,$id, $data) {
-  // TODO: update
+  $sql = "UPDATE " . DB_PREFIX . "_user SET password=SHA('".$data->password."',256) WHERE id=".$id;
+  return updateObject($mysql, $sql);
 }
 function deleteUser($mysql,$id) {
-  // TODO: delete
+  $sql = "DELETE FROM " . DB_PREFIX . "_user WHERE id=".$id;
+  return updateObject($mysql, $sql);
 }
 
 // global
