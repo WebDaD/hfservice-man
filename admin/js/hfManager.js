@@ -11,32 +11,32 @@
         .when('/themen', {
           controller: 'hfManager-Thema',
           controllerAs: 'ctrl',
-          templateUrl: 'templates/thema.html'
+          templateUrl: 'templates/thema/index.html'
         })
         .when('/themen/:messe', {
           controller: 'hfManager-Thema',
           controllerAs: 'ctrl',
-          templateUrl: 'templates/thema.html'
+          templateUrl: 'templates/thema/index.html'
         })
         .when('/otone', {
           controller: 'hfManager-Otone',
           controllerAs: 'ctrl',
-          templateUrl: 'templates/oton.html'
+          templateUrl: 'templates/oton/index.html'
         })
         .when('/otone/:messe', {
           controller: 'hfManager-Otone',
           controllerAs: 'ctrl',
-          templateUrl: 'templates/oton.html'
+          templateUrl: 'templates/oton/index.html'
         })
         .when('/otone/:messe/:thema', {
           controller: 'hfManager-Otone',
           controllerAs: 'ctrl',
-          templateUrl: 'templates/oton.html'
+          templateUrl: 'templates/oton/index.html'
         })
         .when('/user', {
           controller: 'hfManager-User',
           controllerAs: 'ctrl',
-          templateUrl: 'templates/user.html'
+          templateUrl: 'templates/user/index.html'
         })
         .otherwise({ redirectTo: '/messen' })
     }])

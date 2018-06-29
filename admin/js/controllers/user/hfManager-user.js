@@ -5,14 +5,18 @@
       var self = this
       self.users = []
 
-      self.isLoading = true
+      self.isLoading = false
       self.loadUsers = function () {
         hfManagerDataProvider.user().then(function (user) {
-          self.user = user.data
+          if (Array.isArray(user.data)) {
+            self.users = user.data
+          } else {
+            self.users = [user.data]
+          }
           self.isLoading = false
         })
       }
-      self.addMesse = function () {
+      self.addUser = function () {
         var modalInstance = $uibModal.open({
           animation: false,
           size: 'lg',
