@@ -1,0 +1,28 @@
+<h1>User</h1>
+<div class="spinner" ng-show="ctrl.isLoading"></div>
+<div class="table-responsive" ng-show="!ctrl.isLoading">
+  <table class="table table-bordered table-striped table-hover table-sm" emit-last-repeater-element>
+    <thead>
+      <th>ID</th>
+      <th>Login</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="row in ctrl.users" emit-last-repeater-element>
+        <td>{{row.id}}</td>
+        <td>{{row.login}}</td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm" ng-click="ctrl.editUser(row)" title="Bearbeiten">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.deleteUser(row)" title="Löschen">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button type="button" class="btn btn-primary plusButton" ng-click="ctrl.addUser()" ng-show="!ctrl.isLoading">
+  <i class="fa fa-plus"></i>
+</button>

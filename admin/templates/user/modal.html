@@ -1,0 +1,44 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ctrl.title}}</h5>
+  <button type="button" class="close" aria-label="Schließen" ng-click="ctrl.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="user-id">ID</label>
+    </div>
+    <input type="text" class="form-static form-control" id="id" placeholder="ID des Users" ng-model="ctrl.user.id" aria-label="ID des Users"
+      aria-describedby="user-id" disabled>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="user-login">Login</label>
+    </div>
+    <input type="text" class="form-control" id="login" placeholder="Login des Users" ng-model="ctrl.user.login" aria-label="Login des Users"
+      aria-describedby="user-titel" ng-disabled="ctrl.disabled" required ng-class="{'is-invalid': !ctrl.user.login && ctrl.error, 'is-valid':ctrl.user.login && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.user.login && ctrl.error">
+        Login ist leer
+      </div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="user-password">Passwort</label>
+    </div>
+    <input type="password" class="form-control" id="password" placeholder="Password des Users" ng-model="ctrl.user.password" aria-label="Password des Users"
+      aria-describedby="user-password" ng-disabled="ctrl.disabled" required ng-class="{'is-invalid': !ctrl.user.password && ctrl.error, 'is-valid':ctrl.user.password && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.user.password && ctrl.error">
+        Password ist leer
+      </div>
+  </div>
+  <p ng-show="ctrl.deletion">Wollen Sie wirklich die Messe {{ctrl.messe.titel}} löschen?</p>
+  <div class="alert alert-danger" role="alert" ng-show="ctrl.error">
+    {{ctrl.errorText}}
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" ng-click="ctrl.close()">{{ctrl.cancel}}</button>
+  <button ng-show="!ctrl.disabled && !ctrl.deletion" type="button" class="btn btn-primary" ng-click="ctrl.save()">{{ctrl.saveButton}}</button>
+  <button ng-show="ctrl.deletion" type="button" class="btn btn-danger" ng-click="ctrl.delete()">Löschen</button>
+</div>
