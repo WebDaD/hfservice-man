@@ -4,9 +4,18 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="filter-messe">Messe:</span>
   </div>
-  <select class="custom-select form-control" ng-model="ctrl.sortFilter" aria-label="MesseFilter" aria-describedby="filter-messe">
+  <select class="custom-select form-control" ng-model="ctrl.sortFilterMesse" aria-label="MesseFilter" aria-describedby="filter-messe">
     <option value="">--- Auswahl ---</option>
     <option ng-repeat="option in ctrl.messen" value="{{option.slug}}">{{option.titel}}</option>
+  </select>
+</div>
+<div class="input-group mb-3" ng-show="!ctrl.isLoading">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="filter-thema">Thema:</span>
+  </div>
+  <select class="custom-select form-control" ng-model="ctrl.sortFilterThema" aria-label="Themen-Filter" aria-describedby="filter-thema">
+    <option value="">--- Auswahl ---</option>
+    <option ng-repeat="option in ctrl.themen | filter:{messe:ctrl.sortFilterMesse}" value="{{option.titel}}">{{option.titel}}</option>
   </select>
 </div>
 <div class="table-responsive" ng-show="!ctrl.isLoading">
@@ -34,39 +43,53 @@
         </a>
       </th>
       <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'thema'; ctrl.sortReverse = !ctrl.sortReverse">
+          Thema
+          <span ng-show="ctrl.sortType == 'thema' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'thema' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
         <a class="btn btn-link" ng-click="ctrl.sortType = 'sortierung'; ctrl.sortReverse = !ctrl.sortReverse">
           Sortierung
           <span ng-show="ctrl.sortType == 'sortierung' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
           <span ng-show="ctrl.sortType == 'sortierung' && ctrl.sortReverse" class="fa fa-caret-up"></span>
         </a>
       </th>
+      <th ng-show="ctrl.sortType == 'sortierung'"></th>
       <th></th>
     </thead>
     <tbody>
-      <tr ng-repeat="row in ctrl.themen | orderBy:ctrl.sortType:ctrl.sortReverse | filter:{messe:ctrl.sortFilter}" emit-last-repeater-element>
+      <tr ng-repeat="row in ctrl.otone | orderBy:ctrl.sortType:ctrl.sortReverse | filter:{messe:ctrl.sortFilterMesse, thema:ctrl.sortFilterThema }" emit-last-repeater-element>
         <td>{{row.id}}</td>
         <td>{{row.titel}}</td>
         <td>{{row.messe}}</td>
+        <td>{{row.thema}}</td>
         <td>{{row.sortierung}}</td>
+        <td ng-show="ctrl.sortType == 'sortierung'">
+          <button ng-show="!ctrl.topOton(row)" type="button" class="btn btn-info" ng-click="ctrl.otonUp(row)" title="Hoch">
+            <i class="fa fa-chevron-up"></i>
+          </button>
+          <button ng-show="!ctrl.bottomOton(row)" type="button" class="btn btn-info" ng-click="ctrl.otonDown(row)" title="Runter">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        </td>
         <td>
-          <button type="button" class="btn btn-info btn-sm" ng-click="ctrl.showThema(row)" title="Anzeigen">
+          <button type="button" class="btn btn-info btn-sm" ng-click="ctrl.showOton(row)" title="Anzeigen">
             <i class="fa fa-search"></i>
           </button>
-          <button type="button" class="btn btn-primary btn-sm" ng-click="ctrl.editThema(row)" title="Bearbeiten">
+          <button type="button" class="btn btn-primary btn-sm" ng-click="ctrl.editOton(row)" title="Bearbeiten">
             <i class="fa fa-edit"></i>
           </button>
-          <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.deleteThema(row)" title="Löschen">
+          <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.deleteOton(row)" title="Löschen">
             <i class="fa fa-trash"></i>
           </button>
-          <a ng-href="#!/otone/{{row.messe}}/{{row.id}}" class="btn btn-info btn-sm" title="O-Töne">
-            <i class="fa fa-chevron-right"></i>
-          </a>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
-<button type="button" class="btn btn-primary plusButton" ng-click="ctrl.addThema()" ng-show="!ctrl.isLoading">
+<button type="button" class="btn btn-primary plusButton" ng-click="ctrl.addOton()" ng-show="!ctrl.isLoading">
   <i class="fa fa-plus"></i>
-  Neues Thema
+  Neuer O-Ton
 </button>

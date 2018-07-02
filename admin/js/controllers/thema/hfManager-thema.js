@@ -35,7 +35,8 @@
                 disabled: false,
                 thema: {},
                 deletion: false,
-                messe: self.sortFilter
+                messe: self.sortFilter,
+                messen: self.messen
               }
             }
           }
@@ -61,7 +62,8 @@
                 disabled: true,
                 thema: thema,
                 deletion: false,
-                messe: self.sortFilter
+                messe: self.sortFilter,
+                messen: self.messen
               }
             }
           }
@@ -80,7 +82,8 @@
                 disabled: false,
                 thema: thema,
                 deletion: false,
-                messe: self.sortFilter
+                messe: self.sortFilter,
+                messen: self.messen
               }
             }
           }
@@ -106,7 +109,8 @@
                 disabled: true,
                 thema: thema,
                 deletion: true,
-                messe: self.sortFilter
+                messe: self.sortFilter,
+                messen: self.messen
               }
             }
           }

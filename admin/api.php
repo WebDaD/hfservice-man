@@ -147,11 +147,11 @@ function getThema($mysql,$id) {
   return getObject($mysql, $sql, $id);
 }
 function addThema($mysql,$data) {
-  $sql = "INSERT INTO  " . DB_PREFIX . "_themen (titel, `text`, messen_id, pdf, sortierung, youtube) VALUES ('".$data->titel."', '".$data->text."', ".$data->messen_id.", '".$data->pdf."', '".$data->sortierung."', '".$data->youtube."')";
+  $sql = "INSERT INTO  " . DB_PREFIX . "_themen (titel, `text`, messen_id, pdf, sortierung, youtube) VALUES ('".$data->titel."', '".$data->text."', ".$data->messe.", '".$data->pdf."', '".$data->sortierung."', '".$data->youtube."')";
   return addObject($mysql, $sql);
 }
 function updateThema($mysql,$id, $data) {
-  $sql = "UPDATE " . DB_PREFIX . "_themen SET titel='".$data->titel."', `text`='".$data->text."', messen_id='".$data->messen_id."', pdf='".$data->pdf."', sortierung='".$data->sortierung."', youtube='".$data->youtube."' WHERE id=".$id;
+  $sql = "UPDATE " . DB_PREFIX . "_themen SET titel='".$data->titel."', `text`='".$data->text."', messen_id='".$data->messe."', pdf='".$data->pdf."', sortierung='".$data->sortierung."', youtube='".$data->youtube."' WHERE id=".$id;
   return updateObject($mysql, $sql);
 }
 function changeThemaSort($mysql,$id, $data) {
@@ -183,7 +183,7 @@ function getOton($mysql,$id) {
   if($id) {
     $where = " WHERE id=".$id;
   }
-  $sql = "SELECT o.id, o.titel, o.`text`, o.bild, o.themen_id, o.mp3, o.upload, o.posttext, o.sortierung, t.titel as thema, t.id AS thema.id, m.slug AS messe FROM " . DB_PREFIX . "_otoene o," . DB_PREFIX . "_themen t, " . DB_PREFIX . "_messen m WHERE m.id=t.messen_id AND t.id=o.themen.id".$where;
+  $sql = "SELECT o.id, o.titel, o.`text`, o.bild, o.themen_id, o.mp3, o.upload, o.posttext, o.sortierung, t.titel as thema, t.id AS thema_id, m.slug AS messe FROM " . DB_PREFIX . "_otoene o," . DB_PREFIX . "_themen t, " . DB_PREFIX . "_messen m WHERE m.id=t.messen_id AND t.id=o.themen_id".$where;
   return getObject($mysql, $sql, $id);
 }
 function addOton($mysql,$data) {

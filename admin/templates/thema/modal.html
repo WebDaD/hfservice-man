@@ -1,0 +1,81 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ctrl.title}}</h5>
+  <button type="button" class="close" aria-label="Schließen" ng-click="ctrl.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="thema-id">ID</label>
+    </div>
+    <input type="text" class="form-static form-control" id="id" placeholder="ID des Thema" ng-model="ctrl.thema.id" aria-label="ID des Thema"
+      aria-describedby="thema-id" disabled>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="thema-messe">Messe</label>
+    </div>
+    <select class="custom-select form-control" ng-model="ctrl.thema.messe" aria-label="MesseFilter" aria-describedby="thema-messe" ng-disabled="ctrl.disabled">
+      <option value="">--- Auswahl ---</option>
+      <option ng-repeat="option in ctrl.messen" value="{{option.slug}}">{{option.titel}}</option>
+    </select>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="thema-titel">Titel</label>
+    </div>
+    <input type="text" class="form-control" id="titel" placeholder="Titel des Thema" ng-model="ctrl.thema.titel" aria-label="Titel des Thema"
+      aria-describedby="thema-titel" ng-disabled="ctrl.disabled" required ng-class="{'is-invalid': !ctrl.thema.titel && ctrl.error, 'is-valid':ctrl.thema.titel && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.thema.titel && ctrl.error">
+        Titel ist leer
+      </div>
+  </div>
+
+
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="thema-text">Text</label>
+    </div>
+    <textarea class="form-control" id="text" placeholder="Text des Thema" ng-model="ctrl.thema.text" aria-label="Text des Thema"
+      aria-describedby="thema-text" ng-disabled="ctrl.disabled"></textarea>
+  </div>
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="thema-pdf">PDF</label>
+    </div>
+    <div class="custom-file">
+      <input ng-show="!ctrl.disabled" type="file" accept="application/pdf" class="custom-file-input" id="pdf" placeholder="pdf der Thema" ng-model="ctrl.thema.pdf" aria-label="pdf der Thema" aria-describedby="thema-pdf" ng-disabled="ctrl.disabled" nv-file-select uploader="ctrl.uploaderPDF"/>
+      <label class="custom-file-label" for="pdf">{{ctrl.thema.pdf}}</label>
+    </div>
+    <div class="input-group-append">
+      <a ng-href="../uploads/{{ctrl.thema.pdf}}" target="_blank" class="input-group-text" ng-show="ctrl.thema.pdf">
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="thema-youtube">Youtube-Link</label>
+    </div>
+    <input type="text" class="form-control" id="youtube" placeholder="youtube des Thema" ng-model="ctrl.thema.youtube" aria-label="youtube-Link zum Thema"
+      aria-describedby="thema-youtube" ng-disabled="ctrl.disabled" ng-class="{'is-invalid': !ctrl.thema.youtube && ctrl.error, 'is-valid':ctrl.thema.youtube && ctrl.error}">
+    <div class="invalid-feedback" ng-show="!ctrl.thema.youtube && ctrl.error">
+      Link ist leer
+    </div>
+    <div class="input-group-append">
+      <a ng-href="https://www.youtube.com/embed/{{ctrl.thema.youtube}}?modestbranding=1&rel=0" target="_blank" class="input-group-text" ng-show="ctrl.thema.youtube">
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <p ng-show="ctrl.deletion">Wollen Sie wirklich das Thema {{ctrl.thema.titel}} löschen?</p>
+  <div class="alert alert-danger" role="alert" ng-show="ctrl.error">
+    {{ctrl.errorText}}
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" ng-click="ctrl.close()">{{ctrl.cancel}}</button>
+  <button ng-show="!ctrl.disabled && !ctrl.deletion" type="button" class="btn btn-primary" ng-click="ctrl.save()">{{ctrl.saveButton}}</button>
+  <button ng-show="ctrl.deletion" type="button" class="btn btn-danger" ng-click="ctrl.delete()">Löschen</button>
+</div>

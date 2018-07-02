@@ -1,0 +1,81 @@
+<h1>Themen</h1>
+<div class="spinner" ng-show="ctrl.isLoading"></div>
+<div class="input-group mb-3" ng-show="!ctrl.isLoading">
+  <div class="input-group-prepend">
+    <label class="input-group-text" id="filter-messe">Messe:</label>
+  </div>
+  <select class="custom-select form-control" ng-model="ctrl.sortFilter" aria-label="MesseFilter" aria-describedby="filter-messe">
+    <option value="">--- Auswahl ---</option>
+    <option ng-repeat="option in ctrl.messen" value="{{option.slug}}">{{option.titel}}</option>
+  </select>
+</div>
+<div class="table-responsive" ng-show="!ctrl.isLoading">
+  <table class="table table-bordered table-striped table-hover table-sm">
+    <thead>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'id'; ctrl.sortReverse = !ctrl.sortReverse">
+          ID
+          <span ng-show="ctrl.sortType == 'id' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'id' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'titel'; ctrl.sortReverse = !ctrl.sortReverse">
+          Titel
+          <span ng-show="ctrl.sortType == 'titel' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'titel' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'messe'; ctrl.sortReverse = !ctrl.sortReverse">
+          Messe
+          <span ng-show="ctrl.sortType == 'messe' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'messe' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+        <a class="btn btn-link" ng-click="ctrl.sortType = 'sortierung'; ctrl.sortReverse = !ctrl.sortReverse">
+          Sortierung
+          <span ng-show="ctrl.sortType == 'sortierung' && !ctrl.sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="ctrl.sortType == 'sortierung' && ctrl.sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th ng-show="ctrl.sortType == 'sortierung'"></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="row in ctrl.themen | orderBy:ctrl.sortType:ctrl.sortReverse | filter:{messe:ctrl.sortFilter}" emit-last-repeater-element>
+        <td>{{row.id}}</td>
+        <td>{{row.titel}}</td>
+        <td>{{row.messe}}</td>
+        <td>{{row.sortierung}}</td>
+        <td ng-show="ctrl.sortType == 'sortierung'">
+          <button ng-show="!ctrl.topThema(row)" type="button" class="btn btn-info" ng-click="ctrl.themaUp(row)" title="Hoch">
+            <i class="fa fa-chevron-up"></i>
+          </button>
+          <button ng-show="!ctrl.bottomThema(row)" type="button" class="btn btn-info" ng-click="ctrl.themaDown(row)" title="Runter">
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-info btn-sm" ng-click="ctrl.showThema(row)" title="Anzeigen">
+            <i class="fa fa-search"></i>
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" ng-click="ctrl.editThema(row)" title="Bearbeiten">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" ng-click="ctrl.deleteThema(row)" title="Löschen">
+            <i class="fa fa-trash"></i>
+          </button>
+          <a ng-href="#!/otone/{{row.messe}}/{{row.id}}" class="btn btn-info btn-sm" title="O-Töne">
+            <i class="fa fa-chevron-right"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button type="button" class="btn btn-primary plusButton" ng-click="ctrl.addThema()" ng-show="!ctrl.isLoading">
+  <i class="fa fa-plus"></i>
+  Neues Thema
+</button>

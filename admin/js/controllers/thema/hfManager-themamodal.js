@@ -15,6 +15,7 @@
       self.disabled = data.disabled
       self.deletion = data.deletion
       self.thema = data.thema || {}
+      self.messen = data.messen
       if (!self.thema.titel) {
         self.title = 'Neues Thema'
         self.cancel = 'Abbrechen'
@@ -31,6 +32,9 @@
         self.title = 'Details zu ' + self.thema.titel
         self.cancel = 'Schliessen'
         self.saveButton = 'Schliessen'
+      }
+      if (!self.thema.messe) {
+        self.thema.messe = data.messe
       }
       self.close = function () {
         $uibModalInstance.dismiss('cancel')
@@ -54,6 +58,11 @@
       }
       function updateOrInsert (id, thema) {
         if (validate()) {
+          self.messen.forEach(messe => {
+            if (messe.slug === thema.messe) {
+              thema.messe = messe.id
+            }
+          })
           if (id) {
             hfManagerDataProvider.updateThema(thema.id, thema).then(function (result) {
               $uibModalInstance.close(true)
