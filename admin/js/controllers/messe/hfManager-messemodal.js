@@ -53,28 +53,40 @@
         }
       }
       function bildUpload () {
-        self.uploaderLogo.queue[0].onSuccess = function (response, status, headers) {
-          if (self.uploaderLogo.queue.length > 0) {
+        if (self.uploaderLogo.queue.length > 0) {
+          self.uploaderLogo.queue[0].onSuccess = function (response, status, headers) {
+            if (self.uploaderPDF.queue.length > 0) {
+              themenUpload()
+            } else {
+              updateOrInsert(self.messe.id, self.messe)
+            }
+          }
+          self.uploaderLogo.queue[0].onError = function (response, status, headers) {
+            self.error = true
+            self.errorText = response
+          }
+          self.uploaderLogo.queue[0].upload()
+        } else {
+          if (self.uploaderPDF.queue.length > 0) {
             themenUpload()
           } else {
             updateOrInsert(self.messe.id, self.messe)
           }
         }
-        self.uploaderLogo.queue[0].onError = function (response, status, headers) {
-          self.error = true
-          self.errorText = response
-        }
-        self.uploaderLogo.queue[0].upload()
       }
       function themenUpload () {
-        self.uploaderPDF.queue[0].onSuccess = function (response, status, headers) {
+        if (self.uploaderPDF.queue.length > 0) {
+          self.uploaderPDF.queue[0].onSuccess = function (response, status, headers) {
+            updateOrInsert(self.messe.id, self.messe)
+          }
+          self.uploaderPDF.queue[0].onError = function (response, status, headers) {
+            self.error = true
+            self.errorText = response
+          }
+          self.uploaderPDF.queue[0].upload()
+        } else {
           updateOrInsert(self.messe.id, self.messe)
         }
-        self.uploaderPDF.queue[0].onError = function (response, status, headers) {
-          self.error = true
-          self.errorText = response
-        }
-        self.uploaderPDF.queue[0].upload()
       }
       function updateOrInsert (id, messe) {
         self.messe.kontakt_aktiv = self.messe.kontakt_aktiv ? '1' : '0'
@@ -105,7 +117,7 @@
             !self.messe.slug ||
             !self.messe.bild ||
             !self.messe.link ||
-            !self.messe.datum || 
+            !self.messe.datum ||
             !self.messe.enddatum) {
           return false
         } else {

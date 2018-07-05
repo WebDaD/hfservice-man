@@ -42,6 +42,12 @@
         self.cancel = 'Schliessen'
         self.saveButton = 'Schliessen'
       }
+      if (!self.oton.messe) {
+        self.oton.messe = data.messe
+      }
+      if (!self.oton.thema) {
+        self.oton.thema = data.thema
+      }
       self.close = function () {
         $uibModalInstance.dismiss('cancel')
       }
@@ -53,31 +59,53 @@
         }
       }
       function bildUpload () {
-        self.uploaderbild.queue[0].onSuccess = function (response, status, headers) {
-          if (self.uploaderbild.queue.length > 0) {
+        if (self.uploaderbild.queue.length > 0) {
+          self.uploaderbild.queue[0].onSuccess = function (response, status, headers) {
+            if (self.uploaderMP3.queue.length > 0) {
+              mp3Upload()
+            } else {
+              updateOrInsert(self.oton.id, self.oton)
+            }
+          }
+          self.uploaderbild.queue[0].onError = function (response, status, headers) {
+            self.error = true
+            self.errorText = response
+          }
+          self.uploaderbild.queue[0].upload()
+        } else {
+          if (self.uploaderMP3.queue.length > 0) {
             mp3Upload()
           } else {
             updateOrInsert(self.oton.id, self.oton)
           }
         }
-        self.uploaderbild.queue[0].onError = function (response, status, headers) {
-          self.error = true
-          self.errorText = response
-        }
-        self.uploaderbild.queue[0].upload()
       }
       function mp3Upload () {
-        self.uploaderMP3.queue[0].onSuccess = function (response, status, headers) {
+        if (self.uploaderMP3.queue.length > 0) {
+          self.uploaderMP3.queue[0].onSuccess = function (response, status, headers) {
+            updateOrInsert(self.oton.id, self.oton)
+          }
+          self.uploaderMP3.queue[0].onError = function (response, status, headers) {
+            self.error = true
+            self.errorText = response
+          }
+          self.uploaderMP3.queue[0].upload()
+        } else {
           updateOrInsert(self.oton.id, self.oton)
         }
-        self.uploaderMP3.queue[0].onError = function (response, status, headers) {
-          self.error = true
-          self.errorText = response
-        }
-        self.uploaderMP3.queue[0].upload()
       }
       function updateOrInsert (id, oton) {
         if (validate()) {
+          self.messen.forEach(messe => {
+            if (messe.slug === oton.messe) {
+              oton.messe = messe.id
+            }
+          })
+          self.themen.forEach(thema => {
+            if (thema.titel === oton.thema) {
+              oton.thema = thema.id
+            }
+          })
           if (id) {
             hfManagerDataProvider.updateOton(oton.id, oton).then(function (result) {
               $uibModalInstance.close(true)
@@ -100,7 +128,9 @@
       }
       function validate () {
         if (!self.oton.titel ||
-            !self.oton.themen_id) {
+            !self.oton.text ||
+            !self.oton.thema ||
+            !self.oton.messe) {
           return false
         } else {
           return true

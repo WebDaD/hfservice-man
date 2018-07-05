@@ -185,7 +185,7 @@ function getOton($mysql,$id) {
   return getObject($mysql, $sql, $id);
 }
 function addOton($mysql,$data) {
-  $sql = "INSERT INTO  " . DB_PREFIX . "_otoene (titel, `text`, themen_id, bild, mp3, posttext, sortierung) VALUES ('".$data->titel."', '".$data->text."', ".$data->themen_id.", '".$data->bild."', '".$data->mp3."', '".$data->posttext."', '".$data->sortierung."')";
+  $sql = "INSERT INTO  " . DB_PREFIX . "_otoene (titel, `text`, themen_id, bild, mp3, posttext, sortierung) VALUES ('".$data->titel."', '".$data->text."', ".$data->thema.", '".$data->bild."', '".$data->mp3."', '".$data->posttext."', '".$data->sortierung."')";
   return addObject($mysql, $sql);
 }
 function updateOton($mysql,$id, $data) {

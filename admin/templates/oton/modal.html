@@ -27,7 +27,7 @@
     </div>
     <select class="custom-select form-control" ng-model="ctrl.oton.thema" aria-label="ThemaFilter" aria-describedby="oton-thema" ng-disabled="ctrl.disabled">
       <option value="">--- Auswahl ---</option>
-      <option ng-repeat="option in ctrl.themen" value="{{option.id}}">{{option.titel}}</option>
+      <option ng-repeat="option in ctrl.themen" value="{{option.titel}}">{{option.titel}}</option>
     </select>
   </div>
   <div class="input-group mb-3">
@@ -45,7 +45,10 @@
       <label class="input-group-text" id="oton-text">Text</label>
     </div>
     <textarea class="form-control" id="text" placeholder="Text des O-Tons" ng-model="ctrl.oton.text" aria-label="Text des O-Tons"
-      aria-describedby="oton-text" ng-disabled="ctrl.disabled"></textarea>
+      aria-describedby="oton-text" ng-disabled="ctrl.disabled" required ng-class="{'is-invalid': !ctrl.oton.text && ctrl.error, 'is-valid':ctrl.oton.text && ctrl.error}"></textarea>
+      <div class="invalid-feedback" ng-show="!ctrl.oton.text && ctrl.error">
+        Text ist leer
+      </div>
   </div>
   <div class="input-group mb-3" ng-show="!ctrl.deletion">
     <div class="input-group-prepend">

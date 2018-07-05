@@ -14,13 +14,20 @@
       self.sortReverse = false // set the default sort order
 
       self.sortFilterMesse = $routeParams.messe || '' // set by slug or nothing
-      self.sortFilterThema = $routeParams.thema || '' // set by id or nothing
 
       hfManagerDataProvider.messen().then(function (messen) {
         self.messen = messen.data
       })
       hfManagerDataProvider.themen().then(function (themen) {
         self.themen = themen.data
+        if ($routeParams.thema) {
+          self.sortFilterThema = ''
+          self.themen.forEach(thema => {
+            if (thema.id === $routeParams.thema) {
+              self.sortFilterThema = thema.titel
+            }
+          })
+        }
       })
       self.loadOtone = function () {
         hfManagerDataProvider.otone().then(function (otone) {
