@@ -25,8 +25,7 @@ if ($mysql->connect_errno) {
 }
 $mysql->query("SET NAMES utf8"); 
 
-/* TODO: activate!
-if ($method == "GET" && $object == "login") {
+if ($method == "POST" && $object == "login") {
   echo login($mysql, $data);
   exit(0);
 } else {
@@ -34,7 +33,6 @@ if ($method == "GET" && $object == "login") {
     die("{error:'Token Error.'}");
   }
 }
-*/
 switch($object) {
   case "messe":
     switch($method) {
@@ -294,22 +292,21 @@ function updateObject($mysql, $sql) {
 }
 
 function login($mysql, $data) {
-  $sql = "SELECT login, password FROM " . DB_PREFIX . "_user WHERE login=".$data["login"];
+  $sql = "SELECT LOWER(login) as login, LOWER(password) as password FROM " . DB_PREFIX . "_user WHERE login='".strtolower($data->login)."'";
   $result = $mysql->query($sql);
   if ($result->num_rows == 1) {
     $res = $result->fetch_assoc();
-    if (hash('sha256', $data["password"]) == $res["password"]) {
-      return calcToken($data["login"], $data["password"]);
+    if (hash('sha256', strtolower($data->password)) == strtolower($res["password"])) {
+      return json_encode(array('token' =>calcToken(strtolower($data->login), strtolower($data->password))));
     } else {
-      return json_encode(array('error' =>'Login Error.'));
+      return json_encode(array('error' =>'Login Error'));
     }
-    return $token == calcToken($data["login"], $data["password"]);
   } else {
-    return json_encode(array('error' =>'Login Error.'));
+    return json_encode(array('error' =>'Login Error'));
   }
 }
 function checkToken($mysql, $userId, $token) {
-  $sql = "SELECT login, password FROM " . DB_PREFIX . "_user WHERE id=".$userId;
+  $sql = "SELECT login, password FROM " . DB_PREFIX . "_user WHERE login=".$userId;
   $result = $mysql->query($sql);
   if ($result->num_rows == 1) {
     $data = $result->fetch_assoc();

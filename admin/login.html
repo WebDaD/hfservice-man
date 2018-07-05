@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta name="author" content="Dominik Sigmund" />
+  <meta name="publisher" content="Dominik Sigmund" />
+  <meta name="copyright" content="Dominik Sigmund" />
+  <meta name="description" content="Website zur Verwaltung des Messe-Radio München" />
+  <meta name="page-topic" content="Forschung Technik" />
+  <meta name="page-type" content="HTML-Formular" />
+  <meta name="audience" content="All" />
+  <meta http-equiv="content-language" content="de" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192" />
+  <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16" />
+  <link rel="manifest" href="/images/manifest.json" />
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#3F51B5" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#3F51B5" />
+  <meta name="msapplication-TileImage" content="/images/mstile-144x144.png" />
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+  <meta name="theme-color" content="#3F51B5" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="application-name" content="hfManager" />
+  <title>HFServiceMan :: Login</title>
+</head>
+<body class="no-skin">
+  <div class="container">
+    <div class="card card-container">
+        <p id="profile-name" class="profile-name-card">HFManager Login</p>
+        <form class="form-signin">
+            <input type="text" id="user" class="form-control" placeholder="username" required autofocus>
+            <input type="password" id="password" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" id="login">Let Me In.</button>
+        </form><!-- /form -->
+        <div class="alert alert-danger" role="alert" id="error" style="display:none;">
+          Error on Login
+        </div>
+    </div><!-- /card-container -->
+  </div>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- Login specific scripts-->
+  <script src="js/login.js"></script>
+</body>
+
+</html>

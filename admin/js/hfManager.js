@@ -43,7 +43,7 @@
     .run(['$cookies', '$rootScope', '$location', '$http', function ($cookies, $rootScope, $location, $http) {
       $rootScope.$on('$locationChangeStart', function (event, next, current) {
         if ($rootScope.id === '' || $rootScope.token === '') {
-          window.location = '/login'
+          window.location = '/admin/login.html'
         }
       })
       $rootScope.isActive = function (viewLocation) { // eslint-disable-line
@@ -59,7 +59,7 @@
         $rootScope.token = ''
         $http.defaults.headers.common.email = ''
         $http.defaults.headers.common.token = ''
-        window.location = '/login'
+        window.location = '/admin/login.html'
       }
       $rootScope.logout = function () { // eslint-disable-line
         $cookies.remove('hfManager-id')
@@ -68,7 +68,7 @@
         $rootScope.token = ''
         $http.defaults.headers.common.email = ''
         $http.defaults.headers.common.token = ''
-        $location.path('/login')
+        $location.path('/admin/login.html')
       }
     }])
 }())

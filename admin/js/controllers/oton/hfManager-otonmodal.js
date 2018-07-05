@@ -23,6 +23,8 @@
       self.disabled = data.disabled
       self.deletion = data.deletion
       self.oton = data.oton || {}
+      self.messen = data.messen
+      self.themen = data.themen
       if (!self.oton.titel) {
         self.title = 'Neuer O-Ton'
         self.cancel = 'Abbrechen'

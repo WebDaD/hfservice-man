@@ -46,7 +46,9 @@
                 oton: {},
                 deletion: false,
                 thema: self.sortFilterThema,
-                messe: self.sortFilterMesse
+                messe: self.sortFilterMesse,
+                messen: self.messen,
+                themen: self.themen
               }
             }
           }
@@ -73,7 +75,9 @@
                 oton: oton,
                 deletion: false,
                 thema: self.sortFilterThema,
-                messe: self.sortFilterMesse
+                messe: self.sortFilterMesse,
+                messen: self.messen,
+                themen: self.themen
               }
             }
           }
@@ -93,7 +97,9 @@
                 oton: oton,
                 deletion: false,
                 thema: self.sortFilterThema,
-                messe: self.sortFilterMesse
+                messe: self.sortFilterMesse,
+                messen: self.messen,
+                themen: self.themen
               }
             }
           }
@@ -120,7 +126,9 @@
                 oton: oton,
                 deletion: true,
                 thema: self.sortFilterThema,
-                messe: self.sortFilterMesse
+                messe: self.sortFilterMesse,
+                messen: self.messen,
+                themen: self.themen
               }
             }
           }

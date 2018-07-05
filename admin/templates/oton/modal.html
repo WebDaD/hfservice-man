@@ -1,0 +1,94 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ctrl.title}}</h5>
+  <button type="button" class="close" aria-label="Schließen" ng-click="ctrl.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="oton-id">ID</label>
+    </div>
+    <input type="text" class="form-static form-control" id="id" placeholder="ID des O-Tons" ng-model="ctrl.oton.id" aria-label="ID des O-Tons"
+      aria-describedby="oton-id" disabled>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="oton-messe">Messe</label>
+    </div>
+    <select class="custom-select form-control" ng-model="ctrl.oton.messe" aria-label="MesseFilter" aria-describedby="oton-messe" ng-disabled="ctrl.disabled">
+      <option value="">--- Auswahl ---</option>
+      <option ng-repeat="option in ctrl.messen" value="{{option.slug}}">{{option.titel}}</option>
+    </select>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="oton-thema">Thema</label>
+    </div>
+    <select class="custom-select form-control" ng-model="ctrl.oton.thema" aria-label="ThemaFilter" aria-describedby="oton-thema" ng-disabled="ctrl.disabled">
+      <option value="">--- Auswahl ---</option>
+      <option ng-repeat="option in ctrl.themen" value="{{option.id}}">{{option.titel}}</option>
+    </select>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="oton-titel">Titel</label>
+    </div>
+    <input type="text" class="form-control" id="titel" placeholder="Titel des O-Tons" ng-model="ctrl.oton.titel" aria-label="Titel des Thema"
+      aria-describedby="oton-titel" ng-disabled="ctrl.disabled" required ng-class="{'is-invalid': !ctrl.oton.titel && ctrl.error, 'is-valid':ctrl.oton.titel && ctrl.error}">
+      <div class="invalid-feedback" ng-show="!ctrl.oton.titel && ctrl.error">
+        Titel ist leer
+      </div>
+  </div>
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="oton-text">Text</label>
+    </div>
+    <textarea class="form-control" id="text" placeholder="Text des O-Tons" ng-model="ctrl.oton.text" aria-label="Text des O-Tons"
+      aria-describedby="oton-text" ng-disabled="ctrl.disabled"></textarea>
+  </div>
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="oton-posttext">Nach-Text</label>
+    </div>
+    <textarea class="form-control" id="posttext" placeholder="Nach-Text des O-Tons" ng-model="ctrl.oton.posttext" aria-label="Nach-Text des O-Tons"
+      aria-describedby="oton-posttext" ng-disabled="ctrl.disabled"></textarea>
+  </div>
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="oton-logo">Bild</label>
+    </div>
+    <div class="custom-file">
+      <input type="file" accept="image/*" class="custom-file-input" id="bild" placeholder="Bild zum O-Ton" ng-model="ctrl.oton.bild" aria-label="Bild zum O-Ton" aria-describedby="oton-logo" ng-disabled="ctrl.disabled" nv-file-select uploader="ctrl.uploaderbild"/>
+      <label class="custom-file-label" for="bild">{{ctrl.oton.bild}}</label>
+    </div>
+    <div class="input-group-append">
+      <a ng-href="../uploads/{{ctrl.oton.bild}}" target="_blank" class="input-group-text" ng-show="ctrl.oton.bild">
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="oton-mp3">MP3</label>
+    </div>
+    <div class="custom-file">
+      <input type="file" accept="audio/mpeg3" class="custom-file-input" id="mp3" placeholder="Mp3 zum O-Ton" ng-model="ctrl.oton.mp3" aria-label="MP3 zum O-Ton" aria-describedby="oton-logo" ng-disabled="ctrl.disabled" nv-file-select uploader="ctrl.uploaderMP3"/>
+      <label class="custom-file-label" for="mp3">{{ctrl.oton.mp3}}</label>
+    </div>
+    <div class="input-group-append">
+      <a ng-href="../uploads/{{ctrl.oton.mp3}}" target="_blank" class="input-group-text" ng-show="ctrl.oton.mp3">
+        <i class="fa fa-link"></i>
+      </a>
+    </div>
+  </div>
+  <p ng-show="ctrl.deletion">Wollen Sie wirklich den O-Ton {{ctrl.oton.titel}} löschen?</p>
+  <div class="alert alert-danger" role="alert" ng-show="ctrl.error">
+    {{ctrl.errorText}}
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" ng-click="ctrl.close()">{{ctrl.cancel}}</button>
+  <button ng-show="!ctrl.disabled && !ctrl.deletion" type="button" class="btn btn-primary" ng-click="ctrl.save()">{{ctrl.saveButton}}</button>
+  <button ng-show="ctrl.deletion" type="button" class="btn btn-danger" ng-click="ctrl.delete()">Löschen</button>
+</div>
