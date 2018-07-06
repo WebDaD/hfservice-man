@@ -14,6 +14,7 @@
       )
       self.disabled = data.disabled
       self.deletion = data.deletion
+      self.force = false
       self.thema = data.thema || {}
       self.messen = data.messen
       if (!self.thema.titel) {
@@ -94,7 +95,7 @@
         }
       }
       self.delete = function () {
-        hfManagerDataProvider.deleteThema(self.thema.id).then(function (result) {
+        hfManagerDataProvider.deleteThema(self.thema.id, self.force).then(function (result) {
           $uibModalInstance.close(true)
         }, function (error) {
           self.error = true

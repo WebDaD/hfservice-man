@@ -54,7 +54,7 @@
       </a>
     </div>
   </div>
-  <div class="input-group mb-3">
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
     <div class="input-group-prepend">
       <label class="input-group-text" id="thema-youtube">Youtube-Link</label>
     </div>
@@ -69,7 +69,17 @@
       </a>
     </div>
   </div>
-  <p ng-show="ctrl.deletion">Wollen Sie wirklich das Thema {{ctrl.thema.titel}} löschen?</p>
+  <p ng-show="ctrl.deletion">Wollen Sie wirklich das Thema <i>"{{ctrl.thema.titel}}"</i> löschen?</p>
+  <div class="input-group mb-3" ng-show="ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="label-force">Durchlöschen</label>
+    </div>
+    <label class="switch">
+      <input type="checkbox" class="form-control" id="force" placeholder="Durchlöschen?" ng-model="ctrl.force" aria-label="Durchlöschen?"
+      aria-describedby="label-force">
+      <span class="slider"></span>
+    </label>
+  </div>
   <div class="alert alert-danger" role="alert" ng-show="ctrl.error">
     {{ctrl.errorText}}
   </div>

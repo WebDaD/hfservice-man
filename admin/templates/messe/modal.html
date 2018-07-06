@@ -126,6 +126,16 @@
     </label>
   </div>
   <p ng-show="ctrl.deletion">Wollen Sie wirklich die Messe {{ctrl.messe.titel}} löschen?</p>
+  <div class="input-group mb-3" ng-show="ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="label-force">Durchlöschen</label>
+    </div>
+    <label class="switch">
+      <input type="checkbox" class="form-control" id="force" placeholder="Durchlöschen?" ng-model="ctrl.force" aria-label="Durchlöschen?"
+      aria-describedby="label-force">
+      <span class="slider"></span>
+    </label>
+  </div>
   <div class="alert alert-danger" role="alert" ng-show="ctrl.error">
     {{ctrl.errorText}}
   </div>

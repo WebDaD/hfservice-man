@@ -43,9 +43,9 @@
               method: 'PUT', url: restURL + '?object=messe&id=' + id, data: messe
             })
           },
-          deleteMesse: function (id) {
+          deleteMesse: function (id, force) {
             return $http({
-              method: 'DELETE', url: restURL + '?object=messe&id=' + id
+              method: 'DELETE', url: restURL + '?object=messe&id=' + id + (force ? '&force' : '')
             })
           },
           changeMesseSort: function (id, reverseSort, messeUp) {
@@ -93,9 +93,9 @@
               method: 'PUT', url: restURL + '?object=thema&id=' + id, data: thema
             })
           },
-          deleteThema: function (id) {
+          deleteThema: function (id, force) {
             return $http({
-              method: 'DELETE', url: restURL + '?object=thema&id=' + id
+              method: 'DELETE', url: restURL + '?object=thema&id=' + id + (force ? '&force' : '')
             })
           },
           changeThemaSort: function (id, reverseSort, themaUp) {

@@ -56,7 +56,7 @@
                 messe: self.sortFilterMesse,
                 messen: self.messen,
                 themen: self.themen,
-                sort: self.maxOtonSort() + 1
+                sort: parseInt(self.maxOtonSort(self.sortFilterThema)) + 1
               }
             }
           }
@@ -184,10 +184,10 @@
         })
         return min
       }
-      self.maxOtonSort = function () {
+      self.maxOtonSort = function (filter) {
         var max = 1
         self.otone.forEach(oton => {
-          if (oton.sortierung > max) {
+          if (oton.sortierung > max && (filter && oton.thema === filter)) {
             max = oton.sortierung
           }
         })

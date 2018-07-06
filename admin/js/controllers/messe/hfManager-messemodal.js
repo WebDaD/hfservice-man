@@ -22,6 +22,7 @@
       )
       self.disabled = data.disabled
       self.deletion = data.deletion
+      self.force = false
       self.messe = data.messe || {}
       self.messe.kontakt_aktiv = self.messe.kontakt_aktiv === '1'
       self.messe.presseteam = self.messe.presseteam === '1'
@@ -128,7 +129,7 @@
         }
       }
       self.delete = function () {
-        hfManagerDataProvider.deleteMesse(self.messe.id).then(function (result) {
+        hfManagerDataProvider.deleteMesse(self.messe.id, self.force).then(function (result) {
           $uibModalInstance.close(true)
         }, function (error) {
           self.error = true

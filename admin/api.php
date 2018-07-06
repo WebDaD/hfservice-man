@@ -8,6 +8,7 @@ $method = $_SERVER['REQUEST_METHOD']; // 'GET', 'HEAD', 'POST', 'PUT', 'DELETE'
 $object = $_GET["object"]; // messe, thema, oton, user
 $id = $_GET["id"]; // id or empty
 $type = $_GET["type"]; // sort or empty
+$force = isset($_GET["force"]); // Used for forced deleteion: remove subelements. is true or false
 $data = json_decode(file_get_contents('php://input')); // JSON or empty
 $headers = getallheaders ();
 $token = $headers["id"]; // token
@@ -45,7 +46,7 @@ switch($object) {
           echo updateMesse($mysql,$id, $data);
         }
       break;
-      case "DELETE": echo deleteMesse($mysql,$id);break;
+      case "DELETE": echo deleteMesse($mysql,$id, $force);break;
       default: die("{error:'Method ".$method." for Object " . $object . " not supported'}");
     }
     break;
@@ -60,7 +61,7 @@ switch($object) {
           echo updateThema($mysql,$id, $data);
         }
       break;
-      case "DELETE": echo deleteThema($mysql,$id);break;
+      case "DELETE": echo deleteThema($mysql,$id, $force);break;
       default: die("{error:'Method ".$method." for Object " . $object . " not supported'}");
     }
     break;
@@ -130,7 +131,16 @@ function changeMesseSort($mysql,$id, $data) {
   $mysql->query("UPDATE " . DB_PREFIX . "_messen SET sortierung=".$otherRow[1]. " WHERE id=".$id);
   return updateObject($mysql, "UPDATE " . DB_PREFIX . "_messen SET sortierung=".$mySort. " WHERE id=".$otherRow[0]);
 }
-function deleteMesse($mysql,$id) {
+function deleteMesse($mysql,$id, $force) {
+  if($force) {
+    $getSQL = "SELECT id FROM  ". DB_PREFIX . "_themen WHERE messen_id=".$id;
+    $result = $mysql->query($getSQL);
+    if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        deleteThema($mysql, $row["id"], true);
+      }
+    }
+  }
   $sql = "DELETE FROM " . DB_PREFIX . "_messen WHERE id=".$id;
   return updateObject($mysql, $sql);
 }
@@ -170,7 +180,10 @@ function changeThemaSort($mysql,$id, $data) {
   $mysql->query("UPDATE " . DB_PREFIX . "_themen SET sortierung=".$otherRow[1]. " WHERE id=".$id);
   return updateObject($mysql, "UPDATE " . DB_PREFIX . "_themen SET sortierung=".$mySort. " WHERE id=".$otherRow[0]);
 }
-function deleteThema($mysql,$id) {
+function deleteThema($mysql,$id, $force) {
+  if($force) {
+    $mysql->query("DELETE FROM " . DB_PREFIX . "_otoene WHERE themen_id=".$id); 
+  }
   $sql = "DELETE FROM " . DB_PREFIX . "_themen WHERE id=".$id;
   return updateObject($mysql, $sql);
 }

@@ -37,7 +37,7 @@
                 deletion: false,
                 messe: self.sortFilter,
                 messen: self.messen,
-                sort: self.maxThemaSort() + 1
+                sort: parseInt(self.maxThemaSort(self.sortFilter)) + 1
               }
             }
           }
@@ -152,17 +152,17 @@
 
       self.minThemaSort = function () {
         var min = Number.MAX_SAFE_INTEGER
-        self.theman.forEach(thema => {
+        self.themen.forEach(thema => {
           if (thema.sortierung < min) {
             min = thema.sortierung
           }
         })
         return min
       }
-      self.maxThemaSort = function () {
+      self.maxThemaSort = function (filter) {
         var max = 1
-        self.theman.forEach(thema => {
-          if (thema.sortierung > max) {
+        self.themen.forEach(thema => {
+          if (thema.sortierung > max && (filter && thema.messe === filter)) {
             max = thema.sortierung
           }
         })
