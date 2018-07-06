@@ -55,7 +55,8 @@
                 thema: self.sortFilterThema,
                 messe: self.sortFilterMesse,
                 messen: self.messen,
-                themen: self.themen
+                themen: self.themen,
+                sort: self.maxOtonSort() + 1
               }
             }
           }

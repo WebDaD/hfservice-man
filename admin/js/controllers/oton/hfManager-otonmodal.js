@@ -48,6 +48,9 @@
       if (!self.oton.thema) {
         self.oton.thema = data.thema
       }
+      if (!self.oton.sortierung) {
+        self.oton.sortierung = data.sort
+      }
       self.close = function () {
         $uibModalInstance.dismiss('cancel')
       }

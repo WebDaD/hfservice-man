@@ -42,6 +42,9 @@
         self.cancel = 'Schliessen'
         self.saveButton = 'Schliessen'
       }
+      if (!self.messe.sortierung) {
+        self.messe.sortierung = data.sort
+      }
       self.close = function () {
         $uibModalInstance.dismiss('cancel')
       }

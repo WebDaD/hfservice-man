@@ -36,6 +36,9 @@
       if (!self.thema.messe) {
         self.thema.messe = data.messe
       }
+      if (!self.thema.sortierung) {
+        self.thema.sortierung = data.sort
+      }
       self.close = function () {
         $uibModalInstance.dismiss('cancel')
       }

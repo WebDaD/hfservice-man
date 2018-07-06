@@ -33,7 +33,8 @@
               return {
                 disabled: false,
                 messe: {},
-                deletion: false
+                deletion: false,
+                sort: self.maxMesseSort() + 1
               }
             }
           }

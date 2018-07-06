@@ -36,7 +36,8 @@
                 thema: {},
                 deletion: false,
                 messe: self.sortFilter,
-                messen: self.messen
+                messen: self.messen,
+                sort: self.maxThemaSort() + 1
               }
             }
           }
