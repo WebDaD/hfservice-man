@@ -8,7 +8,7 @@
         {
           url: '/admin/upload.php',
           onAfterAddingFile: function (item) {
-            self.messe.pdf = item.file.name
+            self.thema.pdf = item.file.name
           }
         }
       )
