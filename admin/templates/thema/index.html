@@ -44,7 +44,7 @@
       <th></th>
     </thead>
     <tbody>
-      <tr ng-repeat="row in ctrl.themen | orderBy:ctrl.sortType:ctrl.sortReverse | filter:{messe:ctrl.sortFilter}" emit-last-repeater-element>
+      <tr ng-repeat="row in ctrl.themen | orderBy:ctrl.sortType:ctrl.sortReverse | filter:{messe:ctrl.sortFilter} : ctrl.sortFilter !== ''" emit-last-repeater-element>
         <td>{{row.id}}</td>
         <td>{{row.titel}}</td>
         <td>{{row.messe}}</td>
