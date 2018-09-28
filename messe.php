@@ -23,7 +23,7 @@ if ($result->num_rows == 1) {
 }
 
 $themen = array();
-$sql_themen = "SELECT t.id, t.titel, t.text, t.pdf, t.youtube FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_messen m  WHERE t.messen_id = m.id AND m.id=".$data["id"]." ORDER BY t.sortierung ASC, t.id ASC";
+$sql_themen = "SELECT t.id, t.titel, t.text, t.pdf, t.youtube FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_messen m  WHERE t.messen_id = m.id AND m.id=".$data["id"]." ORDER BY CONVERT(t.sortierung,UNSIGNED) ASC, t.id ASC";
 $result_themen = $mysql->query($sql_themen);
 if ($result_themen->num_rows > 0) {
   while($row = $result_themen->fetch_assoc()) {
@@ -33,7 +33,7 @@ if ($result_themen->num_rows > 0) {
 $count_ton = 0;
 foreach ($themen as &$thema) {
   $oton = array();
-  $sql_oton = "SELECT o.id, o.themen_id, o.titel, o.text, o.posttext, o.bild, o.mp3, o.upload FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_otoene o  WHERE o.themen_id = t.id AND t.id=".$thema["id"]." ORDER BY o.sortierung ASC, o.upload ASC";
+  $sql_oton = "SELECT o.id, o.themen_id, o.titel, o.text, o.posttext, o.bild, o.mp3, o.upload FROM ".DB_PREFIX."_themen t, ".DB_PREFIX."_otoene o  WHERE o.themen_id = t.id AND t.id=".$thema["id"]." ORDER BY CONVERT(o.sortierung,UNSIGNED) ASC, o.upload ASC";
   $result_oton  = $mysql->query($sql_oton);
   if ($result_oton->num_rows > 0) {
     while($row = $result_oton->fetch_assoc()) {
