@@ -558,6 +558,7 @@ rel="noopener noopener"
                     <?php
                       $_GET['type'] = "stripe";
                       $_GET['max'] = "4";
+			$_GET['sort'] = "next";
                       include("navbar.php");   
                     ?>   
                 </div>
