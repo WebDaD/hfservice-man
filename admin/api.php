@@ -102,15 +102,15 @@ function getMesse($mysql,$id) {
   if($id) {
     $where = " WHERE id=".$id;
   }
-  $sql = "SELECT id, titel, slug, `text`, bild, link, themenservice, datum, enddatum, sortierung, kontakt_aktiv, presseteam FROM " . DB_PREFIX . "_messen".$where;
+  $sql = "SELECT id, titel, slug, `text`, bild, link, themenservice, datum, enddatum, sortierung, kontakt_aktiv, presseteam, pronomen FROM " . DB_PREFIX . "_messen".$where;
   return getObject($mysql, $sql, $id);
 }
 function addMesse($mysql,$data) {
-  $sql = "INSERT INTO  " . DB_PREFIX . "_messen (titel, slug, `text`, bild, link, datum, enddatum, sortierung, kontakt_aktiv, presseteam) VALUES ('".$data->titel."', '".$data->slug."', '".$data->text."', '".$data->bild."', '".$data->link."', '".$data->datum."', '".$data->enddatum."', '".$data->sortierung."','".$data->kontakt_aktiv."','".$data->presseteam."')";
+  $sql = "INSERT INTO  " . DB_PREFIX . "_messen (titel, slug, `text`, bild, link, datum, enddatum, sortierung, kontakt_aktiv, presseteam, pronomen) VALUES ('".$data->titel."', '".$data->slug."', '".$data->text."', '".$data->bild."', '".$data->link."', '".$data->datum."', '".$data->enddatum."', '".$data->sortierung."','".$data->kontakt_aktiv."','".$data->presseteam."','".$data->pronomen."')";
   return addObject($mysql, $sql);
 }
 function updateMesse($mysql,$id, $data) {
-  $sql = "UPDATE " . DB_PREFIX . "_messen SET titel='".$data->titel."', slug='".$data->slug."', `text`='".$data->text."', bild='".$data->bild."', link='".$data->link."', datum='".$data->datum."', enddatum='".$data->enddatum."', sortierung='".$data->sortierung."', kontakt_aktiv='".$data->kontakt_aktiv."', presseteam='".$data->presseteam."' WHERE id=".$id;
+  $sql = "UPDATE " . DB_PREFIX . "_messen SET titel='".$data->titel."', slug='".$data->slug."', `text`='".$data->text."', bild='".$data->bild."', link='".$data->link."', datum='".$data->datum."', enddatum='".$data->enddatum."', sortierung='".$data->sortierung."', kontakt_aktiv='".$data->kontakt_aktiv."', presseteam='".$data->presseteam."', pronomen='".$data->pronomen."' WHERE id=".$id;
   return updateObject($mysql, $sql);
 }
 function changeMesseSort($mysql,$id, $data) {

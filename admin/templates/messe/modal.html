@@ -125,6 +125,16 @@
       <span class="slider"></span>
     </label>
   </div>
+  <div class="input-group mb-3" ng-show="!ctrl.deletion">
+    <div class="input-group-prepend">
+      <label class="input-group-text" id="messe-pronomen">Pronomen</label>
+    </div>
+      <select class="form-control" id="pronomen" ng-model="ctrl.messe.pronomen" aria-label="Pronomen?"
+      aria-describedby="messe-pronomen" ng-disabled="ctrl.disabled">
+        <option>weiblich</option>
+        <option>männlich</option>
+      </select>
+  </div>
   <p ng-show="ctrl.deletion">Wollen Sie wirklich die Messe {{ctrl.messe.titel}} löschen?</p>
   <div class="input-group mb-3" ng-show="ctrl.deletion">
     <div class="input-group-prepend">
